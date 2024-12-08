@@ -1,0 +1,300 @@
+{
+  "address": "0x62cde19505E91e178A7497cEd51fD29e4142b28F",
+  "abi": [
+      {
+          "type": "event",
+          "anonymous": false,
+          "name": "BidSubmitted",
+          "inputs": [
+              { "type": "uint256", "name": "bidID", "indexed": false },
+              { "type": "uint256", "name": "tenderID", "indexed": false },
+              { "type": "address", "name": "bidder", "indexed": false },
+              { "type": "uint256", "name": "amount", "indexed": false },
+              { "type": "string", "name": "ipfsHash", "indexed": false }
+          ]
+      },
+      {
+          "type": "event",
+          "anonymous": false,
+          "name": "CompanyRegistered",
+          "inputs": [
+              { "type": "uint256", "name": "companyId", "indexed": false },
+              { "type": "address", "name": "user", "indexed": false },
+              { "type": "string", "name": "name", "indexed": false },
+              { "type": "uint256", "name": "SSM", "indexed": false }
+          ]
+      },
+      {
+          "type": "event",
+          "anonymous": false,
+          "name": "TenderAwarded",
+          "inputs": [
+              { "type": "uint256", "name": "tenderID", "indexed": false },
+              { "type": "address", "name": "winner", "indexed": false }
+          ]
+      },
+      {
+          "type": "event",
+          "anonymous": false,
+          "name": "TenderCreated",
+          "inputs": [
+              { "type": "uint256", "name": "tenderID", "indexed": false },
+              { "type": "string", "name": "title", "indexed": false },
+              { "type": "uint256", "name": "budget", "indexed": false },
+              { "type": "uint256", "name": "deadline", "indexed": false },
+              { "type": "address", "name": "creator", "indexed": false }
+          ]
+      },
+      {
+          "type": "function",
+          "name": "awardTender",
+          "constant": false,
+          "payable": false,
+          "inputs": [
+              { "type": "uint256", "name": "tenderID" },
+              { "type": "address", "name": "winner" }
+          ],
+          "outputs": []
+      },
+      {
+          "type": "function",
+          "name": "bidCount",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [],
+          "outputs": [{ "type": "uint256" }]
+      },
+      {
+          "type": "function",
+          "name": "bids",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [
+              { "type": "uint256" },
+              { "type": "uint256" }
+          ],
+          "outputs": [
+              { "type": "uint256", "name": "bidID" },
+              { "type": "uint256", "name": "tenderID" },
+              { "type": "string", "name": "bidTitle" },
+              { "type": "address", "name": "bidder" },
+              { "type": "uint256", "name": "amount" },
+              { "type": "uint256", "name": "submitDate" },
+              { "type": "string", "name": "ipfsHash" }
+          ]
+      },
+      {
+          "type": "function",
+          "name": "companies",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [{ "type": "uint256" }],
+          "outputs": [
+              { "type": "uint256", "name": "id" },
+              { "type": "address", "name": "user" },
+              { "type": "string", "name": "name" },
+              { "type": "uint256", "name": "SSM" },
+              {
+                  "type": "tuple",
+                  "name": "owner",
+                  "components": [
+                      { "type": "string", "name": "staffName" },
+                      { "type": "string", "name": "staffQualification" },
+                      { "type": "uint256", "name": "staffExperience" }
+                  ]
+              },
+              { "type": "string", "name": "expertField" },
+              { "type": "string", "name": "financialStatus" },
+              { "type": "uint256", "name": "professionalStaffCount" }
+          ]
+      },
+      {
+          "type": "function",
+          "name": "companyCount",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [],
+          "outputs": [{ "type": "uint256" }]
+      },
+      {
+          "type": "function",
+          "name": "createTender",
+          "constant": false,
+          "payable": false,
+          "inputs": [
+              { "type": "string", "name": "title" },
+              { "type": "string", "name": "description" },
+              { "type": "uint256", "name": "budget" },
+              { "type": "uint256", "name": "deadline" },
+              { "type": "string", "name": "expertFieldRequired" },
+              { "type": "string", "name": "financialStatusRequired" },
+              { "type": "uint256", "name": "professionalStaffRequired" }
+          ],
+          "outputs": []
+      },
+      {
+          "type": "function",
+          "name": "getBidsForTender",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [{ "type": "uint256", "name": "tenderID" }],
+          "outputs": [
+              {
+                  "type": "tuple[]",
+                  "components": [
+                      { "type": "uint256", "name": "bidID" },
+                      { "type": "uint256", "name": "tenderID" },
+                      { "type": "string", "name": "bidTitle" },
+                      { "type": "address", "name": "bidder" },
+                      { "type": "uint256", "name": "amount" },
+                      { "type": "uint256", "name": "submitDate" },
+                      { "type": "string", "name": "ipfsHash" }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "function",
+          "name": "getCompanyDetails",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [{ "type": "uint256", "name": "companyId" }],
+          "outputs": [
+              {
+                  "type": "tuple",
+                  "components": [
+                      { "type": "uint256", "name": "id" },
+                      { "type": "address", "name": "user" },
+                      { "type": "string", "name": "name" },
+                      { "type": "uint256", "name": "SSM" },
+                      {
+                          "type": "tuple",
+                          "name": "owner",
+                          "components": [
+                              { "type": "string", "name": "staffName" },
+                              { "type": "string", "name": "staffQualification" },
+                              { "type": "uint256", "name": "staffExperience" }
+                          ]
+                      },
+                      {
+                          "type": "tuple[]",
+                          "name": "staff",
+                          "components": [
+                              { "type": "string", "name": "staffName" },
+                              { "type": "string", "name": "staffQualification" },
+                              { "type": "uint256", "name": "staffExperience" }
+                          ]
+                      },
+                      { "type": "string", "name": "expertField" },
+                      { "type": "string", "name": "financialStatus" },
+                      { "type": "uint256", "name": "professionalStaffCount" }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "function",
+          "name": "getTenderDetails",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [{ "type": "uint256", "name": "tenderID" }],
+          "outputs": [
+              {
+                  "type": "tuple",
+                  "components": [
+                      { "type": "uint256", "name": "tenderID" },
+                      { "type": "string", "name": "tenderTitle" },
+                      { "type": "string", "name": "description" },
+                      { "type": "uint256", "name": "budget" },
+                      { "type": "uint256", "name": "deadline" },
+                      { "type": "bool", "name": "awarded" },
+                      { "type": "address", "name": "creator" },
+                      { "type": "string", "name": "expertFieldRequired" },
+                      { "type": "string", "name": "financialStatusRequired" },
+                      { "type": "uint256", "name": "professionalStaffRequired" }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "function",
+          "name": "registerCompany",
+          "constant": false,
+          "payable": false,
+          "inputs": [
+              { "type": "string", "name": "name" },
+              { "type": "uint256", "name": "SSM" },
+              { "type": "string", "name": "expertField" },
+              { "type": "string", "name": "financialStatus" },
+              {
+                  "type": "tuple",
+                  "name": "owner",
+                  "components": [
+                      { "type": "string", "name": "staffName" },
+                      { "type": "string", "name": "staffQualification" },
+                      { "type": "uint256", "name": "staffExperience" }
+                  ]
+              },
+              {
+                  "type": "tuple[]",
+                  "name": "staff",
+                  "components": [
+                      { "type": "string", "name": "staffName" },
+                      { "type": "string", "name": "staffQualification" },
+                      { "type": "uint256", "name": "staffExperience" }
+                  ]
+              }
+          ],
+          "outputs": []
+      },
+      {
+          "type": "function",
+          "name": "submitBid",
+          "constant": false,
+          "payable": false,
+          "inputs": [
+              { "type": "uint256", "name": "tenderID" },
+              { "type": "uint256", "name": "amount" },
+              { "type": "string", "name": "ipfsHash" },
+              { "type": "string", "name": "bidTitle" }
+          ],
+          "outputs": []
+      },
+      {
+          "type": "function",
+          "name": "tenderCount",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [],
+          "outputs": [{ "type": "uint256" }]
+      },
+      {
+          "type": "function",
+          "name": "tenders",
+          "constant": true,
+          "stateMutability": "view",
+          "payable": false,
+          "inputs": [{ "type": "uint256" }],
+          "outputs": [
+              { "type": "uint256", "name": "tenderID" },
+              { "type": "string", "name": "tenderTitle" },
+              { "type": "string", "name": "description" },
+              { "type": "uint256", "name": "budget" },
+              { "type": "uint256", "name": "deadline" },
+              { "type": "bool", "name": "awarded" },
+              { "type": "address", "name": "creator" },
+              { "type": "string", "name": "expertFieldRequired" },
+              { "type": "string", "name": "financialStatusRequired" },
+              { "type": "uint256", "name": "professionalStaffRequired" }
+          ]
+      }
+  ]
+}

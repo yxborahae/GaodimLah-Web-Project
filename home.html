@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Dashboard</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="/assets/fontawesome/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+    <script defer src="interact.js"></script>
 </head>
 <body>
     <!-- Header Bar -->
@@ -71,6 +74,14 @@
                 <div class="project-card">Project 19</div>
                 <div class="project-card">Project 20</div>
             </div>
+        </section>
+
+        <!-- Wallet Connection & Smart Contract Section -->
+        <section>
+            <h2>Testing for Wallet Connection & Smart Contract</h2>
+            <button id="connect-wallet">Connect Wallet</button>
+            <button id="test-smart-contract">Test Smart Contract</button>
+            <p id="contract-result">Result will appear here...</p>
         </section>
     </main>
 </body>
