@@ -1,11 +1,166 @@
-img{
-    width: 200px;
-    height: 80px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F7F6F9;
+}
 
+header {
+  padding: 0px 20px 0px 20px;
+  
+}
+
+.header-title {
+  font-size: 22px; 
+  font-weight: bold; 
+  color: #4550DA; 
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.notificationIcon {
+  background-color: white;
+  color: black;
+}
+
+.notificationIcon:hover {
+  background-color: black;
+  color: white;
+}
+
+.profileIcon {
+  background-color: #4550DA;
+  color: white;
+}
+
+.profileIcon:hover {
+  background-color: black;
+  color: white;
 }
 
 
+.evaluationForm{
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-p{
-    color: aquamarine;
+
+button{
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.backButton{
+  background-color: #4550DA;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 6px 10px;
+  
+}
+
+.tender-title-bar{
+  background-color: black;
+  height: 45px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.tender-title{
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 10px ;
+
+}
+
+.informationButton{
+  background-color: white;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+
+.infoIcon{
+  font-size: 13px;
+
+}
+
+h1{
+  font-size: 23px;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 16px;
+}
+
+
+.evaluationProgressBar{
+  width:23%;
+  background: rgba(0,0,0,0.1);
+  height: 10px;
+  border-radius: 6px;
+
+}
+
+.evaluation-per{
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 50%;
+  background-color: #4550DA;
+  border-radius: 6px;
+}
+
+.tooltip{
+  position: absolute;
+  right: -14px;
+  top: -28px;
+  font-size: 9px;
+  font-weight: 500;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+/* Container Style*/
+.evaluation-container{
+  background-color: #EBEDEF;
+  padding: 5px;
+}
+
+.subtitle{
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.bigTitle{
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+.smallTitle{
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+span{
+  font-weight: 600;
 }
