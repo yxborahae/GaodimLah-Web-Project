@@ -213,6 +213,19 @@ body {
   background-color: #7f66a5; 
 }
 
+#filter-summary {
+  display: none; 
+  gap: 10px; 
+  font-size: 15px;
+}
+
+#category-summary, #date-summary {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
 
 
 .project {

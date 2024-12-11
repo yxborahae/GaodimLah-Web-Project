@@ -40,6 +40,11 @@
             <button class="btn filter-icon" data-bs-toggle="modal" data-bs-target="#filterModal">
                 <i class="fas fa-filter"></i>
             </button>
+            <div id="filter-summary" class="mt-3">
+                <div id="category-summary"></div>
+                <div id="date-summary"></div>
+            </div>
+            
         </div>
 
         <!-- Filter Modal -->
@@ -56,14 +61,14 @@
                                 <label for="category" class="form-label">Category</label>
                                 <select id="category" class="form-select">
                                     <option value="" disabled selected class="choose-option">Choose a category</option>
-                                    <option value="construction">Construction</option>
-                                    <option value="information-technology">Information Technology</option>
-                                    <option value="medical">Medical</option>
-                                    <option value="transportation">Transportation</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Medical">Medical</option>
+                                    <option value="Transportation">Transportation</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="date" class="form-label">Date</label>
+                                <label for="date" class="form-label">Project Deadline</label>
                                 <input type="month" id="date" class="form-control">
                             </div>
                         </form>
