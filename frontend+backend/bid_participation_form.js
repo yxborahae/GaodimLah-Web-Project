@@ -13,11 +13,11 @@ document.getElementById('proceed-transfer').addEventListener('click', function (
   messageDiv.classList.add('d-flex', 'align-items-center'); 
 
   const icon = document.createElement('i');
-  icon.classList.add('fa-solid', 'fa-circle-dollar-to-slot'); 
+  icon.classList.add('fa-solid', 'fa-circle-dollar-to-slot');  
   icon.style.marginRight = '10px'; 
   icon.style.color = isSuccess ? 'green' : 'red'; 
 
-  const messageText = document.createTextNode(isSuccess ? 'Successfully transferred' : 'Transfer Failed');
+  const messageText = document.createTextNode(isSuccess ? 'TRANSFER SUCCESSFUL' : 'TRANSFER FAIL');
 
   messageDiv.appendChild(icon);
   messageDiv.appendChild(messageText);
