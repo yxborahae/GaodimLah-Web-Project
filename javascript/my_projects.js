@@ -81,8 +81,6 @@ const projects = [
   
   renderProjects();
   
-  
-  
   const tabs = document.querySelectorAll('.tab');
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
