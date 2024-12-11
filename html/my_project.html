@@ -37,43 +37,44 @@
         </div>
 
         <div class="filter-section">
-    <button class="btn filter-icon" data-bs-toggle="modal" data-bs-target="#filterModal">
-        <i class="fas fa-filter"></i> 
-    </button>
-</div>
+            <button class="btn filter-icon" data-bs-toggle="modal" data-bs-target="#filterModal">
+                <i class="fas fa-filter"></i>
+            </button>
+        </div>
 
-<!-- Filter Modal -->
-<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="filterModalLabel">Filter Projects</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="filterForm">
-                    <div class="mb-3">
-                        <label for="category" class="form-label">Category</label>
-                        <select id="category" class="form-select">
-                            <option value=""></option>
-                            <option value="construction">Construction</option>
-                            <option value="information-technology">Information Technology</option>
-                            <option value="medical">Medical</option>
-                        </select>
+        <!-- Filter Modal -->
+        <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="filterModalLabel">Filter Projects</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="mb-3">
-                        <label for="date" class="form-label">Date</label>
-                        <input type="month" id="date" class="form-control">
+                    <div class="modal-body">
+                        <form id="filterForm">
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Category</label>
+                                <select id="category" class="form-select">
+                                    <option value="" disabled selected class="choose-option">Choose a category</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="information-technology">Information Technology</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="transportation">Transportation</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date</label>
+                                <input type="month" id="date" class="form-control">
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="applyFilter">Apply Filter</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn" id="applyFilter">Apply Filter</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
         <div id="project-container">

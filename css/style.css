@@ -117,7 +117,7 @@ body {
 }
 
 .proposal-label:hover {
-  background-color: #A88CC9; 
+  background-color: #7f66a5; 
 }
 
 #proceed-transfer {
@@ -126,7 +126,7 @@ body {
 }
 
 #proceed-transfer:hover {
-  background-color: #A88CC9; 
+  background-color: #7f66a5; 
 }
 
 .btn-container {
@@ -188,12 +188,31 @@ body {
   border-radius: 100%;
   padding: 8px 12px;
   cursor: pointer;
+  
 }
 
 .filter-icon:hover {
-  background-color: #A88CC9;
+  background-color: #7f66a5;
   color: white;
+  
 }
+
+.modal-content {
+  background-color: black; 
+  color: white; 
+}
+
+
+.modal-footer .btn {
+  background-color: #CEB8F0; 
+  color: black; 
+  border: none; 
+}
+
+.modal-footer .btn:hover {
+  background-color: #7f66a5; 
+}
+
 
 
 .project {
