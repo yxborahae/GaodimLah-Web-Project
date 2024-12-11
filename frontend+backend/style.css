@@ -45,7 +45,7 @@ body {
 }
 
 .form-container {
-  padding: 0px 25px 25px 25px;
+  padding: 0px 35px 25px 35px;
   border-radius: 8px;
 }
 
@@ -54,8 +54,6 @@ body {
   color: #4550DA;
   margin: 20px 0;
 }
-
-
 
 .sub-container {
   display: flex;
@@ -67,6 +65,7 @@ body {
 }
 
 .sub-container-title {
+  
   background-color: black; 
   color: white; 
   margin: 0; 
@@ -113,8 +112,7 @@ body {
 }
 
 #proceed-transfer {
-  background-color: #CEB8F0; 
-  
+  background-color: #CEB8F0;  
 }
 
 #proceed-transfer:hover {
@@ -137,91 +135,8 @@ body {
 }
 
 
-
-  
-  
-  /* .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .procurement-title {
-    font-size: 16px;
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section h3 {
-    font-size: 18px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input, select, button {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .form-actions {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #back-btn {
-    background-color: #f44336;
-  }
-  
-  #back-btn:hover {
-    background-color: #e53935;
-  }
-   */
+#edit-btn {
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: white;
+}
