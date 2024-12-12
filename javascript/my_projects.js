@@ -188,9 +188,9 @@ function renderProjects(projects, type) {
         <div style="color: black; font-weight: 100; font-style: italic; font-size: 12px; padding-top:10px;">${project.subStatus}</div>
 
       </div>
-          <div class="next-button">
-            <i class="fas fa-arrow-right"></i>
-          </div>
+      <div class="next-button" onclick="navigateToProject('${project.title}')">
+      <i class="fas fa-arrow-right"></i>
+    </div>
         </div>
       </div>
       `;
@@ -203,6 +203,9 @@ function renderProjects(projects, type) {
 function navigateToProject(title) {
   if (title === "EDUCATION SOFTWARE SYSTEM") {
     window.location.href = 'ap_progress.html';
+  }
+  if (title === "PUBLIC COMPLAINT MANAGEMENT SYSTEM") {
+    window.location.href = 'bp_progress.html';
   }
 }
 
