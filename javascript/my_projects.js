@@ -162,7 +162,7 @@ function renderProjects(projects, type) {
             </svg>
             <p class="progress-percent" style="color: ${project.progressColor};">${project.progressText}</p>
           </div>
-          <div class="next-button">
+          <div class="next-button" onclick="navigateToProject('${project.title}')">
             <i class="fas fa-arrow-right"></i>
           </div>
         </div>
@@ -198,6 +198,12 @@ function renderProjects(projects, type) {
 
     projectContainer.appendChild(projectDiv);
   });
+}
+
+function navigateToProject(title) {
+  if (title === "EDUCATION SOFTWARE SYSTEM") {
+    window.location.href = 'ap_progress.html';
+  }
 }
 
 
