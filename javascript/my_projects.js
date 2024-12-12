@@ -81,14 +81,16 @@ const biddingProjects = [
     tenderId: "T2024-135",
     bidAmount: "RM 29,500",
     proposalValidityExpiry: "2025-01-07",
-    status: "Final Evaluation Pending"
+    status: "Final Evaluation Pending",
+    subStatus: "awaiting final decision from the tender committee"
   },
   {
     title: "CLOUD HOSTING SERVICES FOR BROADCASTING CONTENT STORAGE",
     tenderId: "T2024-148",
     bidAmount: "RM 152,800",
     proposalValidityExpiry: "2025-02-17",
-    status: "Proposal Submitted"
+    status: "Proposal Submitted",
+    subStatus: ""
   },
 ];
 
@@ -181,8 +183,10 @@ function renderProjects(projects, type) {
           </div>
         </div>
         <div class="project-right">
-        <div class="status fw-bold" style="background-color: #CEB8F0; color: #4550DA; padding: 20px 20px; border-radius: 10px; white-space: nowrap;">
+        <div class="status fw-bold" style="background-color: #CEB8F0; color: #4550DA; padding: 20px 20px; border-radius: 10px; white-space: nowrap; text-align: center;">
         ${project.status}
+        <div style="color: black; font-weight: 100; font-style: italic; font-size: 12px; padding-top:10px;">${project.subStatus}</div>
+
       </div>
           <div class="next-button">
             <i class="fas fa-arrow-right"></i>
