@@ -5,6 +5,7 @@ body {
   background-color: #F7F6F9;
 }
 
+/* header style */
 header {
   padding: 0px 20px 0px 20px;
   
@@ -46,9 +47,10 @@ header {
 }
 
 
+/* evaluation form style */
 .evaluationForm{
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 
@@ -58,7 +60,7 @@ button{
   border: none;
 }
 
-.backButton{
+.mainButton{
   background-color: #4550DA;
   color: #ffffff;
   border-radius: 5px;
@@ -108,39 +110,59 @@ h2{
 }
 
 
-.evaluationProgressBar{
-  width:23%;
-  background: rgba(0,0,0,0.1);
-  height: 10px;
-  border-radius: 6px;
-
+.progress-bar{
+  width: 20%;
+  height: 15px;
+  background-color: #D9D9D9;
+  border-radius: 10px;
 }
 
-.evaluation-per{
-  position: relative;
-  display: block;
-  height: 100%;
+.progress-per{
   width: 50%;
-  background-color: #4550DA;
-  border-radius: 6px;
+  height: 15px;
+  background-color: #5DC273;
+  border-radius: 10px;
+  position: relative;
 }
 
-.tooltip{
-  position: absolute;
-  right: -14px;
-  top: -28px;
-  font-size: 9px;
+.viewPDF{
+  background-color: #C6C3C3;
+  font-size: 12px;
   font-weight: 500;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 3px;
-  background-color: #ffffff;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
 }
+
+/* .progress-per::before{
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.skill-per::after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f1f1f1;
+  top:-20px;
+  right: 0;
+  transform: translateX(50%);
+} */
 
 /* Container Style*/
 .evaluation-container{
   background-color: #EBEDEF;
-  padding: 5px;
+  padding: 10px 15px;
 }
 
 .subtitle{
@@ -151,16 +173,117 @@ h2{
 .bigTitle{
   font-size: 15px;
   font-weight: 600;
-  padding: 0;
+  padding: 5px 30px;
   margin: 0;
 }
 
 .smallTitle{
   font-size: 14px;
-  padding: 0;
+  padding: 5px 30px;
   margin: 0;
 }
 
 span{
   font-weight: 600;
+}
+
+/* table style */
+table{
+  width: 99.5%;
+  margin: 10px 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+table .textColumn{
+  text-align: left;
+}
+
+table th{
+  color: white;
+  background-color: #4651E3;
+  padding: 5px 20px;
+  font-weight: 500;
+}
+
+table td{
+  color: black;
+  background-color: #CEB8F0;
+  padding: 5px 20px;
+}
+
+/* slider style */
+.scoring{
+  display: flex;
+  justify-content: space-between;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  
+}
+
+.box .slider{
+  height: 16px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+ 
+  
+}
+
+/* .slider input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%; 
+  height: 10px; 
+  background: lightgray; 
+  outline: none; 
+  border-radius: 5px; 
+} */
+
+.slider input{
+
+  width: 90%; 
+  height: 50%
+}
+
+.box .value{
+  width: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: black;
+  /* text-align:center; */
+}
+
+
+/* comments */
+#comments{
+  width: 98%;
+  margin-left: 20px;
+  /* margin-right: 0px; */
+}
+
+/* bottom buttons */
+.buttons{
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+}
+
+#previous{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  width: 130px;
+}
+#next{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  width: 130px;
 }
