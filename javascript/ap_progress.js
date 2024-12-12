@@ -1,3 +1,11 @@
+const backButton = document.getElementById('back-btn');
+
+backButton.addEventListener('click', function() {
+    window.location.href = 'my_project.html';
+});
+
+
+
 function calculateDeadline() {
     const deadline = new Date("2025-01-17");
     const now = new Date();

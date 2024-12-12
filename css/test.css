@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F7F6F9;
+    background-color: #CEB8F0;
 }
 
 .header {
@@ -56,7 +56,7 @@ body {
 }
 
 .deadline-container {
-    background-color: #CEB8F0;
+    background-color: #FFC107;
     padding: 15px;
     border-radius: 10px;
     color: #4550DA;
@@ -80,8 +80,15 @@ body {
     font-weight: bold;
 }
 
+
+
+
+
+
+
 .content-container {
     margin: 30px 80px;
+    background-color: red;
 }
 
 .ap-title {
@@ -95,29 +102,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 0px;
+    padding: 25px 0px;
 }
 
 
 .progress-title-container {
     background-color: #00CF2D;
     color: white;
-    padding: 15px;
+    padding: 10px;
     font-size: 20px;
     border-radius: 10px;
-    width: fit-content;
+    margin-left: 20px; /* Ensure there is space between the title and the circles */
+    margin-top: 10px; 
 }
 
 .step {
     margin: 20px 0;
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Make the elements stack vertically */
+    align-items: center; /* Center the elements horizontally */
+    width: 100%;
 }
 
 .step-header {
-     display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Aligns items to the left */
+    display: flex;
+    flex-direction: column; /* Stack title and step details vertically */
+    align-items: flex-start; /* Align everything to the left */
     width: 100%;
 }
 
@@ -130,14 +140,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 60px;
+    margin-right: 15px; 
 }
 
 .step-circles {
     display: flex;
     justify-content: space-between;
-    margin: 0px 40px;
-    width: 200px;
+    margin: 0px 15px; /* Adjusted space between the circles */
+    width: auto;
 }
 
 .small-circle {
@@ -145,40 +155,21 @@ body {
     height: 10px;
     border-radius: 50%;
     background-color: #28a745;
+    margin: 0 5px;
 }
 
 .step-details {
-    list-style-type: none; 
-    position: relative; 
-    padding-left: 25px; 
-    
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+    margin-top: 10px; 
   }
 
   .step-details::before {
-    content: '\2713'; 
+    content: '\2713'; /* Checkmark icon */
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 20px; 
-    color: black; 
+    font-size: 20px;
+    color: black;
   }
-
-  .undone {
-    list-style-type: none; 
-    position: relative; 
-    padding-left: 25px; 
-    color: grey;
-  }
-
-  .undone::before {
-    content: '\2713'; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px; 
-    color: grey; 
-  }
-
-#completed {
-    background-color: grey;
-}
