@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #CEB8F0;
+  background-color: #F7F6F9;
 }
 
 .header {
@@ -10,8 +10,8 @@ body {
 }
 
 .header img {
-  width: 250px;  
-  height: auto;  
+  width: 190px; 
+  height: 80px;  
 }
 
 .header-title {
@@ -25,8 +25,8 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 .notificationIcon {
@@ -50,14 +50,14 @@ body {
 }
 
 .form-container {
-  padding: 0px 35px 25px 35px;
+  padding: 0px 80px 25px 80px;
   border-radius: 8px;
 }
 
 .procurement-title {
   font-size: 17px;
   color: #4550DA;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .sub-container {
@@ -70,7 +70,6 @@ body {
 }
 
 .sub-container-title {
-  
   background-color: black; 
   color: white; 
   margin: 0; 
@@ -84,6 +83,7 @@ body {
 
 .bid-form-label {
   width: 150px;
+  font-size: 15px;
 }
 
 .bid-form-input {
@@ -91,16 +91,19 @@ body {
   border-radius: 20px;
   background-color: #FFFFFF; 
   border: 1px solid black; 
+  font-size: 15px;
 }
 
 .bid-form-input[readonly] {
   background-color: #D9D9D9; 
   color: grey; 
   border: 1px solid #D9D9D9;
+  font-size: 15px;
 }
 
 .proposal-input {
   display: none; 
+  
 }
 
 .proposal-label {
@@ -110,22 +113,25 @@ body {
   border-radius: 5px; 
   cursor: pointer; 
   border: none; 
+  font-size: 15px;
 }
 
 .proposal-label:hover {
-  background-color: #A88CC9; 
+  background-color: #7f66a5; 
 }
 
 #proceed-transfer {
   background-color: #CEB8F0;  
+  font-size: 15px;
 }
 
 #proceed-transfer:hover {
-  background-color: #A88CC9; 
+  background-color: #7f66a5; 
 }
 
 .btn-container {
   padding-top: 25px;
+ 
   margin-top: 20px;
 }
 
@@ -148,7 +154,7 @@ body {
 
 
 .myprojects {
-  padding: 0px 35px 25px 35px;
+  padding: 0px 80px 25px 80px;
 }
 
 .tabs {
@@ -170,6 +176,56 @@ body {
   background-color: #4550DA; /* Green */
   color: white;
 }
+
+.filter-section {
+  margin: 15px 0;
+}
+
+.filter-icon {
+  background-color: black;
+  color: white;
+  border-radius: 100%;
+  padding: 8px 12px;
+  cursor: pointer;
+  
+}
+
+.filter-icon:hover {
+  background-color: #7f66a5;
+  color: white;
+  
+}
+
+.modal-content {
+  background-color: black; 
+  color: white; 
+}
+
+
+.modal-footer .btn {
+  background-color: #CEB8F0; 
+  color: black; 
+  border: none; 
+}
+
+.modal-footer .btn:hover {
+  background-color: #7f66a5; 
+}
+
+#filter-summary {
+  display: none; 
+  gap: 10px; 
+  font-size: 15px;
+}
+
+#category-summary, #date-summary {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
 
 .project {
   background-color: #EBEDEF;
@@ -194,7 +250,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 180px; 
+  gap: 130px; 
 }
 
 .next-button {
@@ -210,7 +266,7 @@ body {
 }
 
 .next-button:hover {
-  background-color: #3643A7;
+  background-color: #A88CC9;
 }
 
 .next-button i {
