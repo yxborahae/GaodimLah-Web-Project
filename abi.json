@@ -1,5 +1,5 @@
 {
-  "address": "0x9E9DB70D10D6A4291CcD39cc11288b44cd3D0812",
+  "address": "0x2F67034da1ABd00e153ed640Ded8ea7f5B8d3aea",
   "abi": [
     {
       "type": "function",
@@ -82,7 +82,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         }
       ],
       "outputs": [
@@ -327,6 +328,19 @@
     },
     {
       "type": "function",
+      "name": "getTenderCount",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
       "name": "getTenderFieldsAndLocality",
       "constant": true,
       "stateMutability": "view",
@@ -565,10 +579,12 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         },
         {
-          "type": "uint256"
+          "type": "uint256",
+          "name": "bidIndex"
         }
       ],
       "outputs": [
@@ -606,7 +622,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "uint256"
+          "type": "uint256",
+          "name": "index"
         }
       ],
       "outputs": [
@@ -623,10 +640,12 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         },
         {
-          "type": "address"
+          "type": "address",
+          "name": "signer"
         }
       ],
       "outputs": [
@@ -643,7 +662,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         }
       ],
       "outputs": [
@@ -701,7 +721,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "address"
+          "type": "address",
+          "name": "userAddress"
         }
       ],
       "outputs": [
