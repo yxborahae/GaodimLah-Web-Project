@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F6F9;
+}
+
+.header {
+    background-image: url('../images/headerPic.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.65); 
+    background-blend-mode: overlay; 
+    height: 165px; 
+}
+
+.header-padding {
+    padding: 0px 20px 20px 20px;
+}
+
+.header-title {
+    background-color: rgb(255, 255, 255,0.6);
+    color: black;
+    padding: 15px 10px;
+}
+
+.header img {
+    width: 190px;
+    height: 80px;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+.notificationIcon {
+    background-color: white;
+    color: black;
+  }
+  
+.notificationIcon:hover {
+    background-color: black;
+    color: white;
+  }
+  
+.profileIcon {
+    background-color: #4550DA;
+    color: white;
+  }
+  
+.profileIcon:hover {
+    background-color: black;
+    color: white;
+  }
+
+.container {
+    margin: 0px 80px 25px 80px;
+}
+
+.procurement-title {
+    font-size: 17px;
+    color: #4550DA;
+    margin: 20px 0px 30px 0px;
+  }
+
+.half-container {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.tender-container {
+    width: 70%;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: column; 
+    border: none; 
+    overflow: hidden; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+.sub-container-title {
+    background-color: black; 
+    color: white; 
+    margin: 0; 
+    padding: 15px; 
+  }
+  
+.sub-container-content {
+    background-color: #EBEDEF; 
+    padding: 15px 30px 15px 15px; 
+    font-size: 13px;
+  }
+
+.sub-container-content p{
+    background-color: white; 
+    padding: 7px;
+  }
+
+.deadline-container {
+    background-color: #CEB8F0;
+    padding: 15px;
+    border-radius: 10px;
+    color: #4550DA;
+    margin-right: 20px;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 50px;   
+}
+
+.deadline-container p{
+    color: black;
+    font-size: 15px;
+}
+
+.deadline-container i {
+    font-size: 1.2rem;
+    color: #4550DA;
+    margin-right: 8px;
+}
+
+.deadline-timer {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.deadline-container .d-flex {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.table-style {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+}
+
+.table-style th, .table-style td {
+    border: 1.5px solid black;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.table-style th {
+    background-color: #4550DA;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+
+.data-width td{
+    width: 33.33%; 
+}
+  
+.contact-container, .document-container {
+    width: 43%; 
+}
+
+.contact-details {
+    background-color: #EBEDEF; 
+    padding: 15px 30px 15px 15px; 
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+#bid-btn {
+    background-color: #4550DA;
+    color: white;
+  }
+
+#bid-btn:hover {
+    background-color: #737cf8;
+}
+
+footer {
+    text-align: end;
+    margin: 20px 0;
+  }
+
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    color: black;
+}
+
+
+.contact-info p {
+    margin: 10px;
+}
+
+

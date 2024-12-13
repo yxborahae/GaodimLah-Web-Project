@@ -4,7 +4,7 @@ const applyFilterButton = document.getElementById('applyFilter');
 const projectContainer = document.getElementById("project-container");
 const tabs = document.querySelectorAll('.tab');
 
-let countdownInterval;  // Store interval ID
+let countdownInterval; 
 
 applyFilterButton.addEventListener('click', () => {
   const category = document.getElementById('category').value;
@@ -81,18 +81,20 @@ const biddingProjects = [
     tenderId: "T2024-135",
     bidAmount: "RM 29,500",
     proposalValidityExpiry: "2025-01-07",
-    status: "Final Evaluation Pending"
+    status: "Final Evaluation Pending",
+    subStatus: "awaiting final decision from the tender committee"
   },
   {
     title: "CLOUD HOSTING SERVICES FOR BROADCASTING CONTENT STORAGE",
     tenderId: "T2024-148",
     bidAmount: "RM 152,800",
     proposalValidityExpiry: "2025-02-17",
-    status: "Proposal Submitted"
+    status: "Proposal Submitted",
+    subStatus: ""
   },
 ];
 
-// Function to calculate time left
+
 function calculateTimeLeft(deadline) {
   const currentDate = new Date();
   const deadlineDate = new Date(deadline);
@@ -102,24 +104,24 @@ function calculateTimeLeft(deadline) {
     return "Deadline passed";
   }
 
-  const months = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30)); // Approximate months
-  const years = Math.floor(months / 12); // Full years
-  const remainingMonths = months % 12; // Remaining months after years
+  const months = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30)); 
+  const years = Math.floor(months / 12); 
+  const remainingMonths = months % 12; 
 
-  const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)); // Remaining days
+  const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)); 
 
-  if (years > 0 || months >= 1) { // If time left is more than a month, show months and days
+  if (years > 0 || months >= 1) { 
     if (remainingMonths > 0) {
       return `${years > 0 ? `${years} year${years > 1 ? 's' : ''} ` : ''}${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ${days} day${days > 1 ? 's' : ''}`;
     } else {
       return `${years > 0 ? `${years} year${years > 1 ? 's' : ''} ` : ''}${days} day${days > 1 ? 's' : ''}`;
     }
-  } else { // If less than a month, only show days
+  } else { 
     return `${days} day${days > 1 ? 's' : ''}`;
   }
 }
 
-// Format deadline in dd/mm/yy format
+
 function formatDeadline(dateString) {
   const date = new Date(dateString);
   const day = String(date.getDate()).padStart(2, '0');
@@ -128,7 +130,7 @@ function formatDeadline(dateString) {
   return `${day}/${month}/${year}`;
 }
 
-// Function to render projects
+
 function renderProjects(projects, type) {
   projectContainer.innerHTML = '';
 
@@ -160,7 +162,7 @@ function renderProjects(projects, type) {
             </svg>
             <p class="progress-percent" style="color: ${project.progressColor};">${project.progressText}</p>
           </div>
-          <div class="next-button">
+          <div class="next-button" onclick="navigateToProject('${project.title}')">
             <i class="fas fa-arrow-right"></i>
           </div>
         </div>
@@ -181,12 +183,14 @@ function renderProjects(projects, type) {
           </div>
         </div>
         <div class="project-right">
-        <div class="status fw-bold" style="background-color: #CEB8F0; color: #4550DA; padding: 20px 20px; border-radius: 10px; white-space: nowrap;">
+        <div class="status fw-bold" style="background-color: #CEB8F0; color: #4550DA; padding: 20px 20px; border-radius: 10px; white-space: nowrap; text-align: center;">
         ${project.status}
+        <div style="color: black; font-weight: 100; font-style: italic; font-size: 12px; padding-top:10px;">${project.subStatus}</div>
+
       </div>
-          <div class="next-button">
-            <i class="fas fa-arrow-right"></i>
-          </div>
+      <div class="next-button" onclick="navigateToProject('${project.title}')">
+      <i class="fas fa-arrow-right"></i>
+    </div>
         </div>
       </div>
       `;
@@ -196,34 +200,42 @@ function renderProjects(projects, type) {
   });
 }
 
-// Function to start countdown and update project list
+function navigateToProject(title) {
+  if (title === "EDUCATION SOFTWARE SYSTEM") {
+    window.location.href = 'ap_progress.html';
+  }
+  if (title === "PUBLIC COMPLAINT MANAGEMENT SYSTEM") {
+    window.location.href = 'bp_progress.html';
+  }
+}
+
+
 function startCountdown() {
   const activeTab = document.querySelector('.tab.active').dataset.tab;
   const projectsToRender = activeTab === 'awarded' ? awardedProjects : biddingProjects;
   
-  // Clear the previous interval if it exists
+ 
   if (countdownInterval) {
     clearInterval(countdownInterval);
   }
 
   renderProjects(projectsToRender, activeTab);
 
-  // Start a new interval for the countdown
+ 
   countdownInterval = setInterval(() => {
     projectsToRender.forEach((project, index) => {
       const timeLeftElement = document.getElementById(`time-left-${index}`);
       timeLeftElement.innerHTML = `<i class="fas fa-clock"></i> ${calculateTimeLeft(project.deadline || project.proposalValidityExpiry)}`;
     });
-  }, 1000); // Update every second
+  }, 1000); 
 }
 
-// Tab click event listener
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-    startCountdown(); // Re-render based on the selected tab
+    startCountdown(); 
   });
 });
 
-startCountdown(); // Initial countdown when the page loads
+startCountdown(); 
