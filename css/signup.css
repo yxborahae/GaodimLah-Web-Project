@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F6F9;
+  }
+  
+  header {
+    padding: 0px 20px 0px 20px;
+    
+  }
+  
+  .header-title {
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #4550DA; 
+  }
+  
+  .header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .notificationIcon{
+    background-color: white;
+    color: black;
+  }
+  
+  .notificationIcon:hover, .profileIcon:hover  {
+    background-color: black;
+    color: white;
+  }
+  
+  .profileIcon {
+    background-color: #4550DA;
+    color: white;
+  }
+
+  .step-bar{
+    background-color: black;
+    height: 40px;
+    align-items: end;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .step{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px ;
+  }
+  
+  .substep-container {
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid #ccc; 
+    overflow: hidden; 
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .substep-title {
+    background-color: #CEB8F0; 
+    height: 45px;
+    color: black; 
+    margin: 0; 
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px; 
+  }
+  
+  .substep-container-content{
+    background-color: white; 
+    padding: 15px 30px 15px 15px; 
+  }
+  /*or switch back to form-row?*/
+  .signup-form-row {
+    display: flex;
+    /* margin-bottom: 2%; */
+}
+/* 
+.form-label {
+    width: 350px;
+    font-weight: bold;
+} */
+
+.form-input {
+  flex: 1;
+  margin-right: 10px;
+} 
+/* Add margin to separate the input fields */
+
+/* .form-input input { */
+    /* padding: 10px; */
+    /* border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+  .signup-form-label {
+    width: 150px;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: right;
+    padding-right: 2%;
+    /* white-space: nowrap; */
+    /* overflow: auto; */
+    /* text-overflow: ellipsis; */
+  }
+  
+  .business-nature-table,.update-catalog-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+.business-nature-table th, .business-nature-table td ,.update-catalog-table th, .update-catalog-table td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.business-nature-table th , .update-catalog-table th{
+    background-color: #8952F4;
+}
+#add-business-nature-row, #add-update-catalog-row {
+  border: none;
+  border-radius: 15px;
+  background-color: #4550DA;
+  color: #fff;
+} 
+.remove-row{
+  color: grey;
+}
+.confirmation{
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#tnc{
+  color: #4651E3;
+}
+ol{
+  padding-top: 1%;
+  margin-left: 4%;
+  padding-right: 4%;
+  margin-bottom: 0%;
+}
+ol li{
+  padding-bottom: 1%;
+}
+.btn-container {
+  padding-top: 25px;
+/*  
+  margin-top: 20px; */
+}
+
+#back-btn, #next-btn, #decline-btn,#connectWallet-btn {
+  background-color: #4550DA;
+  color: white;
+}
+
+  /* .signup-form-input {
+    flex: 1;
+    margin-right: 10px;
+    width: calc(100% - 120px); 
+    border-radius: 15px;
+    background-color: #D9D9D9; 
+    border: 1px solid #949090; 
+    /* font-size: 15px; */
+  /* } */ 

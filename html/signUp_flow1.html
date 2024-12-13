@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Process1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/signup.css">
+
+</head>
+<body>
+    <header>
+        <div class="mb-5 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="btn header-btn notificationIcon me-3">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="btn header-btn profileIcon">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <div class="col-md-12 col-11">
+        <div class="row gx-4 px-4">
+            <h3 class="fw-bold">Sign Up Process</h3>
+            <div class="col-md-3 bg-white">
+                <div class="process-container">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Registration</div>
+                        <ul class="step-items">
+                            <li class="completed"><i class="fa fa-check"></i> Company Information</li>
+                            <li class="completed"><i class="fa fa-check"></i> GST Information</li>
+                            <li class="completed"><i class="fa fa-check"></i> Business Natures</li>
+                            <li><a href="#">Update Catalog</a></li>
+                        </ul>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Personal Info</div>
+                        <ul class="step-items">
+                            <li><a href="#">Personal Details</a></li>
+                        </ul>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Wallet Integration</div>
+                        <ul class="step-items">
+                            <li><a href="#">Wallet Connection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="jumbotron step-bar d-flex justify-content-between">
+                    <h3 class="step">01. SUPPLIER REGISTRATION</h3>
+                </div>
+                <form>
+                <!-- <div class="form-container"> -->
+                    <!-- each substep's container -->
+                    <div class="substep-container">
+                        <h6 class="substep-title">Company Information</h6>
+                        <div class="substep-container-content row">
+                            <div class="mb-2 signup-form-row">
+                                <label for="ssm_no" class="form-label signup-form-label">SSM Registration No.:</label>
+                                <div class="form-input">
+                                    <input type="text" id="ssm_no" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="owner" class="form-label signup-form-label">Owner Name:</label>
+                                <div class="form-input">
+                                    <input type="text" id="owner" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="businessType" class="form-label signup-form-label">Business Type:</label>
+                                <div class="form-input">
+                                    <select id="businessType" class="form-control sigup-form-input">
+                                        <option value="" disabled selected>--- select business type ---</option>
+                                        <option value="sole_proprietorship">Sole Proprietorship</option>
+                                        <option value="patnership">Patnership</option>
+                                        <option value="sdn_bhd">Sdn Bhd</option>
+                                    </select>
+                                </div>
+                                <label for="ownerIC" class="form-label signup-form-label">Owner IC No.:</label>
+                                <div class="form-input">
+                                    <input type="text" id="ownerIC" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="companyName" class="form-label signup-form-label">Company Name:</label>
+                                <div class="form-input">
+                                    <input type="text" id="companyName" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="nationality" class="form-label signup-form-label">Nationality:</label>
+                                <div class="form-input">
+                                    <input type="text" id="nationality" class="form-control sigup-form-input" value="Malaysian" readonly>
+                                </div>
+                            </div>
+                            <div class="mb-2 signup-form-row">
+                                <label for="companyAddr" class="form-label signup-form-label">Company Address:</label>
+                                <div class="form-input">
+                                    <input type="text" id="companyAddr" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="country" class="form-label signup-form-label">Country:</label>
+                                <div class="form-input">
+                                    <input type="text" id="country establ_date" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="state" class="form-label signup-form-label">State:</label>
+                                <div class="form-input">
+                                    <input type="text" id="state" class="form-control sigup-form-input">
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="district" class="form-label signup-form-label">District:</label>
+                                <div class="form-input">
+                                    <input type="text" id="district" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="city" class="form-label signup-form-label">City:</label>
+                                <div class="form-input">
+                                    <input type="text" id="city" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="poscode" class="form-label signup-form-label">Poscode:</label>
+                                <div class="form-input">
+                                    <input type="text" id="poscode" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="incomeTax" class="form-label signup-form-label">Income Tax No.:</label>
+                                <div class="form-input">
+                                    <input type="text" id="incomeTax" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-2 signup-form-row">
+                                <label for="establ_date" class="form-label signup-form-label">Establishment Date: </label>
+                                <div class="form-input">
+                                    <input type="date" id="city" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="ssm_cert" class="form-label signup-form-label">SSM Registration Certificate:</label>
+                                <div class="form-input">
+                                    <input type="file" id="ssm_cert" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="tel_num" class="form-label signup-form-label">Tel No.: </label>
+                                <div class="form-input">
+                                    <input type="text" id="tel_num" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="fax_num" class="form-label signup-form-label">Fax No.:</label>
+                                <div class="form-input">
+                                    <input type="text" id="fax_num" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- other substep -->
+                    <div class="mb-4 substep-container">
+                        <h6 class="substep-title">GST Information</h6>
+                        <div class="substep-container-content row">
+                            <div class="mb-2 signup-form-row">
+                                <label for="gst_no" class="form-label signup-form-label">GST Registration No.:</label>
+                                <div class="form-input">
+                                    <input type="text" id="gst_no" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="gst_eff_date" class="form-label signup-form-label">GST Registration Effective Date:</label>
+                                <div class="form-input">
+                                    <input type="date" id="gst_eff_date" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                            <div class="mb-2 signup-form-row">
+                                <label for="gst_end_date" class="form-label signup-form-label">GST Registration No.:</label>
+                                <div class="form-input">
+                                    <input type="date" id="gst_end_date" class="form-control sigup-form-input" >
+                                </div>
+                                <label for="gst_doc" class="form-label signup-form-label">Upload GST Doc:</label>
+                                <div class="form-input">
+                                    <input type="file" id="gst_doc" class="form-control sigup-form-input" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- business natures -->
+                    <div class="mb-4 substep-container">
+                        <h6 class="substep-title">Business Natures</h6>
+                        <div class="substep-container-content row">
+                            <table class="mb-2 business-nature-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Business Natures</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="business-nature-row">
+                                        <td><input type="text" class="business-nature-code"></td>
+                                        <td><input type="text" class="business-nature-name"></td>
+                                        <td><i class="fa fa-remove remove-row"></i></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3"><button type="button" id="add-business-nature-row"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <span>Click <span style="color: #4550DA;">here</span> to download full list of Business Type</span>
+                        </div>
+                    </div>
+                    <!-- update catalog -->
+                    <div class="mb-4 substep-container">
+                        <h6 class="substep-title">Update Catalog</h6>
+                        <div class="substep-container-content row">
+                            <table class="mb-2 update-catalog-table">
+                                <thead>
+                                    <tr>
+                                        <th>Item Code</th>
+                                        <th>Item Name</th>
+                                        <th>Details</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="update-catalog-row">
+                                        <td><input type="text" class="item-code"></td>
+                                        <td><input type="text" class="item-name"></td>
+                                        <td><input type="text" class="item-details"></td>
+                                        <td><i class="fa fa-remove remove-row"></i></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4"><button type="button" id="add-update-catalog-row" style="align-items: flex-end;"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Form Actions -->
+                    <div class="btn-container">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="signUp_flow2.html">
+                                <button type="button" id="next-btn" class="btn ms-3">
+                                    NEXT <i class="fa-solid fa-caret-right ms-2"></i>
+                                </button>
+                            </a>
+
+                        </div>
+                    </div>                    
+                <!-- </div>  -->
+                </form>
+            </div>
+        </div>
+      </div>
+    </main>
+    
+</body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/signup_flow.js"></script>
+
