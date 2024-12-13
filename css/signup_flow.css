@@ -10,11 +10,11 @@ body {
     
   }
   
-  .header-title {
+  /* .header-title {
     font-size: 22px; 
     font-weight: bold; 
     color: #4550DA; 
-  }
+  } */
   
   .header-btn {
     display: flex;
