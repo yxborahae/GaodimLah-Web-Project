@@ -38,8 +38,8 @@
             FOR THREE (3) YEARS FOR THE DEPARTMENT OF BROADCASTING MALAYSIA
         </div>
 
-        <div class="tender-container d-flex">
-            <section class="sub-container">
+        <div class="half-container d-flex mb-4">
+            <section class="sub-container tender-container">
                 <h6 class="sub-container-title">Tender Details</h6>
                 <div class="sub-container-content">
                     <p>Tender ID: T2024-018</p>
@@ -71,59 +71,117 @@
         </div>
 
 
-        <section class="supplier-criteria">
-            <h3>Supplier Qualification Criteria</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category Code</th>
-                        <th>Category</th>
-                        <th>Sub Category</th>
-                        <th>Sub Category Division</th>
-                        <th>Service</th>
-                        <th>Locality</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>06050110</td>
-                        <td>Information Technology Services</td>
-                        <td>Cloud Services</td>
-                        <td>Hosting and Data Storage Solution</td>
-                        <td>Encryption and Networking</td>
-                        <td>Kuala Lumpur, Selangor</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="contact-details">
-            <h3>Contact Person Details</h3>
-            <div class="contacts">
-                <div>
-                    <p><strong>Name:</strong> Mr. Syahiran Muhamad</p>
-                    <p><strong>Email:</strong> syahiran.muhamad@mcmc.gov.my</p>
-                    <p><strong>Phone:</strong> +60 17-2345678</p>
-                </div>
-                <div>
-                    <p><strong>Name:</strong> Mr. Azlan Baharum</p>
-                    <p><strong>Email:</strong> azlan.baharum@mcmc.gov.my</p>
-                    <p><strong>Phone:</strong> +60 12-3456789</p>
-                </div>
+        <section class="sub-container" style="margin-bottom: 50px;">
+            <h6 class="sub-container-title">Supplier Qualification Criteria</h6>
+            <div class="sub-container-content">
+                <table class="table-style">
+                    <thead>
+                        <tr>
+                            <th>Category Code</th>
+                            <th>Category</th>
+                            <th>Sub Category</th>
+                            <th>Sub Category Division</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>06050110</td>
+                            <td>Information Technology Services</td>
+                            <td>Cloud Services</td>
+                            <td>Hosting and Data Storage Solution</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table-style">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Locality</th>
+                        </tr>
+                    </thead>
+                    <tbody class="data-width">
+                        <tr>
+                            <td>Sarawak</td>
+                            <td>Wilayah Persekutuan Kuala Lumpur</td>
+                            <td>Selangor</td>
+                        </tr>
+                        <tr>
+                            <td>Penang</td>
+                            <td>Kedah</td>
+                            <td>Melaka</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <section class="document-list">
-            <h3>Document List</h3>
-            <ul>
-                <li><a href="#">Procurement Document</a></li>
-                <li><a href="#">Instruction to Tender</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-            </ul>
+        <section class="half-container">
+            <section class="contact-container sub-container">
+                <h6 class="sub-container-title">Contact Person Details</h6>
+                <div class="contact-details">
+                    <div>
+                        <p>Name: Mr. Syahiran Muhamad</p>
+                        <p>Email: syahiran.muhamad@mcmc.gov.my</p>
+                        <p>Phone: +60 17-2345678</p>
+                    </div>
+                    <div>
+                        <p>Name: Mr. Azlan Baharum</p>
+                        <p>Email: azlan.baharum@mcmc.gov.my</p>
+                        <p>Phone: +60 12-3456789</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sub-container document-container">
+                <h6 class="sub-container-title">Document List</h6>
+                <!-- <ul>
+                    <li><a href="#">Procurement Document</a></li>
+                    <li><a href="#">Instruction to Tender</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul> -->
+                <div class="sub-container-content">
+                    <table class="table-style">
+                        <thead>
+                            <tr>
+                                <th>Document</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;">
+                                    <p><a href="#">Government Procurement Complaint Form</a></p>
+                                    <p><a href="#">Sample Letter of Acceptance</a></p>
+                                    <p><a href="#">Technical Compliance Checklist</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table-style">
+                        <thead>
+                            <tr>
+                                <th>Rules / T&C</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left;">
+                                    <p><a href="#">Specifications</a></p>
+                                    <p><a href="#">Supplier's Offer Statement</a></p>
+                                    <p><a href="#">Instructions to Bidders - Tender Document</a></p>
+                                    <p><a href="#">Delivery/Service Address</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </section>
 
         <footer>
-            <button id="bid-btn">Participate Bid</button>
+            <a href="bid_participation_form.html">
+                <button type="button" id="bid-btn" class="btn ms-3">
+                    PARTICIPATE BID <i class="fa-solid fa-caret-right ms-2"></i>
+                </button>
+            </a>
         </footer>
     </div>
     <script>

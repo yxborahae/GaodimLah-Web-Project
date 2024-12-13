@@ -149,15 +149,32 @@
             const deadline = new Date("2025-01-17");
             const now = new Date();
             const timeDiff = deadline - now;
-            const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            const monthsLeft = Math.floor(daysLeft / 30);
-            const remainingDays = daysLeft % 30;
 
-            document.getElementById('deadline-timer').textContent =
-                `${monthsLeft} months ${remainingDays} days`;
+            if (timeDiff <= 0) {
+                document.getElementById('deadline-timer').textContent = "Deadline passed";
+                return;
+            }
+
+            const months = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30));
+            const years = Math.floor(months / 12);
+            const remainingMonths = months % 12;
+
+            const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+
+            if (years > 0) {
+                document.getElementById('deadline-timer').textContent =
+                    `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ${days} day${days > 1 ? 's' : ''}`;
+            } else if (months >= 1) {
+                document.getElementById('deadline-timer').textContent =
+                    `${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ${days} day${days > 1 ? 's' : ''}`;
+            } else {
+                document.getElementById('deadline-timer').textContent =
+                    `${days} day${days > 1 ? 's' : ''}`;
+            }
         }
 
         calculateDeadline();
+
     </script>
 </body>
 

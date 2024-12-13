@@ -55,6 +55,10 @@ body {
     margin-left: 20px;
 }
 
+#back-btn:hover {
+  background-color: #737cf8;
+}
+
 .deadline-container {
     background-color: #CEB8F0;
     padding: 15px;

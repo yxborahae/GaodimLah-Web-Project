@@ -55,6 +55,10 @@ body {
     margin-left: 20px;
 }
 
+#back-btn:hover {
+    background-color: #737cf8;
+}
+
 .content-container {
     margin: 30px 80px;
 }
@@ -68,7 +72,7 @@ body {
     justify-content: space-between;
 }
 
-/* Style for the table */
+
 .bidder-table {
     width: 100%;
     border-collapse: collapse;

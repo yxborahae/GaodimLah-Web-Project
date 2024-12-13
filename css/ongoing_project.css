@@ -65,13 +65,16 @@ body {
 .procurement-title {
     font-size: 17px;
     color: #4550DA;
-    margin: 15px 0;
+    margin: 20px 0px 30px 0px;
   }
 
-.tender-container {
-    display: flex;
+.half-container {
+    display: flex; 
     justify-content: space-between; 
-    align-items: flex-start; 
+}
+
+.tender-container {
+    width: 70%;
 }
 
 .sub-container {
@@ -91,8 +94,9 @@ body {
   }
   
 .sub-container-content {
-    background-color: blue; 
+    background-color: #EBEDEF; 
     padding: 15px 30px 15px 15px; 
+    font-size: 13px;
   }
 
 .sub-container-content p{
@@ -108,7 +112,7 @@ body {
     margin-right: 20px;
     text-align: center;
     width: fit-content;
-    margin-bottom: 50px;
+    margin-bottom: 50px;   
 }
 
 .deadline-container p{
@@ -133,45 +137,55 @@ body {
     justify-content: center; 
 }
 
-
-  
-  .tender-details, .supplier-criteria, .contact-details, .document-list {
-    background-color: #0056b3;
-    margin: 20px 0;
-  }
-  
-  .tender-details .details p, .supplier-criteria table, .contact-details .contacts, .document-list ul {
-    margin: 10px 0;
-  }
-  
-  .date-box {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 15px;
-    background: #eef;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .date-box span {
-    font-size: 20px;
-    color: #007BFF;
-  }
-  
-  table {
+.table-style {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-  }
+    margin: 20px 0;
+    background-color: white;
+}
+
+.table-style th, .table-style td {
+    border: 1.5px solid black;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.table-style th {
+    background-color: #4550DA;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+
+.data-width td{
+    width: 33.33%; 
+}
   
-  table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+.contact-container, .document-container {
+    width: 48%; 
+}
+
+.contact-details {
+    background-color: #EBEDEF; 
+    padding: 15px 30px 15px 15px; 
+    font-size: 13px;
+}
+
+#bid-btn {
+    background-color: #4550DA;
+    color: white;
   }
+
+#bid-btn:hover {
+    background-color: #737cf8;
+}
+
+
+
   
   footer {
-    text-align: center;
+    text-align: end;
     margin: 20px 0;
   }
   
@@ -188,7 +202,8 @@ body {
     background-color: #0056b3;
   }
 
-
+ 
+  
 
 /* 
   section h1, section h2, section h3 {

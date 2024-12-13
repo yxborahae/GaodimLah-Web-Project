@@ -140,9 +140,17 @@ body {
   color: white;
 }
 
+#back-btn:hover {
+  background-color: #737cf8;
+}
+
 #next-btn {
   background-color: #4550DA;
   color: white;
+}
+
+#next-btn:hover {
+  background-color: #737cf8;
 }
 
 
