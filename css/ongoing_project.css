@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: red;
+    background-color: #F7F6F9;
 }
 
 .header {
@@ -163,13 +163,15 @@ body {
 }
   
 .contact-container, .document-container {
-    width: 48%; 
+    width: 43%; 
 }
 
 .contact-details {
     background-color: #EBEDEF; 
     padding: 15px 30px 15px 15px; 
     font-size: 13px;
+    display: flex;
+    flex-direction: column;
 }
 
 #bid-btn {
@@ -181,225 +183,35 @@ body {
     background-color: #737cf8;
 }
 
-
-
-  
-  footer {
+footer {
     text-align: end;
     margin: 20px 0;
   }
-  
-  footer button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  footer button:hover {
-    background-color: #0056b3;
-  }
-
- 
-  
-
-/* 
-  section h1, section h2, section h3 {
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-}
 
 
-.project-section {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.project-section h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4550DA;
-}
-
-.project-section h2 {
-    font-size: 18px;
-    font-weight: 400;
-    color: #555;
-    line-height: 1.5;
-}
-
-
-.tender-details {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.tender-details h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #4550DA;
-}
-
-.tender-details .details p {
-    margin: 10px 0;
-    color: #333;
-    font-size: 16px;
-}
-
-.tender-details .dates {
+.contact-item {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    margin-left: 20px;
     margin-top: 20px;
 }
 
-.tender-details .date-box {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    width: 45%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.tender-details .date-box span {
-    font-size: 18px;
-    font-weight: bold;
-    color: #4550DA;
-}
-
-
-.supplier-criteria {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.supplier-criteria table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    text-align: left;
-}
-
-.supplier-criteria table th, 
-.supplier-criteria table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    font-size: 14px;
-}
-
-.supplier-criteria table th {
-    background-color: #4550DA;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-}
-
-.supplier-criteria table td {
-    color: #333;
-}
-
-
-.contact-details {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.contact-details .contacts {
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.contact-details p {
-    margin: 10px 0;
-    color: #333;
-    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    color: black;
 }
 
 
-.document-list {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.document-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.document-list ul li {
-    margin: 10px 0;
-}
-
-.document-list ul li a {
-    text-decoration: none;
-    color: #4550DA;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.document-list ul li a:hover {
-    text-decoration: underline;
+.contact-info p {
+    margin: 10px;
 }
 
 
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #4550DA;
-    color: #fff;
-    border-radius: 8px;
-    margin: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-footer button {
-    background-color: #fff;
-    color: #4550DA;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-footer button:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-
-@media (max-width: 768px) {
-    .tender-details .dates {
-        flex-direction: column;
-    }
-
-    .tender-details .date-box {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .contact-details .contacts {
-        flex-direction: column;
-    }
-} */
