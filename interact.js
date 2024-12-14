@@ -65,39 +65,35 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("Please connect your wallet first!");
       return;
     }
-
     try {
-      // Initialize the contract using the loaded ABI and address
+      // Initialize the contract
       const contract = new ethers.Contract(
         contractAddress,
         contractABI,
         signer
       );
 
-      // Example: Call the `getTenderBasicInfo` function with a sample tenderID
       const tenderID = "sampleTenderID"; // Replace with an actual tender ID
-      const tenderInfo = await contract.getTenderBasicInfo(tenderID);
+      const tenderFieldsAndLocality = await contract.getTenderFieldsAndLocality(
+        tenderID
+      );
 
-      // Display the result in the contract result element
+      // Destructure the returned arrays
+      const qualifiedFields = tenderFieldsAndLocality[0];
+      const localities = tenderFieldsAndLocality[1];
+
+      console.log("Qualified Fields:", qualifiedFields);
+      console.log("Localities:", localities);
+
+      // Format the arrays for display
+      const formattedFields = qualifiedFields.join(", ");
+      const formattedLocalities = localities.join(", ");
+
+      // Display result in UI
       contractResult.textContent = `
-        Contract is connected successfully!
-        Tender Info:
-        Creator: ${tenderInfo.creator}
-        Title: ${tenderInfo.title}
-        Ministry: ${tenderInfo.ministry}
-        Budget: ${ethers.utils.formatUnits(tenderInfo.budget, "wei")} ETH
-        Publish Date: ${new Date(
-          tenderInfo.publishDate * 1000
-        ).toLocaleString()}
-        Closing Date: ${new Date(
-          tenderInfo.closingDate * 1000
-        ).toLocaleString()}
-        Deadline: ${new Date(tenderInfo.deadline * 1000).toLocaleString()}
-        Contact: ${tenderInfo.contactDetails}
-        Status: ${tenderInfo.status}
-        Winner: ${tenderInfo.projectWinner}
-      `;
-      console.log("Tender Info:", tenderInfo);
+          Qualified Fields: ${formattedFields}
+          Localities: ${formattedLocalities}
+        `;
     } catch (error) {
       console.error("Error interacting with the contract:", error);
       contractResult.textContent =
