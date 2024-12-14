@@ -33,11 +33,6 @@ async function loadTenders(contract) {
         const count = await contract.getTenderCount();  // Get the total count of tenders
         const tenderCount = count.toNumber();
         console.log("Number of Tender:", tenderCount);
-
-        if (tenderCount === 0) {
-            alert('No tender available');
-            return;
-        }
         
         // Loop through the tenderIDs and fetch each tender
         for (let i = 0; i < tenderCount; i++) {
@@ -45,8 +40,9 @@ async function loadTenders(contract) {
             const tenderID = await contract.tenderIDs(i);  // Access each tender ID by index
 
             const tenderData = await contract.getTenderBasicInfo(tenderID);
-            const tenderStatus = tenderData[7]; // Get the tender status
-
+            console.log("Tender Data:", tenderData);
+            const tenderStatus = tenderData[9]; 
+            console.log(tenderStatus);
             const tenderCard = createTenderCard(tenderData, tenderID);
 
             // Append the tender card to the appropriate section based on its status
@@ -68,10 +64,8 @@ async function loadTenders(contract) {
             }
             
         }
-        displayNoTenderMessage('Ongoing');
-        displayNoTenderMessage('Closed');
-        displayNoTenderMessage('Awarded');
-        displayNoTenderMessage('Cancelled');
+        // Display "No tender" messages for empty sections
+        ['Ongoing', 'Closed', 'Awarded', 'Cancelled'].forEach(displayNoTenderMessage);
         
 
     } catch (error) {
@@ -96,7 +90,7 @@ function createTenderCard(tenderData, tenderID) {
     date.innerText = new Date(tenderData[5] * 1000).toLocaleDateString(); // Convert timestamp to date
 
     // Apply status color styles dynamically based on tender status
-    switch (tenderData[7]) {
+    switch (tenderData[9]) {
         case 0: // Open
             date.style.color = '#4651E3'; // Blue color for open tenders
             break;
@@ -121,7 +115,7 @@ function createTenderCard(tenderData, tenderID) {
     card.appendChild(cardContent);
 
     card.addEventListener('click', () => {
-        window.location.href = `project_details.html?tenderID=${tenderID}`; // Redirect to the project details page
+        window.location.href = `ongoing_project.html?tenderID=${tenderID}`; // Redirect to the project details page
     });
 
     return card;

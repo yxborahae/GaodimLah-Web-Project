@@ -1,5 +1,5 @@
 {
-  "address": "0x2F67034da1ABd00e153ed640Ded8ea7f5B8d3aea",
+  "address": "0x53d6e6b6AC3D13FeFF65BD905B64E5D0dDbb84BE",
   "abi": [
     {
       "type": "function",
@@ -82,8 +82,7 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string",
-          "name": "tenderID"
+          "type": "string"
         }
       ],
       "outputs": [
@@ -138,6 +137,10 @@
             {
               "type": "uint256",
               "name": "deadline"
+            },
+            {
+              "type": "uint256",
+              "name": "validDate"
             },
             {
               "type": "string[]",
@@ -287,6 +290,12 @@
         },
         {
           "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "uint256"
         },
         {
           "type": "uint256"
@@ -579,12 +588,10 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string",
-          "name": "tenderID"
+          "type": "string"
         },
         {
-          "type": "uint256",
-          "name": "bidIndex"
+          "type": "uint256"
         }
       ],
       "outputs": [
@@ -622,8 +629,7 @@
       "payable": false,
       "inputs": [
         {
-          "type": "uint256",
-          "name": "index"
+          "type": "uint256"
         }
       ],
       "outputs": [
@@ -640,12 +646,10 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string",
-          "name": "tenderID"
+          "type": "string"
         },
         {
-          "type": "address",
-          "name": "signer"
+          "type": "address"
         }
       ],
       "outputs": [
@@ -662,8 +666,7 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string",
-          "name": "tenderID"
+          "type": "string"
         }
       ],
       "outputs": [
@@ -700,6 +703,10 @@
           "name": "deadline"
         },
         {
+          "type": "uint256",
+          "name": "validDate"
+        },
+        {
           "type": "string",
           "name": "contactDetails"
         },
@@ -721,8 +728,7 @@
       "payable": false,
       "inputs": [
         {
-          "type": "address",
-          "name": "userAddress"
+          "type": "address"
         }
       ],
       "outputs": [
