@@ -163,12 +163,6 @@ span{
 }
 
 
-
-
-
-
-
-
 .keyTerms{
     padding: 15px 20px;
     border-radius: 6px;
@@ -202,42 +196,6 @@ span{
 
 .keyTerms span{
   font-weight: 500;
-}
-
-
-
-/* bottom buttons */
-button{
-  box-shadow: none;
-  outline: none;
-  border: none;
-}
-
-.mainButton{
-  background-color: #4550DA;
-  color: #ffffff;
-  border-radius: 5px;
-  padding: 6px 10px;
-  
-}
-.buttons{
-  display: flex;
-  margin: 50px;
-  justify-content: center;
-}
-
-#decline{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-right: 5px;
-  width: 130px;
-}
-
-#accept{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 5px;
-  width: 130px;
 }
 
 
@@ -350,8 +308,7 @@ button{
   color: white;
   height: 120px;
   width: 120px;
-  font-size: 30px;
-  
+  font-size: 35px;
   border-radius: 50%;
   background-color: #4550DA;
   margin-bottom: 10px;
@@ -456,4 +413,37 @@ button{
 
 }
 
+/* bottom buttons */
+button{
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.mainButton{
+  background-color: #4550DA;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 6px 10px;
+  
+}
+.buttons{
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+}
+
+#decline{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  width: 130px;
+}
+
+#accept{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  width: 130px;
+}
 
