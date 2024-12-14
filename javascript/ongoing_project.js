@@ -163,6 +163,27 @@ function formatPrice(price) {
 document.addEventListener("DOMContentLoaded", async () => {
     const bidButton = document.getElementById("bid-btn");
 
+    let provider;
+    let signer;
+    let contractAddress;
+    let contractABI;
+    let contract;
+
+    // Load ABI and address from abi.json
+    try {
+        const response = await fetch("../abi.json");
+        if (!response.ok) {
+            throw new Error("Failed to load ABI file.");
+        }
+        const contractData = await response.json();
+        contractAddress = contractData.address;
+        contractABI = contractData.abi;
+        console.log("Contract data loaded successfully:", contractData);
+    } catch (error) {
+        console.error("Error loading ABI file:", error);
+        return; // Prevent further execution if ABI can't be loaded
+    }
+    
     // Check if the bidButton exists in the DOM
     if (!bidButton) {
         console.error("Error: The bid button was not found in the DOM.");
