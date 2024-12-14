@@ -1,5 +1,5 @@
 {
-  "address": "0x53d6e6b6AC3D13FeFF65BD905B64E5D0dDbb84BE",
+  "address": "0x941530AC9104659B204Ce301176A0026c1cBEebb",
   "abi": [
     {
       "type": "function",
@@ -82,7 +82,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         }
       ],
       "outputs": [
@@ -455,11 +456,11 @@
                 },
                 {
                   "type": "string",
-                  "name": "ICNo"
+                  "name": "email"
                 },
                 {
                   "type": "string",
-                  "name": "positionInCompany"
+                  "name": "phone"
                 }
               ]
             },
@@ -511,11 +512,11 @@
                 },
                 {
                   "type": "string",
-                  "name": "ICNo"
+                  "name": "email"
                 },
                 {
                   "type": "string",
-                  "name": "positionInCompany"
+                  "name": "phone"
                 }
               ]
             },
@@ -588,10 +589,12 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         },
         {
-          "type": "uint256"
+          "type": "uint256",
+          "name": "index"
         }
       ],
       "outputs": [
@@ -629,7 +632,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "uint256"
+          "type": "uint256",
+          "name": "index"
         }
       ],
       "outputs": [
@@ -646,10 +650,12 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         },
         {
-          "type": "address"
+          "type": "address",
+          "name": "signer"
         }
       ],
       "outputs": [
@@ -666,7 +672,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "string"
+          "type": "string",
+          "name": "tenderID"
         }
       ],
       "outputs": [
@@ -728,7 +735,8 @@
       "payable": false,
       "inputs": [
         {
-          "type": "address"
+          "type": "address",
+          "name": "userAddress"
         }
       ],
       "outputs": [
@@ -758,11 +766,11 @@
             },
             {
               "type": "string",
-              "name": "ICNo"
+              "name": "email"
             },
             {
               "type": "string",
-              "name": "positionInCompany"
+              "name": "phone"
             }
           ]
         },

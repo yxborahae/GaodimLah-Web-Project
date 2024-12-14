@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Error loading ABI file:", error);
         return; // Prevent further execution if ABI can't be loaded
     }
-    
+
     // Check if the bidButton exists in the DOM
     if (!bidButton) {
         console.error("Error: The bid button was not found in the DOM.");
@@ -205,8 +205,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 // Check if user is registered
                 const userData = await contract.users(address);
+
+                const tenderID = new URLSearchParams(window.location.search).get('tenderID');
+                
                 if (userData.isRegistered) {
-                        window.location.href = "./bid_participation_form.html"; // Redirect to form page
+                        window.location.href = `./bid_participation_form.html?tenderID=${tenderID}`; // Redirect to form page
                 } else {
                     alert("You don't have an account. Please sign up.");
                 }

@@ -153,6 +153,15 @@ body {
   background-color: #737cf8;
 }
 
+#submit-btn {
+  background-color: #4550DA;
+  color: white;
+}
+
+#submit-btn:hover {
+  background-color: #737cf8;
+}
+
 
 #edit-btn {
   cursor: pointer;
