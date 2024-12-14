@@ -87,7 +87,7 @@ function createTenderCard(tenderData, tenderID) {
     title.innerText = tenderData[2]; // Tender title
 
     const date = document.createElement('span');
-    date.innerText = new Date(tenderData[5] * 1000).toLocaleDateString(); // Convert timestamp to date
+    date.innerText = new Date(tenderData[6] * 1000).toLocaleDateString(); // Convert timestamp to date
 
     // Apply status color styles dynamically based on tender status
     switch (tenderData[9]) {
