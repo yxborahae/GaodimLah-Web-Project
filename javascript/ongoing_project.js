@@ -103,6 +103,16 @@ async function fetchTenderDetails(contract) {
         // Timer Logic
         calculateDeadline(new Date(closingDate * 1000), "deadline-timer-1");
         calculateDeadline(new Date(validDate * 1000), "deadline-timer-2");
+
+        // Bid Button Logic
+        const bidButton = document.getElementById("bid-btn");
+
+        if (status === 0) { // Tender is open (status = 0)
+            bidButton.style.display = "block"; // Show the bid button
+        } else {
+            bidButton.style.display = "none"; // Hide the bid button
+        }
+        
     } catch (err) {
         console.error("Error fetching tender details:", err);
         alert("Unable to fetch tender details. Check console for more info.");
