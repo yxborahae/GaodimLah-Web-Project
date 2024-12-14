@@ -1,40 +1,48 @@
 {
-  "address": "0x53d6e6b6AC3D13FeFF65BD905B64E5D0dDbb84BE",
+  "address": "0x32b3124433E4C8b10D7376A60F2Ac28D67a41a22",
   "abi": [
+    {
+      "type": "function",
+      "name": "createTender",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "tuple",
+          "name": "input",
+          "components": [
+            { "type": "string", "name": "tenderID" },
+            { "type": "string", "name": "title" },
+            { "type": "string", "name": "ministry" },
+            { "type": "uint256", "name": "budget" },
+            { "type": "uint256", "name": "closingDate" },
+            { "type": "uint256", "name": "deadline" },
+            { "type": "uint256", "name": "validDate" },
+            { "type": "string[]", "name": "qualifiedFields" },
+            { "type": "string[]", "name": "locality" },
+            { "type": "string", "name": "contactDetails" },
+            { "type": "uint8", "name": "status" }
+          ]
+        }
+      ],
+      "outputs": []
+    },
     {
       "type": "function",
       "name": "addMilestone",
       "constant": false,
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        },
+        { "type": "string", "name": "tenderID" },
         {
           "type": "tuple",
           "name": "milestone",
           "components": [
-            {
-              "type": "string",
-              "name": "description"
-            },
-            {
-              "type": "uint256",
-              "name": "dueDate"
-            },
-            {
-              "type": "string[]",
-              "name": "requiredDocuments"
-            },
-            {
-              "type": "uint256",
-              "name": "paymentPercentage"
-            },
-            {
-              "type": "uint8",
-              "name": "status"
-            }
+            { "type": "string", "name": "description" },
+            { "type": "uint256", "name": "dueDate" },
+            { "type": "string[]", "name": "requiredDocuments" },
+            { "type": "uint256", "name": "paymentPercentage" },
+            { "type": "uint8", "name": "status" }
           ]
         }
       ],
@@ -46,14 +54,8 @@
       "constant": false,
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        },
-        {
-          "type": "uint256",
-          "name": "milestoneIndex"
-        }
+        { "type": "string", "name": "tenderID" },
+        { "type": "uint256", "name": "milestoneIndex" }
       ],
       "outputs": []
     },
@@ -63,33 +65,10 @@
       "constant": false,
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        },
-        {
-          "type": "string",
-          "name": "bidID"
-        }
+        { "type": "string", "name": "tenderID" },
+        { "type": "string", "name": "bidID" }
       ],
       "outputs": []
-    },
-    {
-      "type": "function",
-      "name": "awardedBids",
-      "constant": true,
-      "stateMutability": "view",
-      "payable": false,
-      "inputs": [
-        {
-          "type": "string"
-        }
-      ],
-      "outputs": [
-        {
-          "type": "address"
-        }
-      ]
     },
     {
       "type": "function",
@@ -97,69 +76,7 @@
       "constant": false,
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
-      ],
-      "outputs": []
-    },
-    {
-      "type": "function",
-      "name": "createTender",
-      "constant": false,
-      "payable": false,
-      "inputs": [
-        {
-          "type": "tuple",
-          "name": "input",
-          "components": [
-            {
-              "type": "string",
-              "name": "tenderID"
-            },
-            {
-              "type": "string",
-              "name": "title"
-            },
-            {
-              "type": "string",
-              "name": "ministry"
-            },
-            {
-              "type": "uint256",
-              "name": "budget"
-            },
-            {
-              "type": "uint256",
-              "name": "closingDate"
-            },
-            {
-              "type": "uint256",
-              "name": "deadline"
-            },
-            {
-              "type": "uint256",
-              "name": "validDate"
-            },
-            {
-              "type": "string[]",
-              "name": "qualifiedFields"
-            },
-            {
-              "type": "string[]",
-              "name": "locality"
-            },
-            {
-              "type": "string",
-              "name": "contactDetails"
-            },
-            {
-              "type": "uint8",
-              "name": "status"
-            }
-          ]
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": []
     },
@@ -170,39 +87,18 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
         {
           "type": "tuple[]",
           "components": [
-            {
-              "type": "string",
-              "name": "bidID"
-            },
-            {
-              "type": "string",
-              "name": "title"
-            },
-            {
-              "type": "address",
-              "name": "bidder"
-            },
-            {
-              "type": "uint256",
-              "name": "amount"
-            },
-            {
-              "type": "string",
-              "name": "proposalFile"
-            },
-            {
-              "type": "uint256",
-              "name": "submitDate"
-            }
+            { "type": "string", "name": "bidID" },
+            { "type": "string", "name": "title" },
+            { "type": "address", "name": "bidder" },
+            { "type": "uint256", "name": "amount" },
+            { "type": "string", "name": "proposalFile" },
+            { "type": "uint256", "name": "submitDate" }
           ]
         }
       ]
@@ -214,58 +110,18 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
         {
           "type": "tuple[]",
           "components": [
-            {
-              "type": "string",
-              "name": "description"
-            },
-            {
-              "type": "uint256",
-              "name": "dueDate"
-            },
-            {
-              "type": "string[]",
-              "name": "requiredDocuments"
-            },
-            {
-              "type": "uint256",
-              "name": "paymentPercentage"
-            },
-            {
-              "type": "uint8",
-              "name": "status"
-            }
+            { "type": "string", "name": "description" },
+            { "type": "uint256", "name": "dueDate" },
+            { "type": "string[]", "name": "requiredDocuments" },
+            { "type": "uint256", "name": "paymentPercentage" },
+            { "type": "uint8", "name": "status" }
           ]
-        }
-      ]
-    },
-    {
-      "type": "function",
-      "name": "getSignature",
-      "constant": true,
-      "stateMutability": "view",
-      "payable": false,
-      "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        },
-        {
-          "type": "address",
-          "name": "signer"
-        }
-      ],
-      "outputs": [
-        {
-          "type": "bytes32"
         }
       ]
     },
@@ -276,45 +132,20 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
-        {
-          "type": "address"
-        },
-        {
-          "type": "string"
-        },
-        {
-          "type": "string"
-        },
-        {
-          "type": "string"
-        },
-        {
-          "type": "uint256"
-        },
-        {
-          "type": "uint256"
-        },
-        {
-          "type": "uint256"
-        },
-        {
-          "type": "uint256"
-        },
-        {
-          "type": "uint256"
-        },
-        {
-          "type": "uint8"
-        },
-        {
-          "type": "address"
-        }
+        { "type": "address", "name": "creator" },
+        { "type": "string", "name": "tenderID" },
+        { "type": "string", "name": "title" },
+        { "type": "string", "name": "ministry" },
+        { "type": "uint256", "name": "budget" },
+        { "type": "uint256", "name": "publishDate" },
+        { "type": "uint256", "name": "closingDate" },
+        { "type": "uint256", "name": "deadline" },
+        { "type": "uint256", "name": "validDate" },
+        { "type": "uint8", "name": "status" },
+        { "type": "address", "name": "projectWinner" }
       ]
     },
     {
@@ -324,28 +155,10 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
-        {
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "type": "function",
-      "name": "getTenderCount",
-      "constant": true,
-      "stateMutability": "view",
-      "payable": false,
-      "inputs": [],
-      "outputs": [
-        {
-          "type": "uint256"
-        }
+        { "type": "string", "name": "contactDetails" }
       ]
     },
     {
@@ -355,18 +168,11 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
-        {
-          "type": "string[]"
-        },
-        {
-          "type": "string[]"
-        }
+        { "type": "string[]", "name": "qualifiedFields" },
+        { "type": "string[]", "name": "locality" }
       ]
     },
     {
@@ -376,35 +182,17 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
         {
           "type": "tuple[]",
           "components": [
-            {
-              "type": "string",
-              "name": "description"
-            },
-            {
-              "type": "uint256",
-              "name": "dueDate"
-            },
-            {
-              "type": "string[]",
-              "name": "requiredDocuments"
-            },
-            {
-              "type": "uint256",
-              "name": "paymentPercentage"
-            },
-            {
-              "type": "uint8",
-              "name": "status"
-            }
+            { "type": "string", "name": "description" },
+            { "type": "uint256", "name": "dueDate" },
+            { "type": "string[]", "name": "requiredDocuments" },
+            { "type": "uint256", "name": "paymentPercentage" },
+            { "type": "uint8", "name": "status" }
           ]
         }
       ]
@@ -416,57 +204,27 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "address",
-          "name": "userAddress"
-        }
+        { "type": "address", "name": "userAddress" }
       ],
       "outputs": [
         {
           "type": "tuple",
           "components": [
-            {
-              "type": "string",
-              "name": "ssmNumber"
-            },
-            {
-              "type": "string",
-              "name": "ssmCertificate"
-            },
-            {
-              "type": "string",
-              "name": "companyName"
-            },
-            {
-              "type": "string[]",
-              "name": "expertFields"
-            },
-            {
-              "type": "string",
-              "name": "ownerName"
-            },
+            { "type": "string", "name": "ssmNumber" },
+            { "type": "string", "name": "ssmCertificate" },
+            { "type": "string", "name": "companyName" },
+            { "type": "string[]", "name": "expertFields" },
+            { "type": "string", "name": "ownerName" },
             {
               "type": "tuple",
               "name": "personalDetails",
               "components": [
-                {
-                  "type": "string",
-                  "name": "fullName"
-                },
-                {
-                  "type": "string",
-                  "name": "ICNo"
-                },
-                {
-                  "type": "string",
-                  "name": "positionInCompany"
-                }
+                { "type": "string", "name": "fullName" },
+                { "type": "string", "name": "email" },
+                { "type": "string", "name": "phone" }
               ]
             },
-            {
-              "type": "bool",
-              "name": "isRegistered"
-            }
+            { "type": "bool", "name": "isRegistered" }
           ]
         }
       ]
@@ -481,48 +239,21 @@
           "type": "tuple",
           "name": "user",
           "components": [
-            {
-              "type": "string",
-              "name": "ssmNumber"
-            },
-            {
-              "type": "string",
-              "name": "ssmCertificate"
-            },
-            {
-              "type": "string",
-              "name": "companyName"
-            },
-            {
-              "type": "string[]",
-              "name": "expertFields"
-            },
-            {
-              "type": "string",
-              "name": "ownerName"
-            },
+            { "type": "string", "name": "ssmNumber" },
+            { "type": "string", "name": "ssmCertificate" },
+            { "type": "string", "name": "companyName" },
+            { "type": "string[]", "name": "expertFields" },
+            { "type": "string", "name": "ownerName" },
             {
               "type": "tuple",
               "name": "personalDetails",
               "components": [
-                {
-                  "type": "string",
-                  "name": "fullName"
-                },
-                {
-                  "type": "string",
-                  "name": "ICNo"
-                },
-                {
-                  "type": "string",
-                  "name": "positionInCompany"
-                }
+                { "type": "string", "name": "fullName" },
+                { "type": "string", "name": "email" },
+                { "type": "string", "name": "phone" }
               ]
             },
-            {
-              "type": "bool",
-              "name": "isRegistered"
-            }
+            { "type": "bool", "name": "isRegistered" }
           ]
         }
       ],
@@ -534,14 +265,8 @@
       "constant": false,
       "payable": false,
       "inputs": [
-        {
-          "type": "string",
-          "name": "tenderID"
-        },
-        {
-          "type": "bytes32",
-          "name": "signedHash"
-        }
+        { "type": "string", "name": "tenderID" },
+        { "type": "bytes32", "name": "signedHash" }
       ],
       "outputs": []
     },
@@ -555,26 +280,11 @@
           "type": "tuple",
           "name": "input",
           "components": [
-            {
-              "type": "string",
-              "name": "tenderID"
-            },
-            {
-              "type": "string",
-              "name": "bidID"
-            },
-            {
-              "type": "string",
-              "name": "title"
-            },
-            {
-              "type": "uint256",
-              "name": "amount"
-            },
-            {
-              "type": "string",
-              "name": "proposalFile"
-            }
+            { "type": "string", "name": "tenderID" },
+            { "type": "string", "name": "bidID" },
+            { "type": "string", "name": "title" },
+            { "type": "uint256", "name": "amount" },
+            { "type": "string", "name": "proposalFile" }
           ]
         }
       ],
@@ -587,55 +297,16 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "uint256"
-        }
+        { "type": "string", "name": "tenderID" },
+        { "type": "uint256", "name": "index" }
       ],
       "outputs": [
-        {
-          "type": "string",
-          "name": "bidID"
-        },
-        {
-          "type": "string",
-          "name": "title"
-        },
-        {
-          "type": "address",
-          "name": "bidder"
-        },
-        {
-          "type": "uint256",
-          "name": "amount"
-        },
-        {
-          "type": "string",
-          "name": "proposalFile"
-        },
-        {
-          "type": "uint256",
-          "name": "submitDate"
-        }
-      ]
-    },
-    {
-      "type": "function",
-      "name": "tenderIDs",
-      "constant": true,
-      "stateMutability": "view",
-      "payable": false,
-      "inputs": [
-        {
-          "type": "uint256"
-        }
-      ],
-      "outputs": [
-        {
-          "type": "string"
-        }
+        { "type": "string", "name": "bidID" },
+        { "type": "string", "name": "title" },
+        { "type": "address", "name": "bidder" },
+        { "type": "uint256", "name": "amount" },
+        { "type": "string", "name": "proposalFile" },
+        { "type": "uint256", "name": "submitDate" }
       ]
     },
     {
@@ -645,17 +316,11 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "address"
-        }
+        { "type": "string", "name": "tenderID" },
+        { "type": "address", "name": "signer" }
       ],
       "outputs": [
-        {
-          "type": "bytes32"
-        }
+        { "type": "bytes32" }
       ]
     },
     {
@@ -665,59 +330,21 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "string"
-        }
+        { "type": "string", "name": "tenderID" }
       ],
       "outputs": [
-        {
-          "type": "address",
-          "name": "creator"
-        },
-        {
-          "type": "string",
-          "name": "tenderID"
-        },
-        {
-          "type": "string",
-          "name": "title"
-        },
-        {
-          "type": "string",
-          "name": "ministry"
-        },
-        {
-          "type": "uint256",
-          "name": "budget"
-        },
-        {
-          "type": "uint256",
-          "name": "publishDate"
-        },
-        {
-          "type": "uint256",
-          "name": "closingDate"
-        },
-        {
-          "type": "uint256",
-          "name": "deadline"
-        },
-        {
-          "type": "uint256",
-          "name": "validDate"
-        },
-        {
-          "type": "string",
-          "name": "contactDetails"
-        },
-        {
-          "type": "uint8",
-          "name": "status"
-        },
-        {
-          "type": "address",
-          "name": "projectWinner"
-        }
+        { "type": "address", "name": "creator" },
+        { "type": "string", "name": "tenderID" },
+        { "type": "string", "name": "title" },
+        { "type": "string", "name": "ministry" },
+        { "type": "uint256", "name": "budget" },
+        { "type": "uint256", "name": "publishDate" },
+        { "type": "uint256", "name": "closingDate" },
+        { "type": "uint256", "name": "deadline" },
+        { "type": "uint256", "name": "validDate" },
+        { "type": "string", "name": "contactDetails" },
+        { "type": "uint8", "name": "status" },
+        { "type": "address", "name": "projectWinner" }
       ]
     },
     {
@@ -727,49 +354,23 @@
       "stateMutability": "view",
       "payable": false,
       "inputs": [
-        {
-          "type": "address"
-        }
+        { "type": "address", "name": "userAddress" }
       ],
       "outputs": [
-        {
-          "type": "string",
-          "name": "ssmNumber"
-        },
-        {
-          "type": "string",
-          "name": "ssmCertificate"
-        },
-        {
-          "type": "string",
-          "name": "companyName"
-        },
-        {
-          "type": "string",
-          "name": "ownerName"
-        },
+        { "type": "string", "name": "ssmNumber" },
+        { "type": "string", "name": "ssmCertificate" },
+        { "type": "string", "name": "companyName" },
+        { "type": "string", "name": "ownerName" },
         {
           "type": "tuple",
           "name": "personalDetails",
           "components": [
-            {
-              "type": "string",
-              "name": "fullName"
-            },
-            {
-              "type": "string",
-              "name": "ICNo"
-            },
-            {
-              "type": "string",
-              "name": "positionInCompany"
-            }
+            { "type": "string", "name": "fullName" },
+            { "type": "string", "name": "email" },
+            { "type": "string", "name": "phone" }
           ]
         },
-        {
-          "type": "bool",
-          "name": "isRegistered"
-        }
+        { "type": "bool", "name": "isRegistered" }
       ]
     }
   ]
