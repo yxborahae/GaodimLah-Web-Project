@@ -34,7 +34,6 @@ body {
     color: white;
   }
 
-  
     /* Progress Bar */
     .progress-bar {
       width: 5px;
@@ -135,7 +134,7 @@ body {
     .substeps li.completed .check-icon {
       background: #4caf50;
     }
-    
+
   .step-bar{
     background-color: black;
     height: 40px;
