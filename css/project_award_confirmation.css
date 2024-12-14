@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F6F9;
+  }
+  
+/* header style */
+header {
+  padding: 0px 20px 0px 20px;
+  
+}
+
+.header-title {
+  font-size: 22px; 
+  font-weight: bold; 
+  color: #4550DA; 
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.notificationIcon {
+  background-color: white;
+  color: black;
+}
+
+.notificationIcon:hover {
+  background-color: black;
+  color: white;
+}
+
+.profileIcon {
+  background-color: #4550DA;
+  color: white;
+}
+
+.profileIcon:hover {
+  background-color: black;
+  color: white;
+}
+
+  /* black bar */
+.tender-title-bar{
+    background-color: black;
+    height: 45px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+.tender-title{
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 10px ;
+
+}
+
+/* mainSection */
+  .mainSection{
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+h1{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.congrats{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1D9938 ;
+}
+
+h2{
+    font-size: 16px;
+  }
+
+  
+span{
+    font-weight: 600; 
+}
+
+.timer {
+    background-color: #CEB8F0;
+    padding: 10px;
+    border-radius: 10px;
+    color: #4550DA;
+    margin:10px;
+    text-align: center;
+    width: calc(100% - 20px);
+    
+}
+
+
+/* i change the fontsize to be smaller */
+.timer p{
+    color: black;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.countdown{
+    padding-top:10px  ;
+    padding-bottom: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.countdown i {
+    font-size: 1.2rem;
+    color: #4550DA;
+    margin-right: 8px;
+   
+}
+
+.countdown p {
+    color: #4550DA;
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+
+.keyTerms{
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.keyTerms .subtitle{
+  font-weight: 700;
+  font-size: 17px;
+  padding: 0;
+  margin-top:0 ;
+  margin-bottom: 6px;
+}
+
+.keyTerms .line{
+  height: 2px;
+  background-color: #4550DA;
+  width: 155px;
+  margin-bottom: 15px;
+}
+
+
+.keyTerms p{
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.keyTerms span{
+  font-weight: 500;
+}
+
+/* bottom buttons */
+button{
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.mainButton{
+  background-color: #4550DA;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 6px 10px;
+  
+}
+.buttons{
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+}
+
+#decline{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 5px;
+  width: 130px;
+}
+
+#accept{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  width: 130px;
+}
+

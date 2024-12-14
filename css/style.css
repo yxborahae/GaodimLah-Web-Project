@@ -153,6 +153,15 @@ body {
   background-color: #737cf8;
 }
 
+#submit-btn {
+  background-color: #4550DA;
+  color: white;
+}
+
+#submit-btn:hover {
+  background-color: #737cf8;
+}
+
 
 #edit-btn {
   cursor: pointer;
@@ -247,7 +256,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: none; 
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-content:hover {
+  cursor: pointer; /* Show the pointer cursor */
+  transform: scale(1.01); /* Slightly enlarge the tile */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.project-content a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-left {
@@ -259,6 +282,33 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 130px; 
+}
+
+.project-content-a {
+  position: relative; /* Necessary for absolute positioning of the status container */
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-content-a:hover {
+  cursor: pointer; /* Show the pointer cursor */
+  transform: scale(1.01); /* Slightly enlarge the tile */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.project-status {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  color: #555;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .next-button {
@@ -327,3 +377,48 @@ body {
 .progress-circle.orange { background-color: rgba(252, 194, 27, 0.34); } 
 .progress-circle.red { background-color: rgba(252, 125, 27, 0.41); } 
 
+#loading {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+#loading.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #007bff;
+}
+
+#loading.spinner:before {
+  content: '⏳';
+  font-size: 40px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-projects-message {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-projects-message::before {
+  content: "\f0c8"; /* FontAwesome "info" icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: #ff7b00;
+}

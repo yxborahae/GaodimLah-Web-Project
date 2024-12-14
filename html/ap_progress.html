@@ -34,7 +34,7 @@
             <i class="fas fa-arrow-left me-2"></i>BACK
         </button>
         <div class="deadline-container ">
-            <p>Deadline: 17/01/2025</p>
+            <p>Deadline: <span id="deadline">Loading...</span></p>
             <div class="d-flex align-items-center">
                 <i class="fas fa-clock me-2"></i>
                 <div id="deadline-timer"></div>
@@ -44,8 +44,8 @@
 
     <div class="content-container">
         <h3 class="fw-bold">Awarded Project</h3>
-        <h5 class="p-title">EDUCATION SOFTWARE SYSTEM</h5>
-        <p style="font-size: 15px;">Tender ID: T2023-002</p>
+        <h5 class="p-title" id="p-title">Loading...</h5>
+        <p style="font-size: 15px;">Tender ID: <span id="tender-id">Loading...</span></p>
         <div class="progress-timeline">
             <ul>
                 <li class="step">
@@ -137,45 +137,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const backButton = document.getElementById('back-btn');
-
-        backButton.addEventListener('click', function () {
-            window.location.href = 'my_project.html';
-        });
-
-
-        function calculateDeadline() {
-            const deadline = new Date("2025-01-17");
-            const now = new Date();
-            const timeDiff = deadline - now;
-
-            if (timeDiff <= 0) {
-                document.getElementById('deadline-timer').textContent = "Deadline passed";
-                return;
-            }
-
-            const months = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 30));
-            const years = Math.floor(months / 12);
-            const remainingMonths = months % 12;
-
-            const days = Math.floor((timeDiff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-
-            if (years > 0) {
-                document.getElementById('deadline-timer').textContent =
-                    `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ${days} day${days > 1 ? 's' : ''}`;
-            } else if (months >= 1) {
-                document.getElementById('deadline-timer').textContent =
-                    `${remainingMonths} month${remainingMonths > 1 ? 's' : ''} ${days} day${days > 1 ? 's' : ''}`;
-            } else {
-                document.getElementById('deadline-timer').textContent =
-                    `${days} day${days > 1 ? 's' : ''}`;
-            }
-        }
-
-        calculateDeadline();
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+    <script src="../javascript/ap_progress.js"></script>
 </body>
 
 </html>

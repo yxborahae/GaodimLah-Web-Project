@@ -36,8 +36,8 @@
     </div>
 
     <div class="content-container">
-        <h5 class="p-title">PUBBLIC COMPLAINT MANAGEMENT SYSTEM</h5>
-        <p style="font-size: 15px;">Tender ID: T2023-002</p>
+        <h5 class="p-title" id="p-title">Loading...</h5>
+        <p style="font-size: 15px;">Tender ID: <span id="tender-id">Loading...</span></p>
 
         <table class="bidder-table">
             <thead>
@@ -48,39 +48,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>KEZOBUMI SDN. BHD.</td>
-                    <td>RM 38,500</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>MD MIKAIL ENTREPRISE</td>
-                    <td>RM 23,200</td>
-                </tr>
-                <tr>
-                    <td>3.</td>
-                    <td>MAJOR SHINE SDN. BHD.</td>
-                    <td>RM 29,100</td>
-                </tr>
-                <tr>
-                    <td>4.</td>
-                    <td>TRIPLE N GLOBAL</td>
-                    <td>RM 32,700</td>
-                </tr>
+            
             </tbody>
         </table>
         
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const backButton = document.getElementById('back-btn');
-
-backButton.addEventListener('click', function () {
-    window.location.href = 'bp_progress.html';
-});
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
+    <script src="../javascript/bidder_list.js"></script>
 </body>
 
 </html>
