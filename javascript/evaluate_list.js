@@ -91,7 +91,7 @@ function renderProjects(title, projects) {
       const textColor = isCompleted ? "#00A424" : "#F79329";
       
       projectDiv.innerHTML = `
-        <a href="evaluation.html?tenderID=${project.tenderId}" style="text-decoration: none; color: inherit;">
+        <a href="evaluation.html?tenderID=${tenderID}" style="text-decoration: none; color: inherit;">
           <div class="project-content">
             <div class="project-left">
               <div class="project-title">Bidder ID: ${project.bidder}</div>

@@ -56,7 +56,7 @@ async function fetchProjects(contract, signer) {
       const projectCreator = tenderData[0]; // Winner address
       const status = tenderData[9]; // Status (e.g., awarded)
 
-      if (status === 1 && projectCreator === signerAddress) { // Check status and winner
+      if ((status === 0 || status === 1) && projectCreator === signerAddress) { // Check status and winner
         projects.push({
           title: tenderData[2],
           tenderId: tenderData[1], 
