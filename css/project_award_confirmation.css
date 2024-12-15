@@ -167,7 +167,6 @@ span{
   font-weight: 500;
 }
 
-/* bottom buttons */
 button{
   box-shadow: none;
   outline: none;
@@ -199,5 +198,124 @@ button{
   padding-bottom: 10px;
   margin-left: 5px;
   width: 130px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.label {
+  font-weight: bold;
+  width: 200px; 
+  color: #333;
+}
+
+.value {
+  color: #555;
+}
+
+.key-terms-container {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.line {
+  height: 2px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+}
+
+.milestones-list {
+  margin-top: 20px;
+}
+
+.milestone-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+.milestone-title {
+  color: #0056b3;
+}
+
+.milestone-due-date {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.milestone-body {
+  font-size: 1rem;
+  color: #555;
+}
+
+.milestone-description {
+  margin: 5px 0;
+}
+
+.milestone-payment {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.no-milestones {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-milestones p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.no-milestones p:first-child {
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.no-milestones p:last-child {
+  color: #777;
+  font-size: 0.9rem;
 }
 
