@@ -1,3 +1,5 @@
+const tenderID = new URLSearchParams(window.location.search).get('tenderID');
+
 // Initialize the provider and contract
 window.onload = async function init() {
     let provider;
@@ -32,7 +34,6 @@ window.onload = async function init() {
 }
 
 async function fetchTenderDetails(contract) {
-    const tenderID = new URLSearchParams(window.location.search).get('tenderID');
 
     if (!tenderID) {
         alert("Tender ID is missing!");
@@ -91,9 +92,27 @@ function calculateDeadline(deadline) {
     }
 }
 
-// Back button functionality
 const backButton = document.getElementById('back-btn');
 backButton.addEventListener('click', function () {
     window.location.href = 'my_project.html';
 });
 
+const confirmation = document.getElementById('confirm');
+confirmation.addEventListener('click', function () {
+    window.location.href = `project_award_confirmation.html?tenderID=${tenderID}`;
+});
+
+const signing = document.getElementById('signing');
+signing.addEventListener('click', function () {
+    window.location.href = `contract_signing.html?tenderID=${tenderID}`;
+});
+
+const milestone = document.getElementById('milestone');
+milestone.addEventListener('click', function () {
+    window.location.href = `project-milestones.html?tenderID=${tenderID}`;
+});
+
+const complete = document.getElementById('complete');
+complete.addEventListener('click', function () {
+    window.location.href = `project_completion.html?tenderID=${tenderID}`;
+});

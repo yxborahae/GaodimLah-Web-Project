@@ -111,7 +111,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: none; 
+    padding: 25px;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-content:hover {
+    cursor: pointer; /* Show the pointer cursor */
+    transform: scale(1.01); /* Slightly enlarge the tile */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   }
   
   .project-left {
@@ -162,3 +171,51 @@ body {
     font-weight: normal; 
     margin-bottom: 10px;
   }
+
+  #loading {
+    display: flex;              
+    justify-content: center;   
+    align-items: center;       
+    height: 100vh;             
+    text-align: center;
+    font-size: 18px;
+    color: #919699;   
+  }         
+  
+  #loading.spinner {
+    display: flex;              
+    flex-direction: column;     
+    font-size: 30px;
+  }
+  
+  #loading.spinner::before {
+    content: '⏳';              
+    font-size: 40px;          
+    animation: spin 1s infinite linear;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+    
+    .no-projects-message {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .no-projects-message::before {
+      content: "\f0c8";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 10px;
+      color: #ff7b00;
+    }

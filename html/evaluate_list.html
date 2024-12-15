@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluate List of Cloud Hosting Services For Broadcasting Content Storage</title>
+    <title>Evaluate List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/evaluate_list.css">
@@ -34,7 +34,7 @@
             <i class="fas fa-arrow-left me-2"></i>BACK
         </button>
         <div class="deadline-container ">
-            <p>Deadline: 17/02/2025</p>
+            <p id="deadline">Deadline: Loading...</p>
             <div class="d-flex align-items-center">
                 <i class="fas fa-clock me-2"></i>
                 <div id="deadline-timer"></div>
@@ -43,43 +43,16 @@
     </div>
 
     <div class="content-container">
-        <h3 class="fw-bold">CLOUD HOSTING SERVICES FOR BROADCASTING CONTENT STORAGE</h3>
+        <h3 class="fw-bold" id="title">Loading...</h3>
         <h5 class="p-title">List of Bidders Who Passed Preliminary Evaluation</h5>
-
-        
-
-        
-
-        
 
         <div id="project-container">
 
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
     <script src="../javascript/evaluate_list.js"></script>
-    <script>
-        const backButton = document.getElementById('back-btn');
-
-        backButton.addEventListener('click', function () {
-            window.location.href = 'evaluate_project.html';
-        });
-
-
-        function calculateDeadline() {
-            const deadline = new Date("2025-02-17");
-            const now = new Date();
-            const timeDiff = deadline - now;
-            const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-            const monthsLeft = Math.floor(daysLeft / 30);
-            const remainingDays = daysLeft % 30;
-
-            document.getElementById('deadline-timer').textContent =
-                `${monthsLeft} months ${remainingDays} days`;
-        }
-
-        calculateDeadline();
-    </script>
 </body>
 
 </html>

@@ -1,131 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp Process3</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signup_flow.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUp Process3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/signup_flow.css">
 
 </head>
-<body>
-    <header>
-        <div class="mb-5 d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
-            </div>
-            <div class="d-flex align-items-center">
-                <button class="btn header-btn notificationIcon me-3">
-                    <i class="fas fa-bell"></i>
-                </button>
-                <button class="btn header-btn profileIcon">
-                    <i class="fas fa-user"></i>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <main>
-      <div class="col-md-12 col-11">
-        <div class="row gx-4 px-4">
-            <h3 class="fw-bold">Sign Up Process</h3>
-            <div class="col-md-2 bg-white">
-                <div class="mx-1 my-3 progress-container">
-                    <div class="progress-bar">
-                      <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    <div class="steps">
-                        <!-- Step 1 -->
-                        <div class="step">
-                          <div class="step-title">
-                            <div class="step-number">1</div>
-                            <span class="step-name">Registration</span>
-                            <span class="dropdown-icon">&#9660;</span>
-                          </div>
-                          <!-- Substeps directly follow the title -->
-                          <ul class="substeps">
-                            <li><span class="check-icon"></span>Company Information</li>
-                            <li><span class="check-icon"></span>GST Information</li>
-                            <li><span class="check-icon"></span>Business Type</li>
-                            <li><span class="check-icon"></span>Update Catalog</li>
-                          </ul>
-                        </div>
-                      
-                        <!-- Step 2 -->
-                        <div class="step">
-                          <div class="step-title">
-                            <div class="step-number">2</div>
-                            <span class="step-name">Personal Info</span>
-                            <span class="dropdown-icon">&#9660;</span>
-                          </div>
-                          <ul class="substeps">
-                            <li><span class="check-icon"></span>Personal Details</li>
-                          </ul>
-                        </div>
-                      
-                        <!-- Step 3 -->
-                        <div class="step">
-                          <div class="step-title">
-                            <div class="step-number">3</div>
-                            <span class="step-name">Wallet Integration</span>
-                            <span class="dropdown-icon">&#9660;</span>
-                          </div>
-                          <ul class="substeps">
-                            <li><span class="check-icon"></span>Wallet Connection</li>
-                          </ul>
-                        </div>
-                      </div>
-                  </div>
-                
-                  <button id="nextSubstep">Next Substep</button>
+<body>
+  <header>
+    <div class="mb-5 d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn header-btn notificationIcon me-3">
+          <i class="fas fa-bell"></i>
+        </button>
+        <button class="btn header-btn profileIcon">
+          <i class="fas fa-user"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="col-md-12 col-11">
+      <div class="row gx-4 px-4">
+        <h3 class="fw-bold">Sign Up Process</h3>
+        <div class="col-md-2 bg-white">
+          <div class="mx-1 my-3 progress-container">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="col-md-10">
-                <div class="jumbotron step-bar d-flex justify-content-between">
-                    <h3 class="step-bar-title">03. WALLET INTEGRATION</h3>
+            <div class="steps">
+              <!-- Step 1 -->
+              <div class="step">
+                <div class="step-title">
+                  <div class="step-number">1</div>
+                  <span class="step-name">Registration</span>
+                  <span class="dropdown-icon">&#9660;</span>
                 </div>
-                <!-- <form> -->
-                <!-- <div class="form-container"> -->
-                    <!-- Wallet Integration -->
-                    <div class="substep-container">
-                        <h6 class="substep-title">Terms and Conditions</h6>
-                        <div class="substep-container-content row">
-                            <ol>
-                                <li>I understand that “Connect Wallet” feature links my MetaMask wallet to the platform for secure login, bidding, and payments.</li>
-                                <li>I acknowledge that all transactions are recorded on the blockchain and are permanent.</li>
-                                <li>I am responsible for the security of my MetaMask wallet and keeping my private key confidential.</li>
-                                <li>I accept that the platform is not liable for any loss of funds or access resulting from compromised wallet security.</li>
-                                <li>I understand that this platform only supports the MetaMask wallet for connecting and performing transactions.</li>
-                                <li>I agree to follow the platform’s policies and all applicable blockchain laws and regulations when using the “Connect Wallet” feature.</li>
-                            </ol>
-                            <label for="confirmation" class=" confirmation mx-3">
-                                <input type="checkbox">
-                                <b>By clicking "Connect Wallet", I agree to these terms and conditions.</b>
-                            </label>
-                            <!-- Form Actions -->
-                            <div class="btn-container">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="signUp_flow3.html">
-                                        <button type="button" id="decline-btn" class="btn">DECLINE</button>
-                                    </a>
-        
-                                    <a href="#">
-                                        <button type="button" id="connectWallet-btn" class="btn ms-3">CONNECT WALLET</button>
-                                    </a>
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- </div>  -->
-                <!-- </form> -->
+                <!-- Substeps directly follow the title -->
+                <ul class="substeps">
+                  <li><span class="check-icon"></span>Company Information</li>
+                  <li><span class="check-icon"></span>GST Information</li>
+                  <li><span class="check-icon"></span>Business Type</li>
+                  <li><span class="check-icon"></span>Update Catalog</li>
+                </ul>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="step">
+                <div class="step-title">
+                  <div class="step-number">2</div>
+                  <span class="step-name">Personal Info</span>
+                  <span class="dropdown-icon">&#9660;</span>
+                </div>
+                <ul class="substeps">
+                  <li><span class="check-icon"></span>Personal Details</li>
+                </ul>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="step">
+                <div class="step-title">
+                  <div class="step-number">3</div>
+                  <span class="step-name">Wallet Integration</span>
+                  <span class="dropdown-icon">&#9660;</span>
+                </div>
+                <ul class="substeps">
+                  <li><span class="check-icon"></span>Wallet Connection</li>
+                </ul>
+              </div>
             </div>
+          </div>
+
+          <button id="nextSubstep">Next Substep</button>
+        </div>
+        <div class="col-md-10">
+          <div class="jumbotron step-bar d-flex justify-content-between">
+            <h3 class="step-bar-title">03. WALLET INTEGRATION</h3>
+          </div>
+          <!-- <form> -->
+          <!-- <div class="form-container"> -->
+          <!-- Wallet Integration -->
+          <div class="substep-container">
+            <h6 class="substep-title">Terms and Conditions</h6>
+            <div class="substep-container-content row">
+              <ol>
+                <li>I understand that “Connect Wallet” feature links my MetaMask wallet to the platform for secure
+                  login, bidding, and payments.</li>
+                <li>I acknowledge that all transactions are recorded on the blockchain and are permanent.</li>
+                <li>I am responsible for the security of my MetaMask wallet and keeping my private key confidential.
+                </li>
+                <li>I accept that the platform is not liable for any loss of funds or access resulting from compromised
+                  wallet security.</li>
+                <li>I understand that this platform only supports the MetaMask wallet for connecting and performing
+                  transactions.</li>
+                <li>I agree to follow the platform’s policies and all applicable blockchain laws and regulations when
+                  using the “Connect Wallet” feature.</li>
+              </ol>
+              <label for="confirmation" class=" confirmation mx-3">
+                <input type="checkbox">
+                <b>By clicking "Connect Wallet", I agree to these terms and conditions.</b>
+              </label>
+              <!-- Form Actions -->
+              <div class="btn-container">
+                <div class="d-flex justify-content-center align-items-center">
+                  <a href="signUp_flow3.html">
+                    <button type="button" id="decline-btn" class="btn">DECLINE</button>
+                  </a>
+
+                    <button type="button" id="connectWallet-btn" class="btn ms-3">CONNECT WALLET</button>
+                    <button type="button" id="test-smart-contract" class="btn ms-3">TEST CONTRACT</button>
+
+                </div>
+                <p id="contract-result">Result will appear here...</p>
+              </div>
+            </div>
+          </div>
+          <!-- </div>  -->
+          <!-- </form> -->
         </div>
       </div>
-    </main>
-    
-</body>
-</html>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../javascript/signup_flow.js"></script>
+    </div>
+  </main>
+  <script>
+    const retrievedData = JSON.parse(
+      localStorage.getItem("userData")
+    );
+    console.log(retrievedData);
+  </script>
 
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+<script src="../interact.js"></script>

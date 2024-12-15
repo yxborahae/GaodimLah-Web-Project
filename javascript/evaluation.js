@@ -1,3 +1,11 @@
+const tenderID = new URLSearchParams(window.location.search).get('tenderID');
+
+const back = document.getElementById('back-btn');
+back.addEventListener('click', function () {
+    window.location.href = `evaluate_list.html?tenderID=${tenderID}`;
+});
+
+
 // slider logic
 const slider1 = document.getElementById("slider1");
 const slider2 = document.getElementById("slider2");

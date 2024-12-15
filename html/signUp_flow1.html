@@ -300,18 +300,17 @@
                                 ownerName: "John Doe",
                                 personalDetails: {
                                     fullName: "Johnathan Doe",
-                                    ICNo: "123456-78-9101",
-                                    positionInCompany: "CEO",
+                                    email: "johndoe1@gmail.com",
+                                    phone: "016-5478854",
                                 },
                             };
 
                             // Autofill form fields
                             document.getElementById("ssm_no").value = user.ssmNumber || "";
                             document.getElementById("owner").value = user.ownerName || "";
-                            document.getElementById("ownerIC").value =
-                                user.personalDetails.ICNo || "";
-                            document.getElementById("companyName").value =
-                                user.companyName || "";
+                            document.getElementById("companyName").value = user.companyName || "";
+                            // document.getElementById("").value = user.personalDetails.email || "";
+                            // document.getElementById("tel_num").value = user.personalDetails.phone || "";
                         });
                     </script>
                     <script>
@@ -329,14 +328,14 @@
                                     // Collect form data
                                     const user = {
                                         ssmNumber: document.getElementById("ssm_no")?.value || "",
-                                        ssmCertificate: document.getElementById("ssm_cert")?.value || "",
+                                        ssmCertificate: "SSM_CERTIFICATE_HASH",
                                         companyName: document.getElementById("companyName")?.value || "",
                                         expertFields: expertFields,
                                         ownerName: document.getElementById("owner")?.value || "",
                                         personalDetails: {
-                                            fullName: document.getElementById("fullname")?.value || "",
-                                            ICNo: document.getElementById("IC_no")?.value || "",
-                                            positionInCompany: document.getElementById("position")?.value || "",
+                                            fullName: "",
+                                            email: "",
+                                            phone: "",
                                         },
                                         isRegistered: false, // Default state before submission
                                     };
