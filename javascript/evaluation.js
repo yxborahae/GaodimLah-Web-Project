@@ -5,6 +5,11 @@ back.addEventListener('click', function () {
     window.location.href = `evaluate_list.html?tenderID=${tenderID}`;
 });
 
+const done = document.getElementById('done-btn');
+done.addEventListener('click', function () {
+    window.location.href = `evaluate_list.html?tenderID=${tenderID}`;
+});
+
 
 // slider logic
 const slider1 = document.getElementById("slider1");
