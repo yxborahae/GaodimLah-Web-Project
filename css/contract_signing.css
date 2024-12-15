@@ -240,7 +240,7 @@ span{
   height: 7px;
   background-color: #4550DA ;
   position: absolute;
-  bottom:-90px;
+  bottom:-120px;
   left: 200px;
   /* right: -2px; */
   /* display: none; */
@@ -314,6 +314,32 @@ span{
   margin-bottom: 10px;
   margin-top: 30px;
 
+}
+
+/* table style */
+table{
+  width: 99.5%;
+  /* margin: 10px 10px; */
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+table .textColumn{
+  text-align: left;
+}
+
+table th{
+  color: white;
+  background-color: #4651E3;
+  padding: 5px 20px;
+  font-weight: 500;
+}
+
+table td{
+  color: black;
+  background-color: #CEB8F0;
+  padding: 5px 20px;
 }
 
 /* contract terms */
@@ -407,7 +433,7 @@ span{
 
 }
 
-.blockchain-record .line{
+.blockchain-record .line, .signed-off .line{
   width: 270px;
 
 
@@ -441,6 +467,20 @@ button{
 }
 
 #accept{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  width: 130px;
+}
+
+
+.doneButton{
+  margin: 50px;
+  justify-content: center;
+  text-align:center;
+}
+
+#done{
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 5px;

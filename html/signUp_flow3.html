@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -76,9 +77,13 @@
                       </div>
                     </div>
             </div>
-            <div class="col-md-10">
-                <div class="jumbotron step-bar d-flex justify-content-between">
-                    <h3 class="step-bar-title">03. WALLET INTEGRATION</h3>
+            <div class="steps">
+              <!-- Step 1 -->
+              <div class="step">
+                <div class="step-title">
+                  <div class="step-number">1</div>
+                  <span class="step-name">Registration</span>
+                  <span class="dropdown-icon">&#9660;</span>
                 </div>
                     <!-- Wallet Integration -->
                     <div class="substep-container">
@@ -113,6 +118,54 @@
                         </div>
                     </div>
             </div>
+          </div>
+
+          <button id="nextSubstep">Next Substep</button>
+        </div>
+        <div class="col-md-10">
+          <div class="jumbotron step-bar d-flex justify-content-between">
+            <h3 class="step-bar-title">03. WALLET INTEGRATION</h3>
+          </div>
+          <!-- <form> -->
+          <!-- <div class="form-container"> -->
+          <!-- Wallet Integration -->
+          <div class="substep-container">
+            <h6 class="substep-title">Terms and Conditions</h6>
+            <div class="substep-container-content row">
+              <ol>
+                <li>I understand that “Connect Wallet” feature links my MetaMask wallet to the platform for secure
+                  login, bidding, and payments.</li>
+                <li>I acknowledge that all transactions are recorded on the blockchain and are permanent.</li>
+                <li>I am responsible for the security of my MetaMask wallet and keeping my private key confidential.
+                </li>
+                <li>I accept that the platform is not liable for any loss of funds or access resulting from compromised
+                  wallet security.</li>
+                <li>I understand that this platform only supports the MetaMask wallet for connecting and performing
+                  transactions.</li>
+                <li>I agree to follow the platform’s policies and all applicable blockchain laws and regulations when
+                  using the “Connect Wallet” feature.</li>
+              </ol>
+              <label for="confirmation" class=" confirmation mx-3">
+                <input type="checkbox">
+                <b>By clicking "Connect Wallet", I agree to these terms and conditions.</b>
+              </label>
+              <!-- Form Actions -->
+              <div class="btn-container">
+                <div class="d-flex justify-content-center align-items-center">
+                  <a href="signUp_flow3.html">
+                    <button type="button" id="decline-btn" class="btn">DECLINE</button>
+                  </a>
+
+                    <button type="button" id="connectWallet-btn" class="btn ms-3">CONNECT WALLET</button>
+                    <button type="button" id="test-smart-contract" class="btn ms-3">TEST CONTRACT</button>
+
+                </div>
+                <p id="contract-result">Result will appear here...</p>
+              </div>
+            </div>
+          </div>
+          <!-- </div>  -->
+          <!-- </form> -->
         </div>
       </div>
     </main>

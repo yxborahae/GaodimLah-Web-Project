@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const connectWalletButton = document.getElementById("connect-wallet");
+  const connectWalletButton = document.getElementById("connectWallet-btn");
   const testContractButton = document.getElementById("test-smart-contract");
   const contractResult = document.getElementById("contract-result");
 
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let signer;
   let contractAddress;
   let contractABI;
+  let contract;
 
   // Function to display error message to the user
   function displayErrorMessage(message) {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Load ABI and address from abi.json
   try {
-    const response = await fetch("./abi.json");
+    const response = await fetch("../abi.json");
     if (!response.ok) {
       throw new Error("Failed to load ABI file.");
     }
@@ -45,8 +46,35 @@ document.addEventListener("DOMContentLoaded", async () => {
         await provider.send("eth_requestAccounts", []);
         signer = provider.getSigner();
         const address = await signer.getAddress();
-        contractResult.textContent = `Connected Wallet: ${address}`;
+
+         // Initialize the contract only after the wallet is connected
+         contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+        // Retrieve user data from localStorage
+        const retrievedData = JSON.parse(localStorage.getItem("userData"));
+        if (!retrievedData) {
+          alert("No user data found in localStorage.");
+          return;
+        }
+
+        // Update isRegistered to true
+        retrievedData.isRegistered = true;
+
+        // Trigger the registerUser function on the contract with the updated data
+        const tx = await contract.registerUser(retrievedData);
+        await tx.wait(); // Wait for the transaction to be mined
+
+        console.log(`User registered: ${address}`);
+        
+        // Show the connected wallet address in an alert
+        alert(`Connected Wallet: ${address} and User Registered`);
         console.log(`Wallet connected: ${address}`);
+
+        // Save the updated user data back to localStorage
+        localStorage.setItem("userData", JSON.stringify(retrievedData));
+
+        // Navigate to tender_main.html after successful registration
+        window.location.href = "tender_main.html";
       } else {
         alert(
           "MetaMask is not installed. Please install MetaMask and try again."
@@ -91,6 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // Display result in UI
       contractResult.textContent = `
+          Smart Contract is connected successfully!
           Qualified Fields: ${formattedFields}
           Localities: ${formattedLocalities}
         `;
