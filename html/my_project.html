@@ -32,6 +32,8 @@
     <div class="myprojects">
         <div>
             <h3 class="fw-bold">MyProjects</h3>
+            
+            
             <div class="tabs">
                 <button class="tab active" data-tab="awarded">Awarded Project</button>
                 <button class="tab" data-tab="bidding">Bidding Project</button>
@@ -85,12 +87,13 @@
 
 
         <div id="project-container">
-
+            <div id="loading" style="display: yes;">
+                <div class="spinner">⏳ Loading projects, please wait...</div>
+            </div>
         </div>
     </div>
     <script src="../javascript/my_projects.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

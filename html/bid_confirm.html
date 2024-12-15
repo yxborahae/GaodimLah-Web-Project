@@ -45,12 +45,12 @@
                 <div class="sub-container-content">
                     <div class="mb-3 row">
                         <label for="tender-id" class="form-label bid-form-label">Tender ID:</label>
-                        <input type="text" id="tender-id" class="form-control bid-form-input" value="T2024-018" readonly>
+                        <input type="text" id="tender-id" class="form-control bid-form-input" readonly>
                     </div>
                     <div class="mb-2 row">
                         <label for="tender-name" class="form-label bid-form-label">Tender Project Name:</label>
                         <input type="text" id="tender-name" class="form-control bid-form-input"
-                            value="CLOUD HOSTING SERVICES FOR BROADCASTING CONTENT STORAGE" readonly>
+                            readonly>
                     </div>
                 </div>
             </div>
@@ -66,30 +66,30 @@
                     <div class="mb-3 row">
                         <label for="bidder-id" class="form-label bid-form-label">Bidder ID:</label>
                         <input type="text" id="bidder-id" class="form-control bid-form-input"
-                            value="Bid_TB2034" readonly>
+                             readonly>
                     </div>
                     <div class="mb-3 row">
                         <label for="bidder-name" class="form-label bid-form-label">Bidder Name:</label>
                         <input type="text" id="bidder-name" class="form-control bid-form-input"
-                            value="GaodimLah SDN. BHD." readonly>
+                            readonly>
                     </div>
                     <div class="mb-3 row">
                         <label for="contact-email" class="form-label bid-form-label">Contact Email:</label>
                         <input type="email" id="contact-email" class="form-control bid-form-input"
-                            value="gaodimlah@email.my" readonly>
+                             readonly>
                     </div>
                     <div class="mb-3 row">
                         <label for="tel-no" class="form-label bid-form-label">Tel No.:</label>
-                        <input type="text" id="tel-no" class="form-control bid-form-input" value="012-3456789" readonly>
+                        <input type="text" id="tel-no" class="form-control bid-form-input" readonly>
                     </div>
                     <div class="mb-3 row">
                         <label for="bid-amount" class="form-label bid-form-label">Bid Amount:</label>
-                        <input type="text" id="bid-amount" class="form-control bid-form-input" value="RM 50,000" readonly>
+                        <input type="text" id="bid-amount" class="form-control bid-form-input" readonly>
                     </div>
                     <div class="mb-2 mt-4 d-flex align-items-center">
                         <i class="fa-solid fa-file-arrow-up fa-lg" style="padding-right: 10px;"></i>
                         <label for="upload-proposal" class="form-label me-3 proposal-label">UPLOAD PROPOSAL</label>
-                        <input type="file" id="upload-proposal" class="form-control proposal-input" disabled>
+                        <input type="text" id="upload-proposal" class="form-control proposal-input" disabled>
                     </div>
                 </div>
             </div>
@@ -123,23 +123,23 @@
             <!-- Form Actions -->
             <div class="btn-container">
                 <div class="d-flex justify-content-center align-items-center">
-                    <a href="bid_participation_form.html">
+                    
                         <button type="button" id="back-btn" class="btn">
                             <i class="fa-solid fa-caret-left me-2"></i>BACK
                         </button>
-                    </a>
-
-                    <a href="bid_confirm.html">
-                        <button type="button" id="next-btn" class="btn ms-3">
+                    
+                    
+                        <button type="button" id="submit-btn" class="btn ms-3">
                             SUBMIT <i class="fa-solid fa-caret-right ms-2"></i>
                         </button>
-                    </a>
+                    
                 </div>
             </div>
         </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
     <script src="../javascript/bid_confirm.js"></script>
 </body>
 

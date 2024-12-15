@@ -1,5 +1,5 @@
 {
-  "address": "0x2F67034da1ABd00e153ed640Ded8ea7f5B8d3aea",
+  "address": "0x941530AC9104659B204Ce301176A0026c1cBEebb",
   "abi": [
     {
       "type": "function",
@@ -138,6 +138,10 @@
             {
               "type": "uint256",
               "name": "deadline"
+            },
+            {
+              "type": "uint256",
+              "name": "validDate"
             },
             {
               "type": "string[]",
@@ -287,6 +291,12 @@
         },
         {
           "type": "string"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "uint256"
         },
         {
           "type": "uint256"
@@ -446,11 +456,11 @@
                 },
                 {
                   "type": "string",
-                  "name": "ICNo"
+                  "name": "email"
                 },
                 {
                   "type": "string",
-                  "name": "positionInCompany"
+                  "name": "phone"
                 }
               ]
             },
@@ -502,11 +512,11 @@
                 },
                 {
                   "type": "string",
-                  "name": "ICNo"
+                  "name": "email"
                 },
                 {
                   "type": "string",
-                  "name": "positionInCompany"
+                  "name": "phone"
                 }
               ]
             },
@@ -584,7 +594,7 @@
         },
         {
           "type": "uint256",
-          "name": "bidIndex"
+          "name": "index"
         }
       ],
       "outputs": [
@@ -700,6 +710,10 @@
           "name": "deadline"
         },
         {
+          "type": "uint256",
+          "name": "validDate"
+        },
+        {
           "type": "string",
           "name": "contactDetails"
         },
@@ -752,11 +766,11 @@
             },
             {
               "type": "string",
-              "name": "ICNo"
+              "name": "email"
             },
             {
               "type": "string",
-              "name": "positionInCompany"
+              "name": "phone"
             }
           ]
         },

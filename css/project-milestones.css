@@ -1,0 +1,319 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7F6F9;
+
+  }
+  
+  /* header style */
+  header {
+    padding: 0px 20px 0px 20px;
+    
+  }
+  
+  .header-title {
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #4550DA; 
+  }
+  
+  .header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .notificationIcon {
+    background-color: white;
+    color: black;
+  }
+  
+  .notificationIcon:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .profileIcon {
+    background-color: #4550DA;
+    color: white;
+  }
+  
+  .profileIcon:hover {
+    background-color: black;
+    color: white;
+  }
+
+  /* black bar */
+.tender-title-bar{
+    background-color: black;
+    height: 45px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tender-title{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 10px ;
+  
+  }
+  /* mainSection */
+  .mainSection{
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: border-box;
+  }
+
+h1{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+
+h2{
+    font-size: 16px;
+  }
+
+  
+span{
+    font-weight: 600; 
+}
+
+.status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    
+    
+  }
+  
+  .status button{
+    padding: 6px;
+    margin-left: 10px;
+    border-radius: 6px;
+    
+    
+  }
+  
+  
+  .status .project_status button{
+    background-color: #9ED18D;
+    border: 1px solid #00A424;
+    color: #00A424;
+    font-weight: 500;
+  }
+  
+  .status .contract_status button{
+    background-color: #CCD6C9;
+    border: 1px solid #6A6969;
+    color: #6A6969;
+    font-weight: 500;
+  }
+
+  .keyTerms{
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: white;
+    box-sizing: border-box;
+
+}
+
+.keyTerms .subtitle{
+  font-weight: 700;
+  font-size: 17px;
+  padding: 0;
+  margin-top:0 ;
+  margin-bottom: 6px;
+}
+
+.keyTerms .line{
+  height: 2px;
+  background-color: #4550DA;
+  width: 155px;
+  margin-bottom: 15px;
+}
+
+
+.keyTerms p{
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+
+}
+
+.keyTerms span{
+  font-weight: 700;
+}
+
+
+/* progress-bar */
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; 
+    padding-left: 80px;
+    padding-right: 80px;
+    /* box-sizing: border-box; */
+  
+    
+  } 
+  
+  .progress-container{
+    display: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    
+  }
+  
+  /* .progress-container::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 72%;
+    top: 31%; 
+    left: 200px;
+    background-color: grey;
+    z-index: 0;
+    display: none; 
+    
+  } */
+  
+  .progress-bar{
+    justify-content: center;
+    width: 68%;
+    height: 7px;
+    background-color: #d9d9d9 ;
+    position: absolute;
+    bottom:-10px;
+    left: 200px;
+    /* right: -2px; */
+    /* display: none; */
+  }
+  
+  .progress-step .desc{
+    width:150px;
+    text-align: center;
+  }
+  
+  .progress-step .desc p{
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+  
+  .progress-step .desc p span{
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  .progress-step .desc .deadline{
+    font-weight: 600;
+    color: #4550DA;
+  }
+
+
+  /* update progress here */
+  .progress-per{
+  width: 0%;
+  height: 10px;
+  background-color: #4550DA;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* .progress-bar{
+  position: absolute;
+  left: 200px;
+  height: 3px;
+  top:-10px;
+  width: 32%;
+  transform: translateY(-50%);
+  background-color: blue;
+  z-index: 1;
+  display: none;
+
+} */
+
+.progress-step{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* font-weight: 500;
+    color:black; */
+    z-index: 2;
+  }
+  
+  .progress-step .fa-solid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 120px;
+    width: 120px;
+    font-size: 35px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+
+  .desc button{
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 7px;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    border: 1px solid #949090;
+    color: #949090;
+  }
+
+/* bottom buttons */
+button{
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
+  
+  .mainButton{
+    background-color: #4550DA;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 6px 10px;
+    
+  }
+  .buttons{
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+  }
+  
+  #back{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    width: 130px;
+  }
+  #next{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 5px;
+    width: 130px;
+  }
