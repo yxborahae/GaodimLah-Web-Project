@@ -244,3 +244,37 @@ tabs.forEach(tab => {
     startCountdown();
   });
 });
+
+applyFilterButton.addEventListener('click', () => {
+  const category = document.getElementById('category').value;
+  const date = document.getElementById('date').value;
+
+  const categoryText = category ? `Category: ${category}` : 'No category selected';
+  const dateText = date ? `Proposal Validity Expiry: ${new Date(date).toLocaleString('default', { month: 'long', year: 'numeric' })}` : 'No date selected';
+
+  let categorySummary = document.getElementById('category-summary');
+  if (!categorySummary) {
+    categorySummary = document.createElement('div');
+    categorySummary.id = 'category-summary';
+    filterSummary.appendChild(categorySummary);
+  }
+  categorySummary.textContent = categoryText;
+
+  let dateSummary = document.getElementById('date-summary');
+  if (!dateSummary) {
+    dateSummary = document.createElement('div');
+    dateSummary.id = 'date-summary';
+    filterSummary.appendChild(dateSummary);
+  }
+  dateSummary.textContent = dateText;
+
+  if (category || date) {
+    filterSummary.style.display = 'flex';
+  } else {
+    filterSummary.style.display = 'none';
+  }
+
+  const modal = document.getElementById('filterModal');
+  const bootstrapModal = bootstrap.Modal.getInstance(modal);
+  bootstrapModal.hide();
+});
