@@ -125,16 +125,27 @@ h2{
   position: relative;
 }
 
-.viewPDF{
-  background-color: #C6C3C3;
-  font-size: 12px;
-  font-weight: 500;
-  padding-bottom: 3px;
-  padding-top: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 2px;
+.viewPDF {
+  background-color: #E0E0E0; 
+  color: #333; 
+  font-size: 13px; 
+  font-weight: 600; 
+  padding: 5px 15px; 
+  border-radius: 5px; 
+  border: 1px solid #d4d4d4; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin-left: 10px; 
+  cursor: pointer; 
+  text-decoration: none; 
 }
+
+.viewPDF:hover {
+  background-color: #d1d1d1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  color: #000; 
+  transform: translateY(-2px); 
+}
+ 
 
 /* .progress-per::before{
   content: attr(per);
@@ -287,3 +298,33 @@ table td{
   margin-left: 5px;
   width: 130px;
 }
+
+.info {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.info-label {
+  flex: 0 0 150px; 
+  font-weight: 600;
+  color: #5c7ea3;
+  text-align: left;
+}
+
+.info-value {
+  flex: 1;
+  color: #878282;
+  text-align: left;
+}
+
