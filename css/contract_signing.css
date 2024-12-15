@@ -316,6 +316,32 @@ span{
 
 }
 
+/* table style */
+table{
+  width: 99.5%;
+  /* margin: 10px 10px; */
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+table .textColumn{
+  text-align: left;
+}
+
+table th{
+  color: white;
+  background-color: #4651E3;
+  padding: 5px 20px;
+  font-weight: 500;
+}
+
+table td{
+  color: black;
+  background-color: #CEB8F0;
+  padding: 5px 20px;
+}
+
 /* contract terms */
 .contract-terms{
   padding-left: 20px;
@@ -407,7 +433,7 @@ span{
 
 }
 
-.blockchain-record .line{
+.blockchain-record .line, .signed-off .line{
   width: 270px;
 
 
