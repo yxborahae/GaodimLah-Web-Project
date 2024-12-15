@@ -10,12 +10,6 @@ body {
     
   }
   
-  /* .header-title {
-    font-size: 22px; 
-    font-weight: bold; 
-    color: #4550DA; 
-  } */
-  
   .header-btn {
     display: flex;
     align-items: center;
@@ -39,6 +33,7 @@ body {
     background-color: #4550DA;
     color: white;
   }
+
     /* Progress Bar */
     .progress-bar {
       width: 5px;
@@ -179,37 +174,22 @@ body {
     background-color: white; 
     padding: 15px 30px 15px 15px; 
   }
-  /*or switch back to form-row?*/
+
   .signup-form-row {
     display: flex;
-    /* margin-bottom: 2%; */
 }
-/* 
-.form-label {
-    width: 350px;
-    font-weight: bold;
-} */
 
 .form-input {
   flex: 1;
   margin-right: 10px;
 } 
-/* Add margin to separate the input fields */
 
-/* .form-input input { */
-    /* padding: 10px; */
-    /* border: 1px solid #ccc;
-    border-radius: 5px;
-} */
   .signup-form-label {
     width: 150px;
     font-weight: bold;
     font-size: 15px;
     text-align: right;
     padding-right: 2%;
-    /* white-space: nowrap; */
-    /* overflow: auto; */
-    /* text-overflow: ellipsis; */
   }
   
   .business-nature-table,.update-catalog-table {
@@ -266,13 +246,3 @@ ol li{
   background-color: #4550DA;
   color: white;
 }
-
-  /* .signup-form-input {
-    flex: 1;
-    margin-right: 10px;
-    width: calc(100% - 120px); 
-    border-radius: 15px;
-    background-color: #D9D9D9; 
-    border: 1px solid #949090; 
-    /* font-size: 15px; */
-  /* } */ 

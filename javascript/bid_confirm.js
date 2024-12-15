@@ -90,10 +90,21 @@ document.addEventListener("DOMContentLoaded", async () => {
                     alert("Bid submitted successfully!");
                     window.location.href = './tender_main.html'; // Redirect to confirmation page
                 } catch (error) {
-                    console.error("Error submitting bid:", error);
-                    alert("Error submitting the bid. Please try again.");
+                    
+                    // Extract revert reason
+                    let revertMessage = "Unknown error occurred"; // Default error message
+
+                    if (error.data && error.data.message) {
+                        revertMessage = extractRevertReason(error.data.message);
+                    } else if (error.message) {
+                        revertMessage = error.message;
+                    }
+                    
+                    // Display the revert message in an alert box
+                    alert(`Bid submission failed: ${revertMessage}`);
                 }
             });
+            
             
             // Back button functionality
             document.getElementById('back-btn').addEventListener('click', () => {
@@ -131,3 +142,14 @@ document.getElementById('edit-btn').addEventListener('click', function() {
     }
 });
 
+// Function to extract and decode revert reason
+function extractRevertReason(encodedMessage) {
+    try {
+        // The revert reason is typically a string encoded in the first 4 bytes of data
+        const revertReasonHex = encodedMessage.slice(138); // Remove "0x" and function selector (first 4 bytes)
+        const decodedReason = ethers.utils.toUtf8String(revertReasonHex); // Decode hex to string
+        return decodedReason.trim(); // Return the decoded reason
+    } catch (e) {
+        return "Error decoding revert message";
+    }
+}
