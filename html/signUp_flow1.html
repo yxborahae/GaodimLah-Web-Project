@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>SignUp Process1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signup_flow.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/signup_flow.css"/>
 
 </head>
 <body>
     <header>
         <div class="mb-5 d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
+                <a href="main.html">
+                    <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
+                </a>
             </div>
             <div class="d-flex align-items-center">
                 <button class="btn header-btn notificationIcon me-3">
@@ -27,14 +29,11 @@
     </header>
 
     <main>
-      <div class="col-md-12 col-11">
+      <div class="col-md-12 col-11" style="margin-top: 0%;">
         <div class="row gx-4 px-4">
             <h3 class="fw-bold">Sign Up Process</h3>
             <div class="col-md-2 bg-white">
                 <div class="mx-1 my-3 progress-container">
-                    <div class="progress-bar">
-                      <div class="progress-fill" id="progressFill"></div>
-                    </div>
                     <div class="steps">
                         <!-- Step 1 -->
                         <div class="step">
@@ -43,12 +42,11 @@
                             <span class="step-name">Registration</span>
                             <span class="dropdown-icon">&#9660;</span>
                           </div>
-                          <!-- Substeps directly follow the title -->
                           <ul class="substeps">
-                            <li><span class="check-icon"></span>Company Information</li>
-                            <li><span class="check-icon"></span>GST Information</li>
-                            <li><span class="check-icon"></span>Business Type</li>
-                            <li><span class="check-icon"></span>Update Catalog</li>
+                            <li data-substep-id="company-info"><span class="check-icon"></span>Company Information</li>
+                            <li data-substep-id="gst-info"><span class="check-icon"></span>GST Information</li>
+                            <li data-substep-id="business-nature"><span class="check-icon"></span>Business Natures</li>
+                            <li data-substep-id="update-catalog"><span class="check-icon"></span>Update Catalog</li>
                           </ul>
                         </div>
                       
@@ -60,7 +58,7 @@
                             <span class="dropdown-icon">&#9660;</span>
                           </div>
                           <ul class="substeps">
-                            <li><span class="check-icon"></span>Personal Details</li>
+                            <li data-substep-id="personal-details"><span class="check-icon"></span>Personal Details</li>
                           </ul>
                         </div>
                       
@@ -72,20 +70,17 @@
                             <span class="dropdown-icon">&#9660;</span>
                           </div>
                           <ul class="substeps">
-                            <li><span class="check-icon"></span>Wallet Connection</li>
+                            <li data-substep-id="wallet-connection"><span class="check-icon"></span>Wallet Connection</li>
                           </ul>
                         </div>
                       </div>
                   </div>
-                
-                  <button id="nextSubstep">Next Substep</button>
             </div>
             <div class="col-md-10">
                 <div class="jumbotron step-bar d-flex justify-content-between">
                     <h3 class="step-bar-title">01. SUPPLIER REGISTRATION</h3>
                 </div>
                 <form>
-                <!-- <div class="form-container"> -->
                     <!-- each substep's container -->
                     <div class="substep-container">
                         <h6 class="substep-title">Company Information</h6>
@@ -93,17 +88,17 @@
                             <div class="mb-2 signup-form-row">
                                 <label for="ssm_no" class="form-label signup-form-label">SSM Registration No.:</label>
                                 <div class="form-input">
-                                    <input type="text" id="ssm_no" class="form-control sigup-form-input" >
+                                    <input type="text" id="ssm_no" class="form-control sigup-form-input" data-substep="company-info" >
                                 </div>
                                 <label for="owner" class="form-label signup-form-label">Owner Name:</label>
                                 <div class="form-input">
-                                    <input type="text" id="owner" class="form-control sigup-form-input" >
+                                    <input type="text" id="owner" class="form-control sigup-form-input" data-substep="company-info" >
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="businessType" class="form-label signup-form-label">Business Type:</label>
                                 <div class="form-input">
-                                    <select id="businessType" class="form-control sigup-form-input">
+                                    <select id="businessType" class="form-control sigup-form-input" data-substep="company-info">
                                         <option value="" disabled selected>--- select business type ---</option>
                                         <option value="sole_proprietorship">Sole Proprietorship</option>
                                         <option value="patnership">Patnership</option>
@@ -112,99 +107,99 @@
                                 </div>
                                 <label for="ownerIC" class="form-label signup-form-label">Owner IC No.:</label>
                                 <div class="form-input">
-                                    <input type="text" id="ownerIC" class="form-control sigup-form-input" >
+                                    <input type="text" id="ownerIC" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="companyName" class="form-label signup-form-label">Company Name:</label>
                                 <div class="form-input">
-                                    <input type="text" id="companyName" class="form-control sigup-form-input" >
+                                    <input type="text" id="companyName" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                                 <label for="nationality" class="form-label signup-form-label">Nationality:</label>
                                 <div class="form-input">
-                                    <input type="text" id="nationality" class="form-control sigup-form-input" value="Malaysian" readonly>
+                                    <input type="text" id="nationality" class="form-control sigup-form-input" value="Malaysian" readonly data-substep="company-info">
                                 </div>
                             </div>
                             <div class="mb-2 signup-form-row">
                                 <label for="companyAddr" class="form-label signup-form-label">Company Address:</label>
                                 <div class="form-input">
-                                    <input type="text" id="companyAddr" class="form-control sigup-form-input" >
+                                    <input type="text" id="companyAddr" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
-                                <label for="country" class="form-label signup-form-label">Country:</label>
+                                <label for="companyAddr_country" class="form-label signup-form-label">Country:</label>
                                 <div class="form-input">
-                                    <input type="text" id="country establ_date" class="form-control sigup-form-input" >
+                                    <input type="text" id="companyAddr_country" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
-                                <label for="state" class="form-label signup-form-label">State:</label>
+                                <label for="companyAddr_state" class="form-label signup-form-label">State:</label>
                                 <div class="form-input">
-                                    <input type="text" id="state" class="form-control sigup-form-input">
-                                </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="district" class="form-label signup-form-label">District:</label>
-                                <div class="form-input">
-                                    <input type="text" id="district" class="form-control sigup-form-input" >
-                                </div>
-                                <label for="city" class="form-label signup-form-label">City:</label>
-                                <div class="form-input">
-                                    <input type="text" id="city" class="form-control sigup-form-input" >
+                                    <input type="text" id="companyAddr_state" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
-                                <label for="poscode" class="form-label signup-form-label">Poscode:</label>
+                                <label for="companyAddr_district" class="form-label signup-form-label">District:</label>
                                 <div class="form-input">
-                                    <input type="text" id="poscode" class="form-control sigup-form-input" >
+                                    <input type="text" id="companyAddr_district" class="form-control sigup-form-input" data-substep="company-info">
+                                </div>
+                                <label for="companyAddr_city" class="form-label signup-form-label">City:</label>
+                                <div class="form-input">
+                                    <input type="text" id="companyAddr_city" class="form-control sigup-form-input" data-substep="company-info">
+                                </div>
+                            </div>
+                            <div class="mb-3 signup-form-row">
+                                <label for="companyAddr_poscode" class="form-label signup-form-label">Poscode:</label>
+                                <div class="form-input">
+                                    <input type="text" id="companyAddr_poscode" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                                 <label for="incomeTax" class="form-label signup-form-label">Income Tax No.:</label>
                                 <div class="form-input">
-                                    <input type="text" id="incomeTax" class="form-control sigup-form-input" >
+                                    <input type="text" id="incomeTax" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                             </div>
                             <div class="mb-2 signup-form-row">
                                 <label for="establ_date" class="form-label signup-form-label">Establishment Date: </label>
                                 <div class="form-input">
-                                    <input type="date" id="city" class="form-control sigup-form-input" >
+                                    <input type="date" id="establ_date" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                                 <label for="ssm_cert" class="form-label signup-form-label">SSM Registration Certificate:</label>
                                 <div class="form-input">
-                                    <input type="file" id="ssm_cert" class="form-control sigup-form-input" >
+                                    <input type="file" id="ssm_cert" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
-                                <label for="tel_num" class="form-label signup-form-label">Tel No.: </label>
+                                <label for="company_tel_num" class="form-label signup-form-label">Tel No.: </label>
                                 <div class="form-input">
-                                    <input type="text" id="tel_num" class="form-control sigup-form-input" >
+                                    <input type="text" id="company_tel_num" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                                 <label for="fax_num" class="form-label signup-form-label">Fax No.:</label>
                                 <div class="form-input">
-                                    <input type="text" id="fax_num" class="form-control sigup-form-input" >
+                                    <input type="text" id="fax_num" class="form-control sigup-form-input" data-substep="company-info">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- other substep -->
+                    <!-- gst info -->
                     <div class="mb-4 substep-container">
                         <h6 class="substep-title">GST Information</h6>
                         <div class="substep-container-content row">
                             <div class="mb-2 signup-form-row">
                                 <label for="gst_no" class="form-label signup-form-label">GST Registration No.:</label>
                                 <div class="form-input">
-                                    <input type="text" id="gst_no" class="form-control sigup-form-input" >
+                                    <input type="text" id="gst_no" class="form-control sigup-form-input" data-substep="gst-info">
                                 </div>
                                 <label for="gst_eff_date" class="form-label signup-form-label">GST Registration Effective Date:</label>
                                 <div class="form-input">
-                                    <input type="date" id="gst_eff_date" class="form-control sigup-form-input" >
+                                    <input type="date" id="gst_eff_date" class="form-control sigup-form-input" data-substep="gst-info">
                                 </div>
                             </div>
                             <div class="mb-2 signup-form-row">
                                 <label for="gst_end_date" class="form-label signup-form-label">GST Registration No.:</label>
                                 <div class="form-input">
-                                    <input type="date" id="gst_end_date" class="form-control sigup-form-input" >
+                                    <input type="date" id="gst_end_date" class="form-control sigup-form-input" data-substep="gst-info">
                                 </div>
                                 <label for="gst_doc" class="form-label signup-form-label">Upload GST Doc:</label>
                                 <div class="form-input">
-                                    <input type="file" id="gst_doc" class="form-control sigup-form-input" >
+                                    <input type="file" id="gst_doc" class="form-control sigup-form-input" data-substep="gst-info">
                                 </div>
                             </div>
                         </div>
@@ -223,8 +218,8 @@
                                 </thead>
                                 <tbody>
                                     <tr class="business-nature-row">
-                                        <td><input type="text" class="business-nature-code"></td>
-                                        <td><input type="text" class="business-nature-name"></td>
+                                        <td><input type="text" class="business-nature-code" data-substep="business-nature"></td>
+                                        <td><input type="text" class="business-nature-name" data-substep="business-nature"></td>
                                         <td><i class="fa fa-remove remove-row"></i></td>
                                     </tr>
                                 </tbody>
@@ -252,9 +247,9 @@
                                 </thead>
                                 <tbody>
                                     <tr class="update-catalog-row">
-                                        <td><input type="text" class="item-code"></td>
-                                        <td><input type="text" class="item-name"></td>
-                                        <td><input type="text" class="item-details"></td>
+                                        <td><input type="text" class="item-code" data-substep="update-catalog"></td>
+                                        <td><input type="text" class="item-name" data-substep="update-catalog"></td>
+                                        <td><input type="text" class="item-details" data-substep="update-catalog"></td>
                                         <td><i class="fa fa-remove remove-row"></i></td>
                                     </tr>
                                 </tbody>
@@ -266,7 +261,6 @@
                             </table>
                         </div>
                     </div>
-                    <!-- Form Actions -->
                     <div class="btn-container">
                         <div class="d-flex justify-content-center align-items-center">
                             <a href="signUp_flow2.html">
@@ -276,9 +270,74 @@
                             </a>
 
                         </div>
-                    </div>                    
-                <!-- </div>  -->
+                    </div>
                 </form>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const user = {
+                            ssmNumber: "SSM-123456",
+                            ssmCertificate: "SSM_CERTIFICATE_HASH",
+                            companyName: "Tech Solutions Sdn Bhd",
+                            expertFields: ["IT", "Consulting"],
+                            ownerName: "John Doe",
+                            personalDetails: {
+                                fullName: "Johnathan Doe",
+                                email: "johndoe1@gmail.com",
+                                phone: "016-5478854",
+                            },
+                        };
+
+                        // Autofill form fields
+                        document.getElementById("ssm_no").value = user.ssmNumber || "";
+                        document.getElementById("owner").value = user.ownerName || "";
+                        document.getElementById("companyName").value = user.companyName || "";
+                        // document.getElementById("").value = user.personalDetails.email || "";
+                        // document.getElementById("tel_num").value = user.personalDetails.phone || "";
+                    });
+                </script>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const nextBtn = document.getElementById("next-btn");
+                        if (nextBtn) { // Check if the button exists n
+                            nextBtn.addEventListener("click", () => {
+                                // Collect all business nature names dynamically
+                                const expertFields = [];
+                                document.querySelectorAll(".business-nature-name").forEach((input) => {
+                                    if (input.value.trim() !== "") { // Check if input is not empty
+                                        expertFields.push(input.value.trim());
+                                    }
+                                });
+                                // Collect form data
+                                const user = {
+                                    ssmNumber: document.getElementById("ssm_no")?.value || "",
+                                    ssmCertificate: "SSM_CERTIFICATE_HASH",
+                                    companyName: document.getElementById("companyName")?.value || "",
+                                    expertFields: expertFields,
+                                    ownerName: document.getElementById("owner")?.value || "",
+                                    personalDetails: {
+                                        fullName: "",
+                                        email: "",
+                                        phone: "",
+                                    },
+                                    isRegistered: false, // Default state before submission
+                                };
+
+                                console.log("Data collected---");
+                                console.log("Collected Expert Fields:", expertFields);
+
+                                // Save data to localStorage
+                                localStorage.setItem("userData", JSON.stringify(user));
+
+                                console.log(JSON.stringify(user));
+
+                                // Navigate to the next page
+                                window.location.href = "signUp_flow2.html";
+                            });
+                        } else {
+                            console.error("Next button with id 'next-btn' not found.");
+                        }
+                    });
+                </script>
             </div>
         </div>
       </div>
@@ -288,4 +347,3 @@
 </html>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../javascript/signup_flow.js"></script>
-
