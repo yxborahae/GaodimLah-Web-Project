@@ -26,7 +26,8 @@
 </header>
 
 <div class="mainSection">
-    <h1>Project Milestones</h1>
+    <button type="button" class="mainButton" onclick="navigateBack()"><i class="fa fa-angle-left" aria-hidden="true"></i>   BACK</button>
+    <h1 class="mt-3">Project Milestones</h1>
     <div class="jumbotron tender-title-bar mt-3 d-flex justify-content-between p-1">
         <h3 class="tender-title">Public Budget Tracker Application</h3>
         <!-- <button class="informationButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button> -->
@@ -65,7 +66,7 @@
                 <!-- <div class="progress-bar" id="progress-bar"></div> -->
                 
                 <div class="progress-step">
-                    <i class="fa-solid fa-file"></i>
+                    <a href="project-milestone-details.html"><i class="fa-solid fa-file"></i></a>
                     <div class="desc">
                         <p><span>Milestone 1</span></p>
                         <p>Initial Setup and Requirement Gathering</p>
@@ -73,9 +74,9 @@
                         <p>30% Payment</p>
                         <button>Not Started</button>
                     </div>  
-                </div>
+                </div></a>
                 <div class="progress-step">
-                    <i class="fa-solid fa-code"></i>
+                    <a href="project-milestone-details.html"><i class="fa-solid fa-code"></i></a>
                     <div class="desc">
                         <p><span>Milestone 2</span></p>
                         <p>Mid Project Development Review</p>
@@ -84,9 +85,9 @@
                         <button>Not Started</button>
                         
                     </div>
-                </div>
+                </div></a>
                 <div class="progress-step">
-                    <i class="fa-solid fa-list"></i>
+                    <a href="project-milestone-details.html"><i class="fa-solid fa-list"></i></a>
                     <div class="desc">
                         <p><span>Milestone 3</span></p>
                         <p>Final Delivery and Deployment</p>
@@ -95,7 +96,7 @@
                         <button>Not Started</button>
                         
                     </div>
-                </div>
+                </div></a>
                 </div>
                 
                 </div>
@@ -111,15 +112,17 @@
    
    
    
-
+    <div class="buttons"><button type="button" class="mainButton" id="done" onclick="navigateBack()">DONE <i class="fa-solid fa-check"></i></button></div>
+    
     <!-- back and next button -->
-    <div class="buttons">
+    <!-- <div class="buttons">
         <button type="button" class="mainButton" id="back"><i class="fa-solid fa-arrow-left"></i></i>   BACK</button>
         <button type="button" class="mainButton" id="next">NEXT        <i class="fa-solid fa-arrow-right"></i></button>
-     </div>
+     </div> -->
 
 </div>
 <body>
+    <script src="../javascript/project-milestones.js"></script>
     
 </body>
 </html>

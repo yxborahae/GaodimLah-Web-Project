@@ -188,3 +188,7 @@ body {
 #undone {
     background-color: grey;
 }
+
+a{
+    text-decoration: none;
+}
