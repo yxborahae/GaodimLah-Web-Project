@@ -8,15 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/signup_flow.css"/>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignUp Process2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/signup_flow.css" />
 </head>
-
 <body>
     <header>
         <div class="mb-5 d-flex align-items-center justify-content-between">
@@ -200,111 +192,111 @@
                                 </div>
                             </div>
                         </div>
-                        <script>
-                            const retrievedData = JSON.parse(
-                                localStorage.getItem("userData")
-                            );
-                            console.log(retrievedData);
+                    </div>
+                    <script>
+                        const retrievedData = JSON.parse(
+                            localStorage.getItem("userData")
+                        );
+                        console.log(retrievedData);
 
-                            document.addEventListener("DOMContentLoaded", () => {
-                                const user = {
-                                    ssmNumber: "SSM-123456",
-                                    ssmCertificate: "SSM_CERTIFICATE_HASH",
-                                    companyName: "Tech Solutions Sdn Bhd",
-                                    expertFields: ["IT", "Consulting"],
-                                    ownerName: "John Doe",
-                                    personalDetails: {
-                                        fullName: "Johnathan Doe",
-                                        email: "johndoe1@gmail.com",
-                                        phone: "016-5478854",
-                                    },
-                                };
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const user = {
+                                ssmNumber: "SSM-123456",
+                                ssmCertificate: "SSM_CERTIFICATE_HASH",
+                                companyName: "Tech Solutions Sdn Bhd",
+                                expertFields: ["IT", "Consulting"],
+                                ownerName: "John Doe",
+                                personalDetails: {
+                                    fullName: "Johnathan Doe",
+                                    email: "johndoe1@gmail.com",
+                                    phone: "016-5478854",
+                                },
+                            };
 
-                                // Autofill form fields
-                                document.getElementById("fullname").value =
-                                    user.personalDetails.fullName || "";
-                                document.getElementById("emailAddr").value =
-                                    user.personalDetails.email || "";
-                                document.getElementById("hp_num").value =
-                                    user.personalDetails.phone || "";
+                            // Autofill form fields
+                            document.getElementById("fullname").value =
+                                user.personalDetails.fullName || "";
+                            document.getElementById("emailAddr").value =
+                                user.personalDetails.email || "";
+                            document.getElementById("hp_num").value =
+                                user.personalDetails.phone || "";
 
-                                // Get the form elements
-                                const fullnameField = document.getElementById("fullname");
-                                const emailField = document.getElementById("emailAddr");
-                                const phoneField = document.getElementById("hp_num");
+                            // Get the form elements
+                            const fullnameField = document.getElementById("fullname");
+                            const emailField = document.getElementById("emailAddr");
+                            const phoneField = document.getElementById("hp_num");
 
-                                // Handle form submission or button click
-                                document
-                                    .getElementById("next-btn")
-                                    .addEventListener("click", () => {
-                                        // Step 1: Get the form data from the fields
-                                        const fullName = fullnameField.value;
-                                        const email = emailField.value;
-                                        const phone = phoneField.value;
+                            // Handle form submission or button click
+                            document
+                                .getElementById("next-btn")
+                                .addEventListener("click", () => {
+                                    // Step 1: Get the form data from the fields
+                                    const fullName = fullnameField.value;
+                                    const email = emailField.value;
+                                    const phone = phoneField.value;
 
-                                        // Step 2: Retrieve the stored 'userData' from localStorage
-                                        const storedUserData = localStorage.getItem("userData");
+                                    // Step 2: Retrieve the stored 'userData' from localStorage
+                                    const storedUserData = localStorage.getItem("userData");
 
-                                        if (storedUserData) {
-                                            // Step 3: Parse the JSON string back into a JavaScript object
-                                            const user = JSON.parse(storedUserData);
+                                    if (storedUserData) {
+                                        // Step 3: Parse the JSON string back into a JavaScript object
+                                        const user = JSON.parse(storedUserData);
 
-                                            // Step 4: Update the personalDetails with new values from the form
-                                            user.personalDetails = {
+                                        // Step 4: Update the personalDetails with new values from the form
+                                        user.personalDetails = {
+                                            fullName: fullName,
+                                            email: email,
+                                            phone: phone,
+                                        };
+
+                                        // Step 5: Store the updated userData back into localStorage
+                                        localStorage.setItem("userData", JSON.stringify(user));
+                                        alert("Data saved successfully!");
+                                    } else {
+                                        // If there's no user data in localStorage, create a new object
+                                        const newUser = {
+                                            personalDetails: {
                                                 fullName: fullName,
-                                                email: email,
-                                                phone: phone,
-                                            };
+                                                email: emailField,
+                                                phone: phoneField,
+                                            },
+                                        };
 
-                                            // Step 5: Store the updated userData back into localStorage
-                                            localStorage.setItem("userData", JSON.stringify(user));
-                                            alert("Data saved successfully!");
-                                        } else {
-                                            // If there's no user data in localStorage, create a new object
-                                            const newUser = {
-                                                personalDetails: {
-                                                    fullName: fullName,
-                                                    email: emailField,
-                                                    phone: phoneField,
-                                                },
-                                            };
+                                        // Store the new user data in localStorage
+                                        localStorage.setItem("userData",JSON.stringify(newUser));
+                                        alert("New data saved successfully!");
+                                    }
+                                });
+                        });
+                    </script>
+                    <label for="accept" class="confirmation mx-3">
+                        <input type="checkbox" data-substep="personal-details" id="accept">
+                        <b>I hereby accept the <span id="tnc">terms and conditions</span> </b>
+                    </label>
+                   
+                    <div class="btn-container">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="signUp_flow1.html">
+                                <button type="button" id="back-btn" class="btn">
+                                    <i class="fa-solid fa-caret-left me-2"></i>BACK
+                                </button>
+                            </a>
 
-                                            // Store the new user data in localStorage
-                                            localStorage.setItem("userData",JSON.stringify(newUser));
-                                            alert("New data saved successfully!");
-                                        }
-                                    });
-                            });
-                        </script>
-                        <label for="accept" class="accept mx-3">
-                            <input type="checkbox" />
-                            <b>I hereby accept the
-                                <span id="tnc">terms and conditions</span>
-                            </b>
-                        </label>
-                        <!-- Form Actions -->
-                        <div class="btn-container">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <a href="signUp_flow1.html">
-                                    <button type="button" id="back-btn" class="btn">
-                                        <i class="fa-solid fa-caret-left me-2"></i>BACK
-                                    </button>
-                                </a>
+                            <a href="signUp_flow3.html">
+                                <button type="button" id="next-btn" class="btn ms-3">
+                                    NEXT <i class="fa-solid fa-caret-right ms-2"></i>
+                                </button>
+                            </a>
 
-                                <a href="signUp_flow3.html">
-                                    <button type="button" id="next-btn" class="btn ms-3">
-                                        NEXT <i class="fa-solid fa-caret-right ms-2"></i>
-                                    </button>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+      </div>
     </main>
+    
 </body>
-
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="../javascript/signup_flow.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/signup_flow.js"></script>

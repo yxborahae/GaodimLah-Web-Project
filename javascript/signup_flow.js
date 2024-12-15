@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-    
-    
+
     // Mark substep as completed
     function markSubstepCompleted(substep) {
         substep.classList.add("completed");
@@ -195,3 +194,4 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Form not found.");
         }
     });
+    

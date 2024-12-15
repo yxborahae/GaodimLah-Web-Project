@@ -8,15 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/signup_flow.css"/>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignUp Process1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/signup_flow.css" />
 </head>
-
 <body>
     <header>
         <div class="mb-5 d-flex align-items-center justify-content-between">
@@ -37,7 +29,7 @@
     </header>
 
     <main>
-      <div class="col-md-12 col-11" style="margin-top: 0%;">
+      <div class="col-md-12 col-11">
         <div class="row gx-4 px-4">
             <h3 class="fw-bold">Sign Up Process</h3>
             <div class="col-md-2 bg-white">
@@ -57,7 +49,10 @@
                             <li data-substep-id="update-catalog"><span class="check-icon"></span>Update Catalog</li>
                           </ul>
                         </div>
-                        <div class="process-step">
+                      
+                        <!-- Step 2 -->
+                        <div class="step">
+                          <div class="step-title">
                             <div class="step-number">2</div>
                             <span class="step-name">Personal Info</span>
                             <span class="dropdown-icon">&#9660;</span>
@@ -66,7 +61,10 @@
                             <li data-substep-id="personal-details"><span class="check-icon"></span>Personal Details</li>
                           </ul>
                         </div>
-                        <div class="process-step">
+                      
+                        <!-- Step 3 -->
+                        <div class="step">
+                          <div class="step-title">
                             <div class="step-number">3</div>
                             <span class="step-name">Wallet Integration</span>
                             <span class="dropdown-icon">&#9660;</span>
@@ -269,7 +267,8 @@
                                 <button type="button" id="next-btn" class="btn ms-3">
                                     NEXT <i class="fa-solid fa-caret-right ms-2"></i>
                                 </button>
-                            </div>
+                            </a>
+
                         </div>
                     </div>
                 </form>
@@ -341,7 +340,9 @@
                 </script>
             </div>
         </div>
+      </div>
     </main>
+    
 </body>
 </html>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
