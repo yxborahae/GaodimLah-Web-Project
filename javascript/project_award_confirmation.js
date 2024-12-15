@@ -5,6 +5,22 @@ back.addEventListener('click', function () {
     window.location.href = `ap_progress.html?tenderID=${tenderID}`;
 });
 
+const decline = document.getElementById('decline');
+decline.addEventListener('click', function () {
+    const confirmDecline = confirm("Are you sure you want to decline this project?");
+    if (confirmDecline) {
+        window.location.href = `ap_progress.html?tenderID=${tenderID}`;
+    }
+});
+
+const accept = document.getElementById('accept');
+accept.addEventListener('click', function () {
+    const confirmAccept = confirm("Are you sure you want to accept this project?");
+    if (confirmAccept) {
+        window.location.href = `ap_progress.html?tenderID=${tenderID}`;
+    }
+});
+
 // Initialize the provider and contract
 window.onload = async function init() {
     let provider;
