@@ -25,7 +25,8 @@
         </div>
     </header>
     <div class="mainSection">
-        <h1>Contract Signing</h1>
+        <button type="button" class="mainButton" onclick="navigateBack()"><i class="fa fa-angle-left" aria-hidden="true"></i>   BACK</button>
+        <h1 class="mt-3">Contract Signing</h1>
         <div class="jumbotron tender-title-bar mt-3 d-flex justify-content-between p-1">
             <h3 class="tender-title">Public Budget Tracker Application</h3>
             <!-- <button class="informationButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button> -->
@@ -189,10 +190,12 @@
 
         <!-- decline and accept button -->
         <div class="buttons">
-            <button type="button" class="mainButton" id="decline">DECLINE</button>
-            <button type="button" class="mainButton" id="accept">ACCEPT</button>
+            <button type="button" class="mainButton" id="decline" onclick="navigateBack()">DECLINE</button>
+            <button type="button" class="mainButton" id="accept" onclick="navigateBack()">ACCEPT</button>
         </div>
 
     </div>
 </body>
+
+<script src="../javascript/contract_signing.js"></script>
 </html>

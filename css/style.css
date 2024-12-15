@@ -256,7 +256,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 25px;
   background-color: #fff;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -378,22 +378,24 @@ body {
 .progress-circle.red { background-color: rgba(252, 125, 27, 0.41); } 
 
 #loading {
+  display: flex;              
+  justify-content: center;   
+  align-items: center;       
+  height: 100vh;             
   text-align: center;
   font-size: 18px;
-  margin: 20px 0;
-}
+  color: #919699;   
+}         
 
 #loading.spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex;              
+  flex-direction: column;     
   font-size: 30px;
-  color: #007bff;
 }
 
-#loading.spinner:before {
-  content: '⏳';
-  font-size: 40px;
+#loading.spinner::before {
+  content: '⏳';              
+  font-size: 40px;          
   animation: spin 1s infinite linear;
 }
 
