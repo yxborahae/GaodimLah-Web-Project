@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Save the updated user data back to localStorage
         localStorage.setItem("userData", JSON.stringify(retrievedData));
 
-        // Navigate to main.html after successful registration
-        window.location.href = "main.html";
+        // Navigate to tender_main.html after successful registration
+        window.location.href = "tender_main.html";
       } else {
         alert(
           "MetaMask is not installed. Please install MetaMask and try again."
