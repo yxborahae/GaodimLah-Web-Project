@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp Process2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signup_flow.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Process2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/signup_flow.css" />
 </head>
+
 <body>
     <header>
         <div class="mb-5 d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
+                <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px" />
             </div>
             <div class="d-flex align-items-center">
                 <button class="btn header-btn notificationIcon me-3">
@@ -27,185 +28,281 @@
     </header>
 
     <main>
-      <div class="col-md-12 col-11">
-        <div class="row gx-4 px-4">
-            <h3 class="fw-bold">Sign Up Process</h3>
-            <div class="col-md-3 bg-white">
-                <div class="process-container">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-title">Registration</div>
-                        <ul class="step-items">
-                            <li class="completed"><i class="fa fa-check"></i> Company Information</li>
-                            <li class="completed"><i class="fa fa-check"></i> GST Information</li>
-                            <li class="completed"><i class="fa fa-check"></i> Business Natures</li>
-                            <li><a href="#">Update Catalog</a></li>
-                        </ul>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-title">Personal Info</div>
-                        <ul class="step-items">
-                            <li><a href="#">Personal Details</a></li>
-                        </ul>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-title">Wallet Integration</div>
-                        <ul class="step-items">
-                            <li><a href="#">Wallet Connection</a></li>
-                        </ul>
+        <div class="col-md-12 col-11">
+            <div class="row gx-4 px-4">
+                <h3 class="fw-bold">Sign Up Process</h3>
+                <div class="col-md-3 bg-white">
+                    <div class="process-container">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-title">Registration</div>
+                            <ul class="step-items">
+                                <li class="completed">
+                                    <i class="fa fa-check"></i> Company Information
+                                </li>
+                                <li class="completed">
+                                    <i class="fa fa-check"></i> GST Information
+                                </li>
+                                <li class="completed">
+                                    <i class="fa fa-check"></i> Business Natures
+                                </li>
+                                <li><a href="#">Update Catalog</a></li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-title">Personal Info</div>
+                            <ul class="step-items">
+                                <li><a href="#">Personal Details</a></li>
+                            </ul>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-title">Wallet Integration</div>
+                            <ul class="step-items">
+                                <li><a href="#">Wallet Connection</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-9">
-                <div class="jumbotron step-bar d-flex justify-content-between">
-                    <h3 class="step">02. PERSONAL INFORMATION</h3>
-                </div>
-                <form>
-                <!-- <div class="form-container"> -->
-                    <!-- Personal Details -->
-                    <div class="substep-container">
-                        <h6 class="substep-title">Personal Details</h6>
-                        <div class="substep-container-content row">
-                            <label for="confirmation" class="confirmation mb-3" >
-                                <input type="checkbox">
-                                <span>Supplier administrator is same as the owner in company information</span>
-                            </label>
-                            <div class="mb-3 signup-form-row">
-                                <label for="fullname" class="form-label signup-form-label">Full Name:</label>
-                                <div class="form-input">
-                                    <input type="text" id="fullname" class="form-control sigup-form-input" >
+                <div class="col-md-9">
+                    <div class="jumbotron step-bar d-flex justify-content-between">
+                        <h3 class="step">02. PERSONAL INFORMATION</h3>
+                    </div>
+                    <form>
+                        <!-- <div class="form-container"> -->
+                        <!-- Personal Details -->
+                        <div class="substep-container">
+                            <h6 class="substep-title">Personal Details</h6>
+                            <div class="substep-container-content row">
+                                <label for="confirmation" class="confirmation mb-3">
+                                    <input type="checkbox" />
+                                    <span>Supplier administrator is same as the owner in company
+                                        information</span>
+                                </label>
+                                <div class="mb-3 signup-form-row">
+                                    <label for="fullname" class="form-label signup-form-label">Full Name:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="fullname" class="form-control sigup-form-input" />
+                                    </div>
+                                    <label for="title" class="form-label signup-form-label">Title:</label>
+                                    <div class="form-input">
+                                        <select id="title" class="form-control sigup-form-input">
+                                            <option value="" disabled selected>
+                                                --- select a title ---
+                                            </option>
+                                            <option value="Mr">Mr.</option>
+                                            <option value="Mrs">Mrs.</option>
+                                            <option value="Sir">Sir</option>
+                                            <option value="Miss">Miss</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <label for="title" class="form-label signup-form-label">Title:</label>
-                                <div class="form-input">
-                                    <select id="title" class="form-control sigup-form-input">
-                                        <option value="" disabled selected>--- select a title ---</option>
-                                        <option value="Mr">Mr.</option>
-                                        <option value="Mrs">Mrs.</option>
-                                        <option value="Sir">Sir</option>
-                                        <option value="Miss">Miss</option>
-                                    </select>
+                                <div class="mb-3 signup-form-row">
+                                    <label for="nationality" class="form-label signup-form-label">Nationality:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="nationality" class="form-control sigup-form-input"
+                                            value="Malaysian" readonly />
+                                    </div>
+                                    <label for="birthdate" class="form-label signup-form-label">Date of Birth:</label>
+                                    <div class="form-input">
+                                        <input type="date" id="birthdate" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="nationality" class="form-label signup-form-label">Nationality:</label>
-                                <div class="form-input">
-                                    <input type="text" id="nationality" class="form-control sigup-form-input" value="Malaysian" readonly>
+                                <div class="mb-3 signup-form-row">
+                                    <label for="isBumiputra" class="form-label signup-form-label">Bumiputra:</label>
+                                    <div class="form-input">
+                                        <select id="isBumiputra" class="form-control sigup-form-input">
+                                            <option value="" disabled selected>
+                                                --- select one ---
+                                            </option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <label for="IC_no" class="form-label signup-form-label">IC No.:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="IC_no" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                                <label for="birthdate" class="form-label signup-form-label">Date of Birth:</label>
-                                <div class="form-input">
-                                    <input type="date" id="birthdate" class="form-control sigup-form-input" >
+                                <div class="mb-3 signup-form-row">
+                                    <label for="religion" class="form-label signup-form-label">Religion:</label>
+                                    <div class="form-input">
+                                        <select id="religion" class="form-control sigup-form-input">
+                                            <option value="" disabled selected>
+                                                --- select a religion ---
+                                            </option>
+                                            <option value="malay">Malay</option>
+                                            <option value="chinese">Chinese</option>
+                                            <option value="india">India</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <label for="emailAddr" class="form-label signup-form-label">Email Address:</label>
+                                    <div class="form-input">
+                                        <input type="email" id="emailAddr" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="isBumiputra" class="form-label signup-form-label">Bumiputra:</label>
-                                <div class="form-input">
-                                    <select id="isBumiputra" class="form-control sigup-form-input">
-                                        <option value="" disabled selected>--- select one ---</option>
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                    </select>
+                                <div class="mb-2 signup-form-row">
+                                    <label for="companyAddr" class="form-label signup-form-label">Company
+                                        Address:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="companyAddr" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                                <label for="IC_no" class="form-label signup-form-label">IC No.:</label>
-                                <div class="form-input">
-                                    <input type="text" id="IC_no" class="form-control sigup-form-input">
+                                <div class="mb-3 signup-form-row">
+                                    <label for="country" class="form-label signup-form-label">Country:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="country establ_date"
+                                            class="form-control sigup-form-input" />
+                                    </div>
+                                    <label for="state" class="form-label signup-form-label">State:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="state" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="religion" class="form-label signup-form-label">Religion:</label>
-                                <div class="form-input">
-                                    <select id="religion" class="form-control sigup-form-input">
-                                        <option value="" disabled selected>--- select a religion ---</option>
-                                        <option value="malay">Malay</option>
-                                        <option value="chinese">Chinese</option>
-                                        <option value="india">India</option>
-                                        <option value="other">Other</option>
-                                    </select>
+                                <div class="mb-3 signup-form-row">
+                                    <label for="district" class="form-label signup-form-label">District:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="district" class="form-control sigup-form-input" />
+                                    </div>
+                                    <label for="city" class="form-label signup-form-label">City:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="city" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                                <label for="emailAddr" class="form-label signup-form-label">Email Address:</label>
-                                <div class="form-input">
-                                    <input type="email" id="emailAddr" class="form-control sigup-form-input">
+                                <div class="mb-2 signup-form-row">
+                                    <label for="poscode" class="form-label signup-form-label">Poscode:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="poscode" class="form-control sigup-form-input" />
+                                    </div>
+                                    <label for="position" class="form-label signup-form-label">Position in
+                                        Company:</label>
+                                    <div class="form-input">
+                                        <input type="text" id="position" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-2 signup-form-row">
-                                <label for="companyAddr" class="form-label signup-form-label">Company Address:</label>
-                                <div class="form-input">
-                                    <input type="text" id="companyAddr" class="form-control sigup-form-input" >
-                                </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="country" class="form-label signup-form-label">Country:</label>
-                                <div class="form-input">
-                                    <input type="text" id="country establ_date" class="form-control sigup-form-input" >
-                                </div>
-                                <label for="state" class="form-label signup-form-label">State:</label>
-                                <div class="form-input">
-                                    <input type="text" id="state" class="form-control sigup-form-input">
-                                </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="district" class="form-label signup-form-label">District:</label>
-                                <div class="form-input">
-                                    <input type="text" id="district" class="form-control sigup-form-input" >
-                                </div>
-                                <label for="city" class="form-label signup-form-label">City:</label>
-                                <div class="form-input">
-                                    <input type="text" id="city" class="form-control sigup-form-input" >
-                                </div>
-                            </div>
-                            <div class="mb-2 signup-form-row">
-                                <label for="poscode" class="form-label signup-form-label">Poscode:</label>
-                                <div class="form-input">
-                                    <input type="text" id="poscode" class="form-control sigup-form-input" >
-                                </div>
-                                <label for="position" class="form-label signup-form-label">Position in Company:</label>
-                                <div class="form-input">
-                                    <input type="text" id="position" class="form-control sigup-form-input" >
-                                </div>
-                            </div>
-                            <div class="mb-3 signup-form-row">
-                                <label for="home_tel_num" class="form-label signup-form-label">Tel No.(Home): </label>
-                                <div class="form-input">
-                                    <input type="text" id="home_tel_num" class="form-control sigup-form-input" >
-                                </div>
-                                <label for="hp_num" class="form-label signup-form-label">Tel No.(Hp):</label>
-                                <div class="form-input">
-                                    <input type="text" id="hp_num" class="form-control sigup-form-input" >
+                                <div class="mb-3 signup-form-row">
+                                    <label for="home_tel_num" class="form-label signup-form-label">Tel No.(Home):
+                                    </label>
+                                    <div class="form-input">
+                                        <input type="text" id="home_tel_num" class="form-control sigup-form-input" />
+                                    </div>
+                                    <label for="hp_num" class="form-label signup-form-label">Tel No.(Hp):</label>
+                                    <div class="form-input">
+                                        <input type="text" id="hp_num" class="form-control sigup-form-input" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <label for="accept" class="accept mx-3">
-                        <input type="checkbox">
-                        <b>I hereby accept the <span id="tnc">terms and conditions</span> </b>
-                    </label>
-                    <!-- Form Actions -->
-                    <div class="btn-container">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <a href="signUp_flow1.html">
-                                <button type="button" id="back-btn" class="btn">
-                                    <i class="fa-solid fa-caret-left me-2"></i>BACK
-                                </button>
-                            </a>
+                        <script>
+                            const retrievedData = JSON.parse(
+                                localStorage.getItem("userData")
+                            );
+                            console.log(retrievedData);
 
-                            <a href="signUp_flow3.html">
-                                <button type="button" id="next-btn" class="btn ms-3">
-                                    NEXT <i class="fa-solid fa-caret-right ms-2"></i>
-                                </button>
-                            </a>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                const user = {
+                                    ssmNumber: "SSM-123456",
+                                    ssmCertificate: "SSM_CERTIFICATE_HASH",
+                                    companyName: "Tech Solutions Sdn Bhd",
+                                    expertFields: ["IT", "Consulting"],
+                                    ownerName: "John Doe",
+                                    personalDetails: {
+                                        fullName: "Johnathan Doe",
+                                        ICNo: "123456-78-9101",
+                                        positionInCompany: "CEO",
+                                    },
+                                };
 
+                                // Autofill form fields
+                                document.getElementById("fullname").value =
+                                    user.personalDetails.fullName || "";
+                                document.getElementById("position").value =
+                                    user.personalDetails.positionInCompany || "";
+                                document.getElementById("IC_no").value =
+                                    user.personalDetails.ICNo || "";
+
+                                // Get the form elements
+                                const fullnameField = document.getElementById("fullname");
+                                const positionField = document.getElementById("position");
+                                const ICNoField = document.getElementById("IC_no");
+
+                                // Handle form submission or button click
+                                document
+                                    .getElementById("next-btn")
+                                    .addEventListener("click", () => {
+                                        // Step 1: Get the form data from the fields
+                                        const fullName = fullnameField.value;
+                                        const position = positionField.value;
+                                        const ICNo = ICNoField.value;
+
+                                        // Step 2: Retrieve the stored 'userData' from localStorage
+                                        const storedUserData = localStorage.getItem("userData");
+
+                                        if (storedUserData) {
+                                            // Step 3: Parse the JSON string back into a JavaScript object
+                                            const user = JSON.parse(storedUserData);
+
+                                            // Step 4: Update the personalDetails with new values from the form
+                                            user.personalDetails = {
+                                                fullName: fullName,
+                                                positionInCompany: position,
+                                                ICNo: ICNo,
+                                            };
+
+                                            // Step 5: Store the updated userData back into localStorage
+                                            localStorage.setItem("userData", JSON.stringify(user));
+                                            alert("Data saved successfully!");
+                                        } else {
+                                            // If there's no user data in localStorage, create a new object
+                                            const newUser = {
+                                                personalDetails: {
+                                                    fullName: fullName,
+                                                    positionInCompany: position,
+                                                    ICNo: ICNo,
+                                                },
+                                            };
+
+                                            // Store the new user data in localStorage
+                                            localStorage.setItem("userData",JSON.stringify(newUser));
+                                            const retrievedData2 = JSON.parse(localStorage.getItem("userData"));
+                                            console.log(retrievedData2);
+                                            alert("New data saved successfully!");
+                                        }
+                                    });
+                            });
+                        </script>
+                        <label for="accept" class="accept mx-3">
+                            <input type="checkbox" />
+                            <b>I hereby accept the
+                                <span id="tnc">terms and conditions</span>
+                            </b>
+                        </label>
+                        <!-- Form Actions -->
+                        <div class="btn-container">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="signUp_flow1.html">
+                                    <button type="button" id="back-btn" class="btn">
+                                        <i class="fa-solid fa-caret-left me-2"></i>BACK
+                                    </button>
+                                </a>
+
+                                <!-- <a href="signUp_flow3.html"> -->
+                                    <button type="button" id="next-btn" class="btn ms-3">
+                                        NEXT <i class="fa-solid fa-caret-right ms-2"></i>
+                                    </button>
+                                <!-- </a> -->
+                            </div>
                         </div>
-                    </div>
-                <!-- </div>  -->
-                </form>
+                        <!-- </div>  -->
+                    </form>
+                </div>
             </div>
         </div>
-      </div>
     </main>
-    
 </body>
-</html>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../javascript/signup_flow.js"></script>
 
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="../javascript/signup_flow.js"></script> -->
