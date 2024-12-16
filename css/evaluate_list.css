@@ -52,7 +52,6 @@ body {
 #back-btn {
     background-color: #4550DA;
     color: white;
-    margin-left: 20px;
 }
 
 #back-btn:hover {
@@ -65,7 +64,6 @@ body {
     padding: 15px;
     border-radius: 10px;
     color: #4550DA;
-    margin-right: 20px;
     text-align: center;
 }
 
