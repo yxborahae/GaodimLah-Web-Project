@@ -106,26 +106,6 @@ body {
 }
 
 
-.progress-bar{
-    width: 8px;
-    height: 690px;
-    background-color: grey;
-    position:absolute;
-    left:213px;
-    top:450px;
-    z-index: 0;
-}
-
-.progress-per{
-    position: relative;
-    width: 8px;
-    height: 65%;
-    background-color: #28a745;
-    position:absolute;
-    z-index: 1;
-    top: 0;
-}
-
 
 .progress-title-container {
     background-color: #28a745;
