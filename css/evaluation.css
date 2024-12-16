@@ -68,6 +68,11 @@ button{
   
 }
 
+.mainButton:hover {
+  background-color: #737cf8;
+}
+
+
 /* black bar */
 .tender-title-bar{
   background-color: black;

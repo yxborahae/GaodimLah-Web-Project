@@ -453,6 +453,11 @@ button{
   padding: 6px 10px;
   
 }
+
+.mainButton:hover {
+  background-color: #737cf8;
+}
+
 .buttons{
   display: flex;
   margin: 50px;

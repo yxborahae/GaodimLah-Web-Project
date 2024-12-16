@@ -304,6 +304,11 @@ button{
     
   }
 
+
+  .mainButton:hover {
+    background-color: #737cf8;
+  }
+
   .buttons{
     margin: 50px;
     justify-content: center;
