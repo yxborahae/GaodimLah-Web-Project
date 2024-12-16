@@ -95,7 +95,7 @@
                     <div class="container government-signature">
                         <div>
                             <p class="small-title">Government Representative</p>
-                            <button class="signature-status">Unsigned</button>
+                            <button class="signature-status" id="creator-status">Loading...</button>
                         </div>
                         <p>Name</p>
                         <p>Digital Signature: </p>
@@ -104,17 +104,20 @@
     
                     </div>
 
-                    <div class="container government-signature mt-3">
+                    <div class="container bidder-signature mt-3">
                         <div>
                             <p class="small-title">Bidder Representative</p>
-                            <button class="signature-status">Unsigned</button>
+                            <button class="signature-status" id="winner-status">Loading...</button>
                         </div>
                         <p>Name</p>
                         <p>Digital Signature: </p>
                         <p>Date Signed:</p>
-                        <button class="contract-sign mt-3">Signed Contract</button>
+                        <button class="contract-sign mt-3" id="sign-button" onclick=signContract()>Signed Contract</button>
     
                     </div>
+                    
+
+                        <p id="confirmation-message"></p>
 
                 </div>
 
@@ -124,9 +127,9 @@
                     <p><span>Transaction ID: </span></p>
                     <p><span>Block Number: </span></p>
                     <p><span>Timestamp: </span></p>
-                    <p><span>Contact Hash: </span></p>
-
+                    <p><span>Contract Hash: </span></p>
                 </div>
+                
                 
             </div>
 

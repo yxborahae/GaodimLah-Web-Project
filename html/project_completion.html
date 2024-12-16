@@ -95,7 +95,7 @@
                     <div class="container government-signature">
                         <div>
                             <p class="small-title">Government Representative</p>
-                            <button class="signature-status">Unsigned</button>
+                            <button class="signature-status" id="creator-status">Loading...</button>
                         </div>
                         <p>Name</p>
                         <p>Digital Signature: </p>
@@ -104,19 +104,19 @@
     
                     </div>
 
-                    <div class="container government-signature mt-3">
+                    <div class="container bidder-signature mt-3">
                         <div>
                             <p class="small-title">Bidder Representative</p>
-                            <button class="signature-status">Unsigned</button>
+                            <button class="signature-status" id="winner-status">Loading...</button>
                         </div>
                         <p>Name</p>
                         <p>Digital Signature: </p>
                         <p>Signed-off Date: </p>
-                        <button class="contract-sign mt-3">Signed-off Contract</button>
+                        <button class="contract-sign mt-3" id="sign-button" onclick=signContract()>Signed-off Contract</button>
     
                     </div>
-
-                    <p class="mt-3"><span>Project Closure Date: </span></p>
+                    <p id="confirmation-message"></p>
+                    <p class="mt-3"><span id="close-date">Project Closure Date: </span></p>
 
                 </div>
                 
