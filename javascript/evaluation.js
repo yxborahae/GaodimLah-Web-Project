@@ -79,14 +79,67 @@ back.addEventListener('click', function () {
 });
 
 const done = document.getElementById('done-btn');
-done.addEventListener('click', function () {
-    // Show confirmation dialog
-    const isConfirmed = confirm("Are you sure the evaluation of this bid is complete?");
-    if (isConfirmed) {
-        // Navigate to the next page if confirmed
-        window.location.href = `evaluate_list.html?tenderID=${tenderID}`;
+// done.addEventListener('click', function () {
+
+//     // Show confirmation dialog
+//     const isConfirmed = confirm("Are you sure the evaluation of this bid is complete?");
+//     if (isConfirmed) {
+//         // Navigate to the next page if confirmed
+//         window.location.href = `evaluate_list.html?tenderID=${tenderID}`;
+//     }
+// });
+
+document.querySelector('form').addEventListener("submit", function(event){
+    event.preventDefault();
+    let isValid= true;
+
+    const radioGroups = ['specification1', 'specification2','specification3'];
+    for(const group of radioGroups){
+        const radios = document.getElementsByName(group);
+        const selected = Array.from(radios).some(radio=> radio.checked);
+        if(!selected){
+            isValid = false;
+            
+            break;
+        }
     }
-});
+
+    const sliders=[
+        "slider1",
+        "slider2",
+        "slider3",
+        "slider4",
+        "slider5",
+        "slider6",
+        "slider7",
+        "slider8",
+    ];
+
+    for(const sliderId of sliders){
+        const slider = document.getElementById(sliderId);
+        if(slider.value=== "0"){
+            isValid = false;
+            
+            break;
+        }
+    }
+
+    const comments = document.getElementById('comments');
+    if(comments.value.trim()===""){
+        isValid = false;
+       
+    }
+    if(isValid){
+        const isConfirmed = confirm("Are you sure the evaluation of this bid is complete?");
+        if (isConfirmed) {
+            // Navigate to the next page if confirmed
+            window.location.href = `evaluate_list.html?tenderID=${tenderID}`;
+    }
+        
+    }else{
+        alert("Please fill the form completely.");
+    }
+})
 
 // slider logic
 const slider1 = document.getElementById("slider1");
@@ -141,6 +194,45 @@ slider8.oninput =function(){
     value8.textContent = this.value;
 }
 
+
 function openPdf(){
     window.open('../pdf/bid1.pdf','_blank')
 }
+
+
+//track progress logic
+const progress_bar= document.getElementById('progress-per');
+const radio_groups = document.querySelectorAll('input[type="radio"]');
+const slider_groups = document.querySelectorAll('input[type="range"]');
+const comment = document.getElementById('comments');
+
+function updateProgressBar(){
+    let radio_groups_num = radio_groups.length;
+    let slider_groups_num = slider_groups.length;
+    
+    let total_groups = 12;
+    let filled_groups =0;
+    for (let i=1;i<=radio_groups_num;i++){
+        const radios =document.getElementsByName(`specification${i}`);
+        if (Array.from(radios).some(radio=>radio.checked)){
+            filled_groups++;
+        }
+    }
+    for (let i=1;i<=slider_groups_num;i++){
+        const slider =document.getElementById(`slider${i}`);
+       if(slider.value!=0){
+        filled_groups++;
+       }
+    }
+    if(comment.value!=""){
+        filled_groups++;
+    }
+    const progress = (filled_groups/total_groups)*100;
+    progress_bar.style.width = `${progress}%`;
+}
+
+slider_groups.forEach(slider=> slider.addEventListener('input', updateProgressBar));
+radio_groups.forEach(radio=> radio.addEventListener('change', updateProgressBar));
+comment.addEventListener('input',updateProgressBar);
+
+
