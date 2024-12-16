@@ -36,7 +36,7 @@
     
     <form>
     <div class="evaluationForm">
-        <button type="button" class="mainButton" id="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>   BACK</button>
+        <button type="button" class="mainButton" id="back-btn"><i class="fa fa-arrow-left me-2" aria-hidden="true"></i>   BACK</button>
         
         <!-- black bar -->
         <div class="jumbotron tender-title-bar mt-3 d-flex justify-content-between p-1">
@@ -47,12 +47,20 @@
             <h1 class="mt-3">Evaluation Form (Bid 01/10)</h1>
             <div class="d-flex align-items-center justify-content-between mt-1">
                 <h2 id="bid-id"><span>Bidder ID: </span>Loading...</h2>
-               
+                <div class="track-progress">
+                    <p>Progress</p>
                     <div class="progress-bar">
-                        <div class="progress-per">
+                        <div class="progress-per" id="progress-per">
                             
                         </div>
                     </div>  
+
+                </div>
+                <!-- <p class="track-progress">Progress <div class="progress-bar">
+                    <div class="progress-per" id="progress-per">
+                        
+                    </div>
+                </div>  </p> -->
 
                
             </div>
@@ -76,7 +84,7 @@
                     <tr>
                         <td class="textColumn">Scalable Cloud Infrastructure</td>
                         <!-- td1y stands for technical details 1 no -->
-                        <td><input type="radio" name="specification1" value="td1y" id="td1n"/></td>
+                        <td><input type="radio" name="specification1" value="td1y" id="td1n" required></td>
                         <td><input type="radio" name="specification1" value="td1n" id="td1n"/></td>
                         
                     </tr>
@@ -103,7 +111,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider1">
+                        <input type="range" min="0" max="100" value="0" id="slider1">
                     </div>
                     <div class="value" id="value1">100</div>
                 </div>
@@ -113,7 +121,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider2">
+                        <input type="range" min="0" max="100" value="0" id="slider2">
                     </div>
                     <div class="value" id="value2">0</div>
                 </div>
@@ -123,7 +131,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider3">
+                        <input type="range" min="0" max="100" value="0" id="slider3">
                     </div>
                     <div class="value" id="value3">0</div>
                 </div>
@@ -141,19 +149,19 @@
                     </tr>
                     <tr>
                         <td class="textColumn">Software Development</td>
-                        <td>RM</td>                         
+                        <td>RM 13,000</td>                         
                     </tr>
                     <tr>
                         <td class="textColumn">Hosting and Infrastructure</td>
-                        <td>RM</td>
+                        <td>RM 3000</td>
                     </tr>
                     <tr>
                         <td class="textColumn">Security Features</td>
-                        <td>RM</td>
+                        <td>RM 1500</td>
                     </tr>
                     <tr>
                         <td class="textColumn">Maintenance and Support</td>
-                        <td>RM</td>
+                        <td>RM 2000</td>
                     </tr>
                 
     
@@ -166,7 +174,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider4">
+                        <input type="range" min="0" max="100" value="0" id="slider4">
                     </div>
                     <div class="value" id="value4">0</div>
                 </div>
@@ -178,7 +186,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider5">
+                        <input type="range" min="0" max="100" value="0" id="slider5">
                     </div>
                     <div class="value" id="value5">0</div>
                 </div>
@@ -189,6 +197,7 @@
         <div class="container-fluid evaluation-container mt-3">
             <p class="subtitle">D. Value-Added Services<p>
             <p class="bigTitle"><span>Proposed Extras: </span></p>
+            <p class="content">Notify users when they are close to exceeding their budget or when they have unused funds remaining.</p>
             
             <p class="bigTitle">Score</p>
             <div class="scoring">
@@ -196,7 +205,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider6">
+                        <input type="range" min="0" max="100" value="0" id="slider6">
                     </div>
                     <div class="value" id="value6">0</div>
                 </div>
@@ -213,7 +222,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider7">
+                        <input type="range" min="0" max="100" value="0" id="slider7">
                     </div>
                     <div class="value" id="value7">0</div>
                 </div>
@@ -223,7 +232,7 @@
             
                 <div class="box">
                     <div class="slider">
-                        <input type="range" min="0" max="100" value="20" id="slider8">
+                        <input type="range" min="0" max="100" value="0" id="slider8">
                     </div>
                     <div class="value" id="value8">0</div>
                 </div>
@@ -237,9 +246,10 @@
             
         </div>
     </div>
+    <div class="buttons"><button type="submit" class="mainButton" id="done-btn">DONE <i class="fa-solid fa-check"></i></button></div>
 </form>
 
-    <div class="buttons"><button type="button" class="mainButton" id="done-btn">DONE <i class="fa-solid fa-check"></i></button></div>
+    
     <!-- previous and next button -->
     <!-- <div class="buttons">
         <button type="button" class="mainButton" id="previous"><i class="fa-solid fa-arrow-left"></i></i>   PREVIOUS</button>
