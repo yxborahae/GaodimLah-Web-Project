@@ -104,20 +104,44 @@ body {
     padding: 15px 0px;
 }
 
+.progress-bar{
+    width: 8px;
+    height: 560px;
+    background-color: grey;
+    position:absolute;
+    left:243px;
+    top:460px;
+    z-index: 0;
+}
+
+.progress-per{
+    position: relative;
+    width: 8px;
+    height: 26%;
+    background-color: #28a745;
+    position:absolute;
+    z-index: 1;
+    top: 0;
+}
+
 
 .progress-title-container {
-    background-color: #00CF2D;
+    background-color: #28a745;
     color: white;
     padding: 15px;
     font-size: 20px;
     border-radius: 10px;
-    width: fit-content;
+    width: 300px;
+    text-align: center;
 }
 
-.step {
-    margin: 20px 0;
+.content{
     display: flex;
-    align-items: center;
+    justify-content: end;
+    text-align: start;
+    width:180px;
+    margin-left: 540px;
+
 }
 
 .step-header {
@@ -137,14 +161,16 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 60px;
+    z-index: 2;
 }
 
 .step-circles {
     display: flex;
     justify-content: space-between;
-    margin: 0px 40px;
+    margin: 0px 100px;
     width: 200px;
 }
+
 
 .small-circle {
     width: 10px;
@@ -153,36 +179,13 @@ body {
     background-color: #28a745;
 }
 
-.step-details {
-    list-style-type: none; 
-    position: relative; 
-    padding-left: 25px; 
-    
-  }
-
-  .step-details::before {
-    content: '\2713'; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px; 
-    color: black; 
-  }
-
-  .undone {
-    list-style-type: none; 
-    position: relative; 
-    padding-left: 25px; 
-    color: grey;
-  }
-
-  .undone::before {
-    content: '\2713'; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px; 
-    color: grey; 
+  .step-details i{
+    color:white;
+    border-radius: 50%;
+    background-color: black;
+    padding: 5px;
+    margin-right: 4px;
+    font-size: 13px;
   }
 
 #undone {

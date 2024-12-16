@@ -32,7 +32,7 @@ header {
   background-color: #4550DA;
   color: white;
 }
-  /* Steps */
+
   .steps {
     display: flex;
     flex-direction: column;
@@ -101,7 +101,6 @@ header {
 
   .substeps li.completed {
     color: #1A9D36;
-    /* text-decoration: line-through; */
   }
 
   .check-icon {
@@ -233,4 +232,8 @@ padding-top: 25px;
 #back-btn, #next-btn, #decline-btn,#connectWallet-btn {
 background-color: #4550DA;
 color: white;
+}
+
+#next-btn:hover, #back-btn:hover, #decline-btn:hover ,#connectWallet-btn:hover {
+  background-color: #737cf8;
 }

@@ -6,7 +6,6 @@ body {
 
   }
   
-  /* header style */
   header {
     padding: 0px 20px 0px 20px;
     
@@ -47,7 +46,6 @@ body {
     color: white;
   }
 
-  /* black bar */
 .tender-title-bar{
     background-color: black;
     height: 45px;
@@ -64,7 +62,6 @@ body {
   
   }
 
-/* mainSection */
   .mainSection{
     padding-left: 80px;
     padding-right: 80px;
@@ -98,7 +95,6 @@ span{
 }
 
 
-/* i change the fontsize to be smaller */
 .timer p{
     color: black;
     font-size: 13px;
@@ -199,17 +195,13 @@ span{
 }
 
 
-/* progress-bar */
 .wrapper{
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%; 
   padding-left: 80px;
-  padding-right: 80px;
-  /* box-sizing: border-box; */
-
-  
+  padding-right: 80px;  
 } 
 
 .progress-container{
@@ -221,18 +213,6 @@ span{
   
 }
 
-/* .progress-container::after{
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 72%;
-  top: 31%; 
-  left: 200px;
-  background-color: grey;
-  z-index: 0;
-  display: none; 
-  
-} */
 
 .progress-bar{
   justify-content: center;
@@ -242,8 +222,6 @@ span{
   position: absolute;
   bottom:-120px;
   left: 200px;
-  /* right: -2px; */
-  /* display: none; */
 }
 
 .progress-step .desc{
@@ -268,36 +246,12 @@ span{
   color: #4550DA;
 }
 
-
-/* .progress-per{
-  width: 50%;
-  height: 10px;
-  background-color: #5DC273;
-  border-radius: 10px;
-  position: relative;
-} */
-
-/* .progress-bar{
-  position: absolute;
-  left: 200px;
-  height: 3px;
-  top:-10px;
-  width: 32%;
-  transform: translateY(-50%);
-  background-color: blue;
-  z-index: 1;
-  display: none;
-
-} */
-
 .progress-step{
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* font-weight: 500;
-  color:black; */
   z-index: 2;
 }
 
@@ -316,10 +270,9 @@ span{
 
 }
 
-/* table style */
+
 table{
   width: 99.5%;
-  /* margin: 10px 10px; */
   font-size: 14px;
   text-align: center;
   box-sizing: border-box;
@@ -342,7 +295,7 @@ table td{
   padding: 5px 20px;
 }
 
-/* contract terms */
+
 .contract-terms{
   padding-left: 20px;
 
@@ -439,7 +392,6 @@ table td{
 
 }
 
-/* bottom buttons */
 button{
   box-shadow: none;
   outline: none;
@@ -453,6 +405,11 @@ button{
   padding: 6px 10px;
   
 }
+
+.mainButton:hover {
+  background-color: #737cf8;
+}
+
 .buttons{
   display: flex;
   margin: 50px;
