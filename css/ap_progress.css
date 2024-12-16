@@ -102,22 +102,57 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 15px 0px;
+    /* width: 100%;
+    justify-content: center; */
+}
+
+/* latest */
+.progress-bar{
+    width: 8px;
+    height: 690px;
+    background-color: grey;
+    position:absolute;
+    left:213px;
+    top:450px;
+    z-index: 0;
+}
+
+.progress-per{
+    position: relative;
+    width: 8px;
+    height: 65%;
+    background-color: #28a745;
+    position:absolute;
+    z-index: 1;
+    top: 0;
 }
 
 
 .progress-title-container {
-    background-color: #00CF2D;
+    background-color: #28a745;
     color: white;
     padding: 15px;
     font-size: 20px;
     border-radius: 10px;
-    width: fit-content;
+    /* width: fit-content; */
+    width: 270px;
+    text-align: center;
 }
 
-.step {
+/* .step {
     margin: 20px 0;
     display: flex;
     align-items: center;
+} */
+
+
+.content{
+    display: flex;
+    justify-content: end;
+    text-align: start;
+    width:210px;
+    margin-left: 600px;
+
 }
 
 .step-header {
@@ -137,14 +172,16 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 60px;
+    z-index: 2;
 }
 
 .step-circles {
     display: flex;
     justify-content: space-between;
-    margin: 0px 40px;
+    margin: 0px 145px;
     width: 200px;
 }
+
 
 .small-circle {
     width: 10px;
@@ -153,37 +190,46 @@ body {
     background-color: #28a745;
 }
 
-.step-details {
+/* .step-details {
     list-style-type: none; 
     position: relative; 
     padding-left: 25px; 
     
+  } */
+
+  .step-details i{
+    color:white;
+    border-radius: 50%;
+    background-color: black;
+    padding: 5px;
+    margin-right: 4px;
+    font-size: 13px;
   }
 
-  .step-details::before {
+  /* .step-details::before {
     content: '\2713'; 
     position: absolute;
     left: 0;
     top: 0;
     font-size: 20px; 
     color: black; 
-  }
+  } */
 
-  .undone {
+  /* .undone {
     list-style-type: none; 
     position: relative; 
     padding-left: 25px; 
     color: grey;
-  }
+  } */
 
-  .undone::before {
+  /* .undone::before {
     content: '\2713'; 
     position: absolute;
     left: 0;
     top: 0;
     font-size: 20px; 
     color: grey; 
-  }
+  } */
 
 #undone {
     background-color: grey;
