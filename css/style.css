@@ -136,6 +136,7 @@ body {
 
 #back-btn:hover {
   background-color: #737cf8;
+  color: black;
 }
 
 #next-btn {
@@ -145,6 +146,7 @@ body {
 
 #next-btn:hover {
   background-color: #737cf8;
+  color: black;
 }
 
 #submit-btn {
@@ -154,6 +156,7 @@ body {
 
 #submit-btn:hover {
   background-color: #737cf8;
+  color: black;
 }
 
 

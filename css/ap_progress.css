@@ -52,11 +52,12 @@ body {
 #back-btn {
     background-color: #4550DA;
     color: white;
-    margin-left: 20px;
+    
 }
 
 #back-btn:hover {
     background-color: #737cf8;
+    color: black;
 }
 
 .deadline-container {
@@ -76,7 +77,7 @@ body {
 .deadline-container i {
     font-size: 1.2rem;
     color: #4550DA;
-    margin-right: 8px;
+   
 }
 
 #deadline-timer {

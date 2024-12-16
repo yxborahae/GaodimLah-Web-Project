@@ -408,6 +408,7 @@ button{
 
 .mainButton:hover {
   background-color: #737cf8;
+  color: black;
 }
 
 .buttons{
