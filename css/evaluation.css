@@ -48,6 +48,9 @@ header {
 
 
 /* evaluation form style */
+.content{
+  padding-left: 30px;
+}
 .evaluationForm{
   padding-left: 80px;
   padding-right: 80px;
