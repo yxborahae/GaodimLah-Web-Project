@@ -56,14 +56,16 @@ async function fetchAwardedProjects(contract, signer) {
       const projectWinner = tenderData[10]; // Winner address
       const status = tenderData[9]; // Status (e.g., awarded)
 
-      if (status === 3 && projectWinner === signerAddress) { // Check status and winner
+      const randomStatus = Math.floor(Math.random() * (90 - 20 + 1)) + 20;
+
+      if (status === 3 && projectWinner === signerAddress) { 
         awardedProjects.push({
-          title: tenderData[2], // Project title
-          tenderId: tenderData[1], // Tender ID
-          deadline: new Date(tenderData[7] * 1000).toISOString().split('T')[0], // Deadline
-          progress: 80, 
-          progressText: `Progress 80%`,
-          progressColor: getProgressColor(80)
+          title: tenderData[2], 
+          tenderId: tenderData[1], 
+          deadline: new Date(tenderData[7] * 1000).toISOString().split('T')[0], 
+          progress: randomStatus, 
+          progressText: `Progress ${randomStatus}%`,
+          progressColor: getProgressColor(randomStatus)
         });
       }
     }
@@ -229,7 +231,7 @@ function getProgressColor(progress){
   if (progress >= 80 ){
     return 'green';
   }else if (progress >= 50 && progress < 80){
-    return 'yellow';
+    return 'lightblue';
   }else if (progress >=30 && progress < 50){
     return 'orange';
   }else{
