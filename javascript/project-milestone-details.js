@@ -84,10 +84,6 @@ window.onload = async function () {
         console.log("-----Milestone Name:", milestoneName);
 
         // Update the HTML with milestone details
-        // document.querySelector(".subtitle").textContent = `Milestone ${parseInt(milestoneIndex) + 1}: ${milestoneName}`;
-        // document.querySelector(".milestone-title button").textContent = status.text;
-        // document.querySelector(".milestone-title button").style.backgroundColor = status.color;
-
         document.querySelector(".keyTerms").innerHTML = `
             <div>
                 <div>
@@ -99,7 +95,7 @@ window.onload = async function () {
             </div>
             <p><span>Description: </span>${milestone.description}</p>
             <p class="mt-3"><span>Deadline: </span>${new Date(Number(milestone.dueDate) * 1000).toLocaleDateString()}</p>
-            <p><span>Payment Released: </span>${paymentReleased.toFixed(4)} ETH</p>
+            <p><span>Payment Released: RM </span>${paymentReleased.toFixed(2)}</p>
             <form method="form" enctype="multipart/form-data">
                 <table class="mt-3">
                     <tr>
@@ -107,9 +103,7 @@ window.onload = async function () {
                         <th>Approval Status</th>
                         <th>Action</th>
                     </tr>
-                    ${milestone.requiredDocuments
-                .map(
-                    (doc, idx) => `
+                    ${milestone.requiredDocuments.map((doc, idx) => `
                         <tr>
                             <td class="textColumn">${doc}</td>
                             <td>Not Uploaded</td>
@@ -122,14 +116,9 @@ window.onload = async function () {
                 </table>
             </form>
             <p class="mt-3"><span>Payment Status: </span>
-            <p class="mt-3"><span>Payment Status: </span>
-    <button class="payment-status" style="background-color: ${status.text === 'Complete' ? '#4CAF50' : 'gray'}">
-        ${status.text === 'Complete' ? 'Released' : 'Pending'}
-    </button>
-</p>
-
-</p>
-
+            <button class="payment-status" style="background-color: ${status.text === 'Complete' ? '#4CAF50' : 'gray'}">
+                ${status.text === 'Complete' ? 'Released' : 'Pending'}
+            </button>
         `;
 
         console.log("Milestone loaded successfully:", milestone);
@@ -140,11 +129,11 @@ window.onload = async function () {
 };
 
 // Navigation buttons
-document.getElementById("back").addEventListener("click", function () {
+document.getElementById("back-btn").addEventListener("click", function () {
     window.location.href = `ap_progress.html?tenderID=${tenderID}`;
 });
 
-document.getElementById("next").addEventListener("click", function () {
+document.getElementById("next-btn").addEventListener("click", function () {
     const nextIndex = parseInt(milestoneIndex) + 1;
     window.location.href = `project-milestone-details.html?tenderID=${tenderID}&index=${nextIndex}`;
 });

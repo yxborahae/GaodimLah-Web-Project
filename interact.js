@@ -76,9 +76,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Navigate to tender_main.html after successful registration
         window.location.href = "tender_main.html";
       } else {
-        alert(
-          "MetaMask is not installed. Please install MetaMask and try again."
-        );
+        const userResponse = confirm(
+          "MetaMask is not installed. Would you like to download it now?"
+      );
+      if (userResponse) {
+          // Redirect user to the MetaMask download page
+          window.location.href = "https://metamask.io/download/";
+      }
       }
     } catch (error) {
       console.error("Error connecting wallet:", error);
