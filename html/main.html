@@ -29,7 +29,8 @@
                     <a href="#" class="language-link active">EN</a>
                     <a href="#" class="language-link">BM</a>
                 </div>
-                <button class="btn header-btn profileIcon">
+
+                <button class="btn header-btn profileIcon" onclick="redirectToLogin()">
                     <i class="fas fa-user"></i>
                 </button>
             </div>
@@ -114,3 +115,8 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 <script src="../javascript/mainpage.js"></script>
+<script>
+    function redirectToLogin() {
+      window.location.href = "login.html";
+    }
+</script>
