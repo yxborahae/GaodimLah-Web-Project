@@ -102,11 +102,9 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 15px 0px;
-    /* width: 100%;
-    justify-content: center; */
 }
 
-/* latest */
+
 .progress-bar{
     width: 8px;
     height: 690px;
@@ -134,16 +132,9 @@ body {
     padding: 15px;
     font-size: 20px;
     border-radius: 10px;
-    /* width: fit-content; */
     width: 270px;
     text-align: center;
 }
-
-/* .step {
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-} */
 
 
 .content{
@@ -158,7 +149,7 @@ body {
 .step-header {
      display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligns items to the left */
+    justify-content: flex-start; 
     width: 100%;
 }
 
@@ -190,13 +181,6 @@ body {
     background-color: #28a745;
 }
 
-/* .step-details {
-    list-style-type: none; 
-    position: relative; 
-    padding-left: 25px; 
-    
-  } */
-
   .step-details i{
     color:white;
     border-radius: 50%;
@@ -206,30 +190,6 @@ body {
     font-size: 13px;
   }
 
-  /* .step-details::before {
-    content: '\2713'; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px; 
-    color: black; 
-  } */
-
-  /* .undone {
-    list-style-type: none; 
-    position: relative; 
-    padding-left: 25px; 
-    color: grey;
-  } */
-
-  /* .undone::before {
-    content: '\2713'; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px; 
-    color: grey; 
-  } */
 
 #undone {
     background-color: grey;

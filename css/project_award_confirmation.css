@@ -5,7 +5,6 @@ body {
     background-color: #F7F6F9;
   }
   
-/* header style */
 header {
   padding: 0px 20px 0px 20px;
   
@@ -46,7 +45,6 @@ header {
   color: white;
 }
 
-  /* black bar */
 .tender-title-bar{
     background-color: black;
     height: 45px;
@@ -63,7 +61,6 @@ header {
 
 }
 
-/* mainSection */
   .mainSection{
     padding-left: 80px;
     padding-right: 80px;
@@ -98,11 +95,9 @@ span{
     margin:10px;
     text-align: center;
     width: calc(100% - 20px);
-    
 }
 
 
-/* i change the fontsize to be smaller */
 .timer p{
     color: black;
     font-size: 13px;
@@ -183,8 +178,6 @@ button{
 .mainButton:hover {
   background-color: #737cf8;
 }
-
-
 
 .buttons{
   display: flex;
