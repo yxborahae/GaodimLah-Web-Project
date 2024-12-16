@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>SignUp Process2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/signup_flow.css" />
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/signup_flow.css"/>
 
+</head>
 <body>
     <header>
         <div class="mb-5 d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-                <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px" />
+                <a href="main.html">
+                    <img src="../images/logo.png" alt="Logo" style="width: 190px; height: 80px;">
+                </a>
             </div>
             <div class="d-flex align-items-center">
                 <button class="btn header-btn notificationIcon me-3">
@@ -33,23 +34,19 @@
             <h3 class="fw-bold">Sign Up Process</h3>
             <div class="col-md-2 bg-white">
                 <div class="mx-1 my-3 progress-container">
-                    <div class="progress-bar">
-                      <div class="progress-fill" id="progressFill"></div>
-                    </div>
                     <div class="steps">
                         <!-- Step 1 -->
                         <div class="step">
-                          <div class="step-title">
-                            <div class="step-number">1</div>
+                          <div class="step-title completed">
+                            <div class="step-number completed">1</div>
                             <span class="step-name">Registration</span>
                             <span class="dropdown-icon">&#9660;</span>
                           </div>
-                          <!-- Substeps directly follow the title -->
                           <ul class="substeps">
-                            <li><span class="check-icon"></span>Company Information</li>
-                            <li><span class="check-icon"></span>GST Information</li>
-                            <li><span class="check-icon"></span>Business Type</li>
-                            <li><span class="check-icon"></span>Update Catalog</li>
+                            <li data-substep-id="company-info" class="completed"><span class="check-icon"></span>Company Information</li>
+                            <li data-substep-id="gst-info" class="completed"><span class="check-icon"></span>GST Information</li>
+                            <li data-substep-id="business-nature" class="completed"><span class="check-icon"></span>Business Natures</li>
+                            <li data-substep-id="update-catalog" class="completed"><span class="check-icon"></span>Update Catalog</li>
                           </ul>
                         </div>
                       
@@ -61,7 +58,7 @@
                             <span class="dropdown-icon">&#9660;</span>
                           </div>
                           <ul class="substeps">
-                            <li><span class="check-icon"></span>Personal Details</li>
+                            <li data-substep-id="personal-details"><span class="check-icon"></span>Personal Details</li>
                           </ul>
                         </div>
                       
@@ -73,36 +70,33 @@
                             <span class="dropdown-icon">&#9660;</span>
                           </div>
                           <ul class="substeps">
-                            <li><span class="check-icon"></span>Wallet Connection</li>
+                            <li data-substep-id="wallet-connection"><span class="check-icon"></span>Wallet Connection</li>
                           </ul>
                         </div>
                       </div>
                   </div>
-                
-                  <button id="nextSubstep">Next Substep</button>
             </div>
             <div class="col-md-10">
                 <div class="jumbotron step-bar d-flex justify-content-between">
                     <h3 class="step-bar-title">02. PERSONAL INFORMATION</h3>
                 </div>
                 <form>
-                <!-- <div class="form-container"> -->
                     <!-- Personal Details -->
                     <div class="substep-container">
                         <h6 class="substep-title">Personal Details</h6>
                         <div class="substep-container-content row">
                             <label for="confirmation" class="confirmation mb-3" >
-                                <input type="checkbox">
+                                <input type="checkbox" data-substep="personal-details" id="confirmation">
                                 <span>Supplier administrator is same as the owner in company information</span>
                             </label>
                             <div class="mb-3 signup-form-row">
                                 <label for="fullname" class="form-label signup-form-label">Full Name:</label>
                                 <div class="form-input">
-                                    <input type="text" id="fullname" class="form-control sigup-form-input" >
+                                    <input type="text" id="fullname" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                                 <label for="title" class="form-label signup-form-label">Title:</label>
                                 <div class="form-input">
-                                    <select id="title" class="form-control sigup-form-input">
+                                    <select id="title" class="form-control sigup-form-input" data-substep="personal-details">
                                         <option value="" disabled selected>--- select a title ---</option>
                                         <option value="Mr">Mr.</option>
                                         <option value="Mrs">Mrs.</option>
@@ -114,17 +108,17 @@
                             <div class="mb-3 signup-form-row">
                                 <label for="nationality" class="form-label signup-form-label">Nationality:</label>
                                 <div class="form-input">
-                                    <input type="text" id="nationality" class="form-control sigup-form-input" value="Malaysian" readonly>
+                                    <input type="text" id="nationality" class="form-control sigup-form-input" value="Malaysian" readonly data-substep="personal-details">
                                 </div>
                                 <label for="birthdate" class="form-label signup-form-label">Date of Birth:</label>
                                 <div class="form-input">
-                                    <input type="date" id="birthdate" class="form-control sigup-form-input" >
+                                    <input type="date" id="birthdate" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="isBumiputra" class="form-label signup-form-label">Bumiputra:</label>
                                 <div class="form-input">
-                                    <select id="isBumiputra" class="form-control sigup-form-input">
+                                    <select id="isBumiputra" class="form-control sigup-form-input" data-substep="personal-details">
                                         <option value="" disabled selected>--- select one ---</option>
                                         <option value="yes">Yes</option>
                                         <option value="no">No</option>
@@ -132,13 +126,13 @@
                                 </div>
                                 <label for="IC_no" class="form-label signup-form-label">IC No.:</label>
                                 <div class="form-input">
-                                    <input type="text" id="IC_no" class="form-control sigup-form-input">
+                                    <input type="text" id="IC_no" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="religion" class="form-label signup-form-label">Religion:</label>
                                 <div class="form-input">
-                                    <select id="religion" class="form-control sigup-form-input">
+                                    <select id="religion" class="form-control sigup-form-input" data-substep="personal-details">
                                         <option value="" disabled selected>--- select a religion ---</option>
                                         <option value="malay">Malay</option>
                                         <option value="chinese">Chinese</option>
@@ -148,162 +142,161 @@
                                 </div>
                                 <label for="emailAddr" class="form-label signup-form-label">Email Address:</label>
                                 <div class="form-input">
-                                    <input type="email" id="emailAddr" class="form-control sigup-form-input">
+                                    <input type="email" id="emailAddr" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-2 signup-form-row">
-                                <label for="companyAddr" class="form-label signup-form-label">Company Address:</label>
+                                <label for="Addr" class="form-label signup-form-label">Address:</label>
                                 <div class="form-input">
-                                    <input type="text" id="companyAddr" class="form-control sigup-form-input" >
+                                    <input type="text" id="Addr" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="country" class="form-label signup-form-label">Country:</label>
                                 <div class="form-input">
-                                    <input type="text" id="country establ_date" class="form-control sigup-form-input" >
+                                    <input type="text" id="country" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                                 <label for="state" class="form-label signup-form-label">State:</label>
                                 <div class="form-input">
-                                    <input type="text" id="state" class="form-control sigup-form-input">
+                                    <input type="text" id="state" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="district" class="form-label signup-form-label">District:</label>
                                 <div class="form-input">
-                                    <input type="text" id="district" class="form-control sigup-form-input" >
+                                    <input type="text" id="district" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                                 <label for="city" class="form-label signup-form-label">City:</label>
                                 <div class="form-input">
-                                    <input type="text" id="city" class="form-control sigup-form-input" >
+                                    <input type="text" id="city" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-2 signup-form-row">
                                 <label for="poscode" class="form-label signup-form-label">Poscode:</label>
                                 <div class="form-input">
-                                    <input type="text" id="poscode" class="form-control sigup-form-input" >
+                                    <input type="text" id="poscode" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                                 <label for="position" class="form-label signup-form-label">Position in Company:</label>
                                 <div class="form-input">
-                                    <input type="text" id="position" class="form-control sigup-form-input" >
+                                    <input type="text" id="position" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                             <div class="mb-3 signup-form-row">
                                 <label for="home_tel_num" class="form-label signup-form-label">Tel No.(Home): </label>
                                 <div class="form-input">
-                                    <input type="text" id="home_tel_num" class="form-control sigup-form-input" >
+                                    <input type="text" id="home_tel_num" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                                 <label for="hp_num" class="form-label signup-form-label">Tel No.(Hp):</label>
                                 <div class="form-input">
-                                    <input type="text" id="hp_num" class="form-control sigup-form-input" >
+                                    <input type="text" id="hp_num" class="form-control sigup-form-input" data-substep="personal-details">
                                 </div>
                             </div>
                         </div>
-                        <script>
-                            const retrievedData = JSON.parse(
-                                localStorage.getItem("userData")
-                            );
-                            console.log(retrievedData);
+                    </div>
+                    <script>
+                        const retrievedData = JSON.parse(
+                            localStorage.getItem("userData")
+                        );
+                        console.log(retrievedData);
 
-                            document.addEventListener("DOMContentLoaded", () => {
-                                const user = {
-                                    ssmNumber: "SSM-123456",
-                                    ssmCertificate: "SSM_CERTIFICATE_HASH",
-                                    companyName: "Tech Solutions Sdn Bhd",
-                                    expertFields: ["IT", "Consulting"],
-                                    ownerName: "John Doe",
-                                    personalDetails: {
-                                        fullName: "Johnathan Doe",
-                                        email: "johndoe1@gmail.com",
-                                        phone: "016-5478854",
-                                    },
-                                };
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const user = {
+                                ssmNumber: "SSM-123456",
+                                ssmCertificate: "SSM_CERTIFICATE_HASH",
+                                companyName: "Tech Solutions Sdn Bhd",
+                                expertFields: ["IT", "Consulting"],
+                                ownerName: "John Doe",
+                                personalDetails: {
+                                    fullName: "Johnathan Doe",
+                                    email: "johndoe1@gmail.com",
+                                    phone: "016-5478854",
+                                },
+                            };
 
-                                // Autofill form fields
-                                document.getElementById("fullname").value =
-                                    user.personalDetails.fullName || "";
-                                document.getElementById("emailAddr").value =
-                                    user.personalDetails.email || "";
-                                document.getElementById("hp_num").value =
-                                    user.personalDetails.phone || "";
+                            // Autofill form fields
+                            document.getElementById("fullname").value =
+                                user.personalDetails.fullName || "";
+                            document.getElementById("emailAddr").value =
+                                user.personalDetails.email || "";
+                            document.getElementById("hp_num").value =
+                                user.personalDetails.phone || "";
 
-                                // Get the form elements
-                                const fullnameField = document.getElementById("fullname");
-                                const emailField = document.getElementById("emailAddr");
-                                const phoneField = document.getElementById("hp_num");
+                            // Get the form elements
+                            const fullnameField = document.getElementById("fullname");
+                            const emailField = document.getElementById("emailAddr");
+                            const phoneField = document.getElementById("hp_num");
 
-                                // Handle form submission or button click
-                                document
-                                    .getElementById("next-btn")
-                                    .addEventListener("click", () => {
-                                        // Step 1: Get the form data from the fields
-                                        const fullName = fullnameField.value;
-                                        const email = emailField.value;
-                                        const phone = phoneField.value;
+                            // Handle form submission or button click
+                            document
+                                .getElementById("next-btn")
+                                .addEventListener("click", () => {
+                                    // Step 1: Get the form data from the fields
+                                    const fullName = fullnameField.value;
+                                    const email = emailField.value;
+                                    const phone = phoneField.value;
 
-                                        // Step 2: Retrieve the stored 'userData' from localStorage
-                                        const storedUserData = localStorage.getItem("userData");
+                                    // Step 2: Retrieve the stored 'userData' from localStorage
+                                    const storedUserData = localStorage.getItem("userData");
 
-                                        if (storedUserData) {
-                                            // Step 3: Parse the JSON string back into a JavaScript object
-                                            const user = JSON.parse(storedUserData);
+                                    if (storedUserData) {
+                                        // Step 3: Parse the JSON string back into a JavaScript object
+                                        const user = JSON.parse(storedUserData);
 
-                                            // Step 4: Update the personalDetails with new values from the form
-                                            user.personalDetails = {
+                                        // Step 4: Update the personalDetails with new values from the form
+                                        user.personalDetails = {
+                                            fullName: fullName,
+                                            email: email,
+                                            phone: phone,
+                                        };
+
+                                        // Step 5: Store the updated userData back into localStorage
+                                        localStorage.setItem("userData", JSON.stringify(user));
+                                        alert("Data saved successfully!");
+                                    } else {
+                                        // If there's no user data in localStorage, create a new object
+                                        const newUser = {
+                                            personalDetails: {
                                                 fullName: fullName,
-                                                email: email,
-                                                phone: phone,
-                                            };
+                                                email: emailField,
+                                                phone: phoneField,
+                                            },
+                                        };
 
-                                            // Step 5: Store the updated userData back into localStorage
-                                            localStorage.setItem("userData", JSON.stringify(user));
-                                            alert("Data saved successfully!");
-                                        } else {
-                                            // If there's no user data in localStorage, create a new object
-                                            const newUser = {
-                                                personalDetails: {
-                                                    fullName: fullName,
-                                                    email: emailField,
-                                                    phone: phoneField,
-                                                },
-                                            };
+                                        // Store the new user data in localStorage
+                                        localStorage.setItem("userData",JSON.stringify(newUser));
+                                        alert("New data saved successfully!");
+                                    }
+                                });
+                        });
+                    </script>
+                    <label for="accept" class="confirmation mx-3">
+                        <input type="checkbox" data-substep="personal-details" id="accept">
+                        <b>I hereby accept the <span id="tnc">terms and conditions</span> </b>
+                    </label>
+                   
+                    <div class="btn-container">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="signUp_flow1.html">
+                                <button type="button" id="back-btn" class="btn">
+                                    <i class="fa-solid fa-caret-left me-2"></i>BACK
+                                </button>
+                            </a>
 
-                                            // Store the new user data in localStorage
-                                            localStorage.setItem("userData",JSON.stringify(newUser));
-                                            alert("New data saved successfully!");
-                                        }
-                                    });
-                            });
-                        </script>
-                        <label for="accept" class="accept mx-3">
-                            <input type="checkbox" />
-                            <b>I hereby accept the
-                                <span id="tnc">terms and conditions</span>
-                            </b>
-                        </label>
-                        <!-- Form Actions -->
-                        <div class="btn-container">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <a href="signUp_flow1.html">
-                                    <button type="button" id="back-btn" class="btn">
-                                        <i class="fa-solid fa-caret-left me-2"></i>BACK
-                                    </button>
-                                </a>
+                            <a href="signUp_flow3.html">
+                                <button type="button" id="next-btn" class="btn ms-3">
+                                    NEXT <i class="fa-solid fa-caret-right ms-2"></i>
+                                </button>
+                            </a>
 
-                                <a href="signUp_flow3.html">
-                                    <button type="button" id="next-btn" class="btn ms-3">
-                                        NEXT <i class="fa-solid fa-caret-right ms-2"></i>
-                                    </button>
-                                </a>
-                            </div>
                         </div>
-                        <!-- </div>  -->
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
+      </div>
     </main>
+    
 </body>
-
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="../javascript/signup_flow.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/signup_flow.js"></script>

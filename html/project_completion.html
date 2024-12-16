@@ -28,14 +28,12 @@
         <button type="button" class="mainButton" id="back-btn"><i class="fa fa-angle-left" aria-hidden="true"></i>   BACK</button>
         <h1 class="mt-3">Project Completion</h1>
         <div class="jumbotron tender-title-bar mt-3 d-flex justify-content-between p-1">
-            <h3 class="tender-title">Public Budget Tracker Application</h3>
+            <h3 class="tender-title" id="tender-title">Loading...</h3>
             <!-- <button class="informationButton"><i class="fa fa-info infoIcon" aria-hidden="true"></i></button> -->
         </div>
         <div class="row">
             <div class="col-sm-9">
-                <h2 class="mt-3"><span>Tender ID：</span></h2>
-                <h2><span>Responsibility Center</span>：</span></h2>
-                <h2><span>Awarded Company：</span></h2>
+                <div id="tender-details" class="details-container"></div>
             </div>
             <div class="col-sm-3">
                 <div class="container timer">
@@ -65,33 +63,16 @@
             
             <p class="subtitle">Completion Status</p>
             <div class="line"></div>
-            <table class="mt-3">
-                <tr>
-                    <th class="textColumn">Milestone</th>
-                    <th>Status</th>
-                    
-                </tr>
-                <tr>
-                    <td class="textColumn">Milestone 1: Initial Setup and Requirements Gathering</td>
-                    <!-- td1y stands for technical details 1 no -->
-                    <td>Completed</td>
-                    
-                    
-                </tr>
-                <tr>
-                    
-                    <td class="textColumn">Milestone 2: Mid-Project Development Review</td>
-                    <td>Completed</td>
-                    
-                    
-                </tr>
-                <tr>
-                
-                    <td class="textColumn">Milestone 3: Final Delivery and Deployment</td>
-                    <td>Completed</td>
-                   
-                </tr>
-    
+            <table class="mt-3" id="milestone-table">
+                <thead>
+                    <tr>
+                        <th class="textColumn">Milestone</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
             </table>
             <p><span>Project Completion Time: </span></p>
             <p><span>Total Project Cost: </span></p>
@@ -147,7 +128,7 @@
        
        
        
-        <div class="doneButton"><button type="button" class="mainButton" id="done" onclick="navigateBack()">DONE <i class="fa-solid fa-check"></i></button></div>
+        <div class="doneButton"><button type="button" class="mainButton" id="done-btn">DONE <i class="fa-solid fa-check"></i></button></div>
         <!-- decline and accept button -->
         <!-- <div class="buttons">
             <button type="button" class="mainButton" id="decline"><i class="fa-solid fa-arrow-left"></i> BACK</button>
@@ -156,5 +137,6 @@
 
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
 <script src="../javascript/project_completion.js"></script>
 </html>
