@@ -93,17 +93,17 @@ body {
 
 .role p, 
 .role i {
-    display: inline-block; /* Treat <p> and <i> as inline elements */
-    vertical-align: middle; /* Align them vertically */
+    display: inline-block; 
+    vertical-align: middle; 
 }
 
 .role p {
-    margin-right: 5px; /* Add spacing between <p> and <i> */
+    margin-right: 5px; 
 }
 
 .role img {
-    display: block; /* Ensure the avatar remains separate */
-    margin: 0 auto; /* Center the avatar */
+    display: block; 
+    margin: 0 auto;
 }
 
   #info-icon{

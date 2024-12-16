@@ -32,7 +32,7 @@ header {
   background-color: #4550DA;
   color: white;
 }
-  /* Steps */
+
   .steps {
     display: flex;
     flex-direction: column;
@@ -101,7 +101,6 @@ header {
 
   .substeps li.completed {
     color: #1A9D36;
-    /* text-decoration: line-through; */
   }
 
   .check-icon {

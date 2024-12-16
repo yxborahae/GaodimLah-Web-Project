@@ -150,32 +150,7 @@ h2{
   color: #000; 
   transform: translateY(-2px); 
 }
- 
 
-/* .progress-per::before{
-  content: attr(per);
-  position: absolute;
-  padding: 4px 6px;
-  background-color: #ffffff;
-  border-radius: 4px;
-  font-size: 12px;
-  top: -35px;
-  right: 0;
-  transform: translateX(50%);
-}
-
-.skill-per::after{
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #f1f1f1;
-  top:-20px;
-  right: 0;
-  transform: translateX(50%);
-} */
-
-/* Container Style*/
 .evaluation-container{
   background-color: #EBEDEF;
   padding: 10px 15px;
@@ -203,7 +178,6 @@ span{
   font-weight: 600;
 }
 
-/* table style */
 table{
   width: 99.5%;
   margin: 10px 10px;
@@ -228,7 +202,6 @@ table td{
   padding: 5px 20px;
 }
 
-/* slider style */
 .scoring{
   display: flex;
   justify-content: space-between;
@@ -247,19 +220,7 @@ table td{
   width: 300px;
   display: flex;
   align-items: center;
- 
-  
 }
-
-/* .slider input {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%; 
-  height: 10px; 
-  background: lightgray; 
-  outline: none; 
-  border-radius: 5px; 
-} */
 
 .slider input{
 
@@ -273,18 +234,13 @@ table td{
   font-weight: 600;
   font-family: sans-serif;
   color: black;
-  /* text-align:center; */
 }
 
-
-/* comments */
 #comments{
   width: 98%;
   margin-left: 20px;
-  /* margin-right: 0px; */
 }
 
-/* bottom buttons */
 .buttons{
   display: flex;
   margin: 50px;

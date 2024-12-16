@@ -14,12 +14,6 @@ body {
   height: 80px;  
 }
 
-/* .header-title {
-  font-size: 22px; 
-  font-weight: bold; 
-  color: #4550DA; 
-} */
-
 .header-btn {
   display: flex;
   align-items: center;
@@ -190,7 +184,7 @@ body {
 }
 
 .tab.active {
-  background-color: #4550DA; /* Green */
+  background-color: #4550DA;
   color: white;
 }
 
@@ -263,9 +257,9 @@ body {
 }
 
 .project-content:hover {
-  cursor: pointer; /* Show the pointer cursor */
-  transform: scale(1.01); /* Slightly enlarge the tile */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  cursor: pointer; 
+  transform: scale(1.01); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .project-content a {
@@ -285,7 +279,7 @@ body {
 }
 
 .project-content-a {
-  position: relative; /* Necessary for absolute positioning of the status container */
+  position: relative; 
   padding: 15px;
   background-color: #fff;
   border-radius: 8px;
@@ -293,9 +287,9 @@ body {
 }
 
 .project-content-a:hover {
-  cursor: pointer; /* Show the pointer cursor */
-  transform: scale(1.01); /* Slightly enlarge the tile */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-status {
@@ -418,7 +412,7 @@ body {
 }
 
 .no-projects-message::before {
-  content: "\f0c8"; /* FontAwesome "info" icon */
+  content: "\f0c8"; 
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 10px;
