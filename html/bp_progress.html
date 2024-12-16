@@ -7,7 +7,7 @@
     <title>Public Complaint Management System Progress</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/ap_bp_progress.css">
+    <link rel="stylesheet" href="../css/bp_progress.css">
 </head>
 
 <body>
@@ -29,112 +29,145 @@
         </div>
     </div>
 
-    <div class="back-and-deadline d-flex align-items-center justify-content-between mb-3">
-        <a href="my_project.html">    
-            <button type="button" id="back-btn" class="btn">
-                <i class="fas fa-arrow-left me-2"></i>BACK
-            </button>
-        </a>
-        <div class="deadline-container">
-            <p>Proposal Validity Expiry: <span id="validity-expiry"></span></p>
-            <div class="d-flex justify-content-center align-items-center">
-                <i class="fas fa-clock me-2"></i>
-                <div id="deadline-timer"></div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="content-container">
+        <div class="back-and-deadline d-flex align-items-center justify-content-between mb-3">
+            <a href="my_project.html">
+                <button type="button" id="back-btn" class="btn">
+                    <i class="fas fa-arrow-left me-2"></i>BACK
+                </button>
+            </a>
+            <div class="deadline-container">
+                <p>Proposal Validity Expiry: <span id="validity-expiry"></span></p>
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fas fa-clock me-2"></i>
+                    <div id="deadline-timer"></div>
+                </div>
+            </div>
+        </div>
+
         <h3 class="fw-bold">Bidding Project</h3>
         <div class="p-title">
             <h5 id="project-title">Loading...</h5>
             <h6 id="project-amount">Loading...</h6>
         </div>
         <p style="font-size: 15px; margin-top: 10px;">Tender ID: <span id="tender-id">Loading...</span></p>
-        <a id = 'bidder-list' href="bidder_list.html" style="font-size: 19px; color: #4651E3; text-decoration: underline;">Bidder List</a>
+        <a id='bidder-list' href="bidder_list.html"
+            style="font-size: 19px; color: #4651E3; text-decoration: underline;">Bidder List</a>
         <div class="progress-timeline">
-            <ul>
-                <li class="step">
-                    <div class="step-header">
-                        <div class="step-icon"><i class="fas fa-check"></i></div>
-                        <div class="step-circles">
-                            <span class="small-circle"></span>
-                            <span class="small-circle"></span>
-                            <span class="small-circle"></span>
-                            <span class="small-circle"></span>
-                        </div>
-                        <div class="progress-title-container" style="margin-left: 29px;">
+            
+
+
+
+            <!-- latest part -->
+            <!-- proposal submitted -->
+            <div class="step">
+                <div class="step-header">
+
+                    <div class="step-icon"><i class="fas fa-check"></i></div>
+                    <div class="step-circles">
+                        <span class="small-circle"></span>
+                        <span class="small-circle"></span>
+                        <span class="small-circle"></span>
+                        <span class="small-circle"></span>
+                    </div>
+                    <div>
+                        <div class="progress-title-container">
                             <strong>Proposal Submitted</strong>
                             <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
                         </div>
+
                     </div>
-
-                </li>
-                <li class="step">
-                    <div class="step-header ">
-                        <div class="step-icon"><i class="fas fa-check"></i></div>
-                        <div class="step-circles">
-                            <span class="small-circle"></span>
-                            <span class="small-circle"></span>
-                            <span class="small-circle"></span>
-                            <span class="small-circle"></span>
-                        </div>
-                        <ul>
-                            <div class="progress-title-container" style="margin-top: 40px;">
-                                <strong>Preliminary Evaluation</strong>
-                                <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
-                            </div>
-                            <div style="margin-top: 15px; margin-bottom: 40px;">
-                                <ul class="step-details">evaluation in progress</ul>
-                                <ul class="step-details">pass evaluation</ul>
-                            </div>
-                        </ul>
+                </div>
+                <div class="content">
+                    <div style="margin-top: 15px; margin-bottom: 40px;">
                     </div>
+                </div>
+            </div>
 
-                </li>
-                <li class="step">
-                    <div class="step-header">
-                        <div class="step-icon" id="undone">3</div>
-                        <div class="step-circles">
-                            <span class="small-circle" id="undone"></span>
-                            <span class="small-circle" id="undone"></span>
-                            <span class="small-circle" id="undone"></span>
-                            <span class="small-circle" id="undone"></span>
-                        </div>
-                        <ul>
-                            <div class="progress-title-container" id="undone">
-                                <strong>Final Evaluation</strong>
-                                <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
-                            </div>
-                            <div style="margin-top: 15px; margin-bottom: 40px;">
-                                <ul class="undone">evaluation in progress</ul>
-                                <ul class="undone">pass evaluation</ul>
-                            </div>
-                        </ul>
 
-                </li>
-                <li class="step">
-                    <div class="step-header">
-                        <div class="step-icon" id="undone">4</div>
-                        <div class="step-circles">
-                            <span class="small-circle" id="undone"></span>
-                            <span class="small-circle" id="undone"></span>
-                            <span class="small-circle" id="undone"></span>
-                            <span class="small-circle" id="undone"></span>
+            <!-- Preliminary Evaluation -->
+            <div class="step">
+                <div class="step-header">
+
+                    <div class="step-icon"><i class="fas fa-check"></i></div>
+                    <div class="step-circles">
+                        <span class="small-circle"></span>
+                        <span class="small-circle"></span>
+                        <span class="small-circle"></span>
+                        <span class="small-circle"></span>
+                    </div>
+                    <div>
+                        <div class="progress-title-container">
+                            <strong>Preliminary Evaluation</strong>
+                            <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
                         </div>
-                        <ul>
-                            <div class="progress-title-container" id="undone">
-                                <strong>Project Awarded</strong>
-                                <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
-                            </div>
-                            <div style="margin-top: 15px; margin-bottom: 40px;">
-                                <ul class="undone">successfully bid the project</ul>
-                            </div>
-                        </ul>
-                </li>
-            </ul>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <div style="margin-top: 15px; margin-bottom: 40px;">
+                        <p class="step-details"><i class="fas fa-check"></i>evaluation in progress</p>
+                        <p class="step-details"><i class="fas fa-check"></i>pass evaluation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Evaluation -->
+            <div class="step">
+                <div class="step-header">
+
+                    <div class="step-icon" id="undone"><i class="fas fa-check"></i></div>
+                    <div class="step-circles">
+                        <span class="small-circle" id="undone"></span>
+                        <span class="small-circle" id="undone"></span>
+                        <span class="small-circle" id="undone"></span>
+                        <span class="small-circle" id="undone"></span>
+                    </div>
+                    <div>
+                        <div class="progress-title-container" id="undone">
+                            <strong>Final Evaluation</strong>
+                            <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <div style="margin-top: 15px; margin-bottom: 40px;">
+                        <p class="step-details"><i class="fas fa-check"></i>evaluation in progress</p>
+                        <p class="step-details"><i class="fas fa-check"></i>pass evaluation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Awarded -->
+            <div class="step">
+                <div class="step-header">
+
+                    <div class="step-icon" id="undone"><i class="fas fa-check"></i></div>
+                    <div class="step-circles">
+                        <span class="small-circle" id="undone"></span>
+                        <span class="small-circle" id="undone"></span>
+                        <span class="small-circle" id="undone"></span>
+                        <span class="small-circle" id="undone"></span>
+                    </div>
+                    <div>
+                        <div class="progress-title-container" id="undone">
+                            <strong>Project Awarded</strong>
+                            <i class="fa-solid fa-caret-down" style="padding-left: 25px; padding-right: 10px;"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <div style="margin-top: 15px; margin-bottom: 40px;">
+                        <p class="step-details"><i class="fas fa-check"></i>successfully bid the project</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
