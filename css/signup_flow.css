@@ -236,4 +236,5 @@ color: white;
 
 #next-btn:hover, #back-btn:hover, #decline-btn:hover ,#connectWallet-btn:hover {
   background-color: #737cf8;
+  color: black;
 }
