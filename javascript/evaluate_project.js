@@ -40,7 +40,6 @@ async function fetchProjects(contract, signer) {
     const count = await contract.getTenderCount(); // Get total tender count
     const tenderCount = count.toNumber();
 
-    const awardedProjects = [];
     console.log('Number of tenders: ' + tenderCount);
 
     // Loop through all tenders and filter awarded ones
@@ -51,7 +50,7 @@ async function fetchProjects(contract, signer) {
       const bids = await contract.getBids(tenderID);
       const bidCount = bids.length;
 
-      console.log('total number of bid: ' + bidCount);
+      console.log(`total number of bid for ${tenderID}` + ': ' + bidCount);
 
       const projectCreator = tenderData[0]; // Winner address
       const status = tenderData[9]; // Status (e.g., awarded)
