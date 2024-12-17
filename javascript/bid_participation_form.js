@@ -68,7 +68,9 @@ document.getElementById('next-btn').addEventListener('click',function () {
   if (!bidAmount || !proposalFile) {
     alert('Please fill in the bid amount and upload a proposal file.');
     return;
-  }else{
+  }else {
+    localStorage.setItem('bidAmount', bidAmount);
+    localStorage.setItem('proposalFile', proposalFile.name);
     window.location.href = `./bid_confirm.html?tenderID=${tenderID}`; // Redirect to bid_confirm page
   }
 });
