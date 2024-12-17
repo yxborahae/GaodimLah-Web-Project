@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Fetch the personal details of the signer (the current user)
             const userDetails = await contract.getUser(await signer.getAddress());
 
-
+            document.getElementById('procurement-title').innerHTML = `<strong>Procurement Title:</strong> [FTA(CPTPP)] TENDER FOR CLOUD INFRASTRUCTURE AND DATA HOSTING SERVICES FOR THREE (3) YEARS FOR THE DEPARTMENT OF BROADCASTING MALAYSIA `;
+            
             // Populate the fields with the fetched tender data
             document.getElementById('tender-id').value = tenderID;
             document.getElementById('tender-name').value = tenderData[2];
