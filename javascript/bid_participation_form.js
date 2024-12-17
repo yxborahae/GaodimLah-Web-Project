@@ -68,39 +68,33 @@ document.getElementById('next-btn').addEventListener('click',function () {
   if (!bidAmount || !proposalFile) {
     alert('Please fill in the bid amount and upload a proposal file.');
     return;
-  }
-
-  if (isSuccess) {
-    localStorage.setItem('bidAmount', bidAmount);
-    localStorage.setItem('proposalFile', proposalFile.name);
-    window.location.href = `./bid_confirm.html?tenderID=${tenderID}`; // Redirect to bid_confirm page
   }else{
-    alert('A token transfer is required before proceed to bid confirmation.');
+    window.location.href = `./bid_confirm.html?tenderID=${tenderID}`; // Redirect to bid_confirm page
   }
 });
 
 // Proceed transfer logic (similar to your existing one)
-document.getElementById('proceed-transfer').addEventListener('click', function () {
-alert('Transfer process initiated!');
-isSuccess = true;
-const buttonContainer = document.getElementById('proceed-transfer').parentElement;
+// document.getElementById('proceed-transfer').addEventListener('click', function () {
+// alert('Transfer process initiated!');
+// isSuccess = true;
+// const buttonContainer = document.getElementById('proceed-transfer').parentElement;
 
-buttonContainer.innerHTML = '';
+// buttonContainer.innerHTML = '';
 
 const messageDiv = document.createElement('div');
 messageDiv.classList.add('alert');
 messageDiv.classList.add(isSuccess ? 'alert-success' : 'alert-danger');
 messageDiv.classList.add('d-flex', 'align-items-center');
 
-const icon = document.createElement('i');
-icon.classList.add('fa-solid', 'fa-circle-dollar-to-slot');
-icon.style.marginRight = '10px';
-icon.style.color = isSuccess ? 'green' : 'red';
+// const icon = document.createElement('i');
+// icon.classList.add('fa-solid', 'fa-circle-dollar-to-slot');
+// icon.style.marginRight = '10px';
+// icon.style.color = isSuccess ? 'green' : 'red';
 
-const messageText = document.createTextNode(isSuccess ? 'TRANSFER SUCCESSFUL' : 'TRANSFER FAIL');
-messageDiv.appendChild(icon);
-messageDiv.appendChild(messageText);
-buttonContainer.appendChild(messageDiv);
-});
+// const messageText = document.createTextNode(isSuccess ? 'TRANSFER SUCCESSFUL' : 'TRANSFER FAIL');
+// messageDiv.appendChild(icon);
+// messageDiv.appendChild(messageText);
+// buttonContainer.appendChild(messageDiv);
+// });
 
 

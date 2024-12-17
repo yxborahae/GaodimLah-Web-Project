@@ -200,7 +200,7 @@ function renderProjects(projects, type) {
                 <i class="fas fa-clock"></i> Calculating...
               </div>
             </div>
-            <div class="project-status">
+            <div class="project-status-a">
               <span class="status-text">${project.status || 'Pending'}</span>
             </div>
           </div>
