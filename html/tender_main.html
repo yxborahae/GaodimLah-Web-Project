@@ -111,67 +111,6 @@
             <div class="scroll-container" id="Cancelled"></div>
         </section>
     </section>
-    <!-- <h1>User Info</h1>
-        <div id="user-info">
-            <p><strong>Full Name:</strong> <span id="full-name"></span></p>
-            <p><strong>Email:</strong> <span id="email"></span></p>
-            <p><strong>Phone:</strong> <span id="phone"></span></p>
-            <p><strong>SSM Number:</strong> <span id="ssm-number"></span></p>
-            <p><strong>Company Name:</strong> <span id="company-name"></span></p>
-            <p><strong>Expert Fields:</strong> <span id="expert-fields"></span></p>
-            <p><strong>Owner Name:</strong> <span id="owner-name"></span></p>
-            <p><strong>Registration Status:</strong> <span id="registration-status"></span></p>
-        </div>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", async () => {
-                const provider = new ethers.providers.Web3Provider(window.ethereum);
-                const signer = provider.getSigner();
-                const address = await signer.getAddress();
-
-                let contract;
-                let contractAddress;
-                let contractABI;
-
-                // Load ABI and address from abi.json
-                try {
-                    const response = await fetch("../abi.json");
-                    if (!response.ok) {
-                        throw new Error("Failed to load ABI file.");
-                    }
-                    const contractData = await response.json();
-                    contractAddress = contractData.address;
-                    contractABI = contractData.abi;
-                    console.log("Contract data loaded successfully:", contractData);
-                } catch (error) {
-                    console.error("Error loading ABI file:", error);
-                    contractResult.textContent =
-                        "Error loading ABI file. Check console for details.";
-                    return; // Prevent further execution if ABI can't be loaded
-                }
-
-                // Initialize contract
-                contract = new ethers.Contract(contractAddress, contractABI, signer);
-
-                try {
-                    // Call getUser with the connected wallet address
-                    const userData = await contract.getUser(address);
-
-                    // Display the user data in HTML
-                    document.getElementById("full-name").textContent = userData.personalDetails.fullName;
-                    document.getElementById("email").textContent = userData.personalDetails.email;
-                    document.getElementById("phone").textContent = userData.personalDetails.phone;
-                    document.getElementById("ssm-number").textContent = userData.ssmNumber;
-                    document.getElementById("company-name").textContent = userData.companyName;
-                    document.getElementById("expert-fields").textContent = userData.expertFields.join(", ");
-                    document.getElementById("owner-name").textContent = userData.ownerName;
-                    document.getElementById("registration-status").textContent = userData.isRegistered ? "Registered" : "Not Registered";
-                } catch (error) {
-                    console.error("Error fetching user data:", error);
-                    alert("Error fetching user data.");
-                }
-            });
-        </script> -->
     </main>
 </body>
 </html>
