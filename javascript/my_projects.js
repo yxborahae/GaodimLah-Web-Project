@@ -53,6 +53,8 @@ async function fetchAwardedProjects(contract, signer) {
       const tenderID = await contract.tenderIDs(i);
       const tenderData = await contract.getTenderBasicInfo(tenderID); // Fetch tender details
 
+      console.log('complete check:' + tenderID);
+
       const projectWinner = tenderData[10]; // Winner address
       const status = tenderData[9]; // Status (e.g., awarded)
 
