@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const connectWalletButton = document.getElementById("connectWallet-btn");
-  const testContractButton = document.getElementById("test-smart-contract");
   const contractResult = document.getElementById("contract-result");
 
   let provider;
@@ -88,49 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Error connecting wallet:", error);
       contractResult.textContent =
         "Error connecting wallet. Check console for details.";
-    }
-  });
-
-  // Smart Contract Interaction Testing: Retrieve tender info
-  testContractButton.addEventListener("click", async () => {
-    if (!signer) {
-      alert("Please connect your wallet first!");
-      return;
-    }
-    try {
-      // Initialize the contract
-      const contract = new ethers.Contract(
-        contractAddress,
-        contractABI,
-        signer
-      );
-
-      const tenderID = "sampleTenderID"; // Replace with an actual tender ID
-      const tenderFieldsAndLocality = await contract.getTenderFieldsAndLocality(
-        tenderID
-      );
-
-      // Destructure the returned arrays
-      const qualifiedFields = tenderFieldsAndLocality[0];
-      const localities = tenderFieldsAndLocality[1];
-
-      console.log("Qualified Fields:", qualifiedFields);
-      console.log("Localities:", localities);
-
-      // Format the arrays for display
-      const formattedFields = qualifiedFields.join(", ");
-      const formattedLocalities = localities.join(", ");
-
-      // Display result in UI
-      contractResult.textContent = `
-          Smart Contract is connected successfully!
-          Qualified Fields: ${formattedFields}
-          Localities: ${formattedLocalities}
-        `;
-    } catch (error) {
-      console.error("Error interacting with the contract:", error);
-      contractResult.textContent =
-        "Error interacting with the contract. Check console for details.";
     }
   });
 });

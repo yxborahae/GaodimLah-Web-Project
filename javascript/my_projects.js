@@ -53,6 +53,8 @@ async function fetchAwardedProjects(contract, signer) {
       const tenderID = await contract.tenderIDs(i);
       const tenderData = await contract.getTenderBasicInfo(tenderID); // Fetch tender details
 
+      console.log('complete check:' + tenderID);
+
       const projectWinner = tenderData[10]; // Winner address
       const status = tenderData[9]; // Status (e.g., awarded)
 
@@ -198,7 +200,7 @@ function renderProjects(projects, type) {
                 <i class="fas fa-clock"></i> Calculating...
               </div>
             </div>
-            <div class="project-status">
+            <div class="project-status-a">
               <span class="status-text">${project.status || 'Pending'}</span>
             </div>
           </div>

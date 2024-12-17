@@ -57,6 +57,39 @@ window.onload = async function () {
         // Get specific milestone data
         const milestone = milestones[milestoneIndex];
 
+        // Check if this is the last milestone
+        const isLastMilestone = (parseInt(milestoneIndex.trim()) === milestones.length - 1);
+
+        console.log('milestone: ' + milestoneIndex + 'milestone length: ' + (milestones.length - 1) + " Is last milestone? " + isLastMilestone);
+
+        // Update Next button to Done if it's the last milestone
+        const nextBtn = document.getElementById("next-btn");
+        if (isLastMilestone) {
+            nextBtn.textContent = "DONE";
+            nextBtn.onclick = function () {
+                window.location.href = `project-milestones.html?tenderID=${tenderID}`;
+            };
+        } else {
+            nextBtn.textContent = "NEXT";
+            nextBtn.onclick = function () {
+                const nextIndex = parseInt(milestoneIndex) + 1;
+                window.location.href = `project-milestone-details.html?tenderID=${tenderID}&index=${nextIndex}`;
+            };
+        }
+
+        // Update Back button
+        const backBtn = document.getElementById("back-btn");
+        if (parseInt(milestoneIndex.trim()) === 0) {
+            backBtn.onclick = function () {
+                window.location.href = `project-milestones.html?tenderID=${tenderID}`;
+            };
+        } else {
+            backBtn.onclick = function () {
+                const nextIndex = parseInt(milestoneIndex) - 1;
+                window.location.href = `project-milestone-details.html?tenderID=${tenderID}&index=${nextIndex}`;
+            };
+        }
+
         // Status mapping
         const statusMap = {
             0: { text: "Not Started", color: "#f3f3f3", icon: "⏳" },
@@ -128,12 +161,3 @@ window.onload = async function () {
     }
 };
 
-// Navigation buttons
-document.getElementById("back-btn").addEventListener("click", function () {
-    window.location.href = `ap_progress.html?tenderID=${tenderID}`;
-});
-
-document.getElementById("next-btn").addEventListener("click", function () {
-    const nextIndex = parseInt(milestoneIndex) + 1;
-    window.location.href = `project-milestone-details.html?tenderID=${tenderID}&index=${nextIndex}`;
-});
