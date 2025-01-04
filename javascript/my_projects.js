@@ -232,9 +232,9 @@ function getProgressColor(progress){
   if (progress >= 80 ){
     return 'green';
   }else if (progress >= 50 && progress < 80){
-    return 'lightblue';
-  }else if (progress >=30 && progress < 50){
     return 'orange';
+  }else if (progress >=30 && progress < 50){
+    return 'coral';
   }else{
     return 'red';
   }

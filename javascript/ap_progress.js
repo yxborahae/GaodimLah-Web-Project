@@ -67,6 +67,38 @@ async function fetchTenderDetails(contract) {
 }
 
 function updateProjectStatus(tenderStatus) {
+
+    const steps = [
+        { id: "step-awarded", requiredStatus: 4 },
+        { id: "step-signing", requiredStatus: 5 },
+        { id: "step-milestones", requiredStatus: 6 },
+        { id: "step-complete", requiredStatus: 7 }
+    ];
+
+    steps.forEach(step => {
+        const stepElement = document.getElementById(step.id);
+        const stepIcon = stepElement.querySelector(".step-icon");
+        const smallCircles = stepElement.querySelectorAll(".small-circle");
+
+        if (tenderStatus >= step.requiredStatus) {
+            // Mark the step as completed
+            stepIcon.classList.remove("undone");
+            stepIcon.removeAttribute("id");
+            smallCircles.forEach(circle => {
+                circle.classList.remove("undone");
+                circle.removeAttribute("id");
+            });
+        } else {
+            // Mark the step as undone
+            stepIcon.classList.add("undone");
+            stepIcon.setAttribute("id", "undone");
+            smallCircles.forEach(circle => {
+                circle.classList.add("undone");
+                circle.setAttribute("id", "undone");
+            });
+        }
+    });
+    
     // Select the <a> elements corresponding to each project stage
     const projectAwardedLink = document.getElementById('confirm');
     const contractSigningLink = document.getElementById('signing');
@@ -120,6 +152,7 @@ function setLinkColor(link, color) {
     link.style.padding = '10px'; 
     link.style.borderRadius = '20px';
 }
+
 
 function calculateDeadline(deadline) {
     const now = new Date();
