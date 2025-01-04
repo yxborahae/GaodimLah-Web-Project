@@ -98,6 +98,20 @@ body {
     justify-content: space-between;
 }
 
+.progress-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lightgrey; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-btn:hover {
+    background-color: darkgrey;
+}
+
 .progress-timeline{
     display: flex;
     flex-direction: column;
@@ -108,7 +122,7 @@ body {
 
 
 .progress-title-container {
-    background-color: #28a745;
+    background-color: transparent;
     color: white;
     padding: 15px;
     font-size: 20px;

@@ -24,6 +24,7 @@ window.onload = async function init() {
             console.log("Connected to contract:", contractAddress);
 
             fetchTenderDetails(contract);
+
         } catch (error) {
             console.error("Error connecting to MetaMask:", error);
             alert("Error connecting to MetaMask. Please try again.");
@@ -49,13 +50,14 @@ async function fetchTenderDetails(contract) {
 
         const projectTitle = result[2]; 
         const deadline = new Date(result[7] * 1000); 
-
+        const status = result[9];
 
         document.getElementById('p-title').innerHTML = projectTitle;
         document.getElementById('tender-id').innerHTML = tenderID;
         document.getElementById('deadline').innerHTML = deadline.toLocaleDateString();
 
-        // Timer Logic
+        updateProjectStatus(status);
+
         calculateDeadline(deadline);
         
     } catch (err) {
@@ -64,7 +66,61 @@ async function fetchTenderDetails(contract) {
     }
 }
 
-// Function to calculate and display the deadline timer
+function updateProjectStatus(tenderStatus) {
+    // Select the <a> elements corresponding to each project stage
+    const projectAwardedLink = document.getElementById('confirm');
+    const contractSigningLink = document.getElementById('signing');
+    const projectMilestonesLink = document.getElementById('milestone');
+    const projectCompletionLink = document.getElementById('complete');
+
+    // Ensure that the elements exist before attempting to modify them
+    if (projectAwardedLink && contractSigningLink && projectMilestonesLink && projectCompletionLink) {
+        
+        console.log('tender status', tenderStatus);
+        // Mapping of status to <a> link color
+        switch (tenderStatus) {
+            case 4: // Project Awarded
+                setLinkColor(projectAwardedLink, 'green');
+                setLinkColor(contractSigningLink, 'grey');
+                setLinkColor(projectMilestonesLink, 'grey');
+                setLinkColor(projectCompletionLink, 'grey');
+                break;
+            case 5: // Contract Signing
+                setLinkColor(projectAwardedLink, 'green');
+                setLinkColor(contractSigningLink, 'green');
+                setLinkColor(projectMilestonesLink, 'grey');
+                setLinkColor(projectCompletionLink, 'grey');
+                break;
+            case 6: // Project Milestones
+                setLinkColor(projectAwardedLink, 'green');
+                setLinkColor(contractSigningLink, 'green');
+                setLinkColor(projectMilestonesLink, 'green');
+                setLinkColor(projectCompletionLink, 'grey');
+                break;
+            case 7: // Project Completion
+                setLinkColor(projectAwardedLink, 'green');
+                setLinkColor(contractSigningLink, 'green');
+                setLinkColor(projectMilestonesLink, 'green');
+                setLinkColor(projectCompletionLink, 'green');
+                break;
+            default:
+                // Default case for unknown or uninitialized status
+                setLinkColor(projectAwardedLink, 'grey');
+                setLinkColor(contractSigningLink, 'grey');
+                setLinkColor(projectMilestonesLink, 'grey');
+                setLinkColor(projectCompletionLink, 'grey');
+                break;
+        }
+    }
+}
+
+function setLinkColor(link, color) {
+    link.style.backgroundColor = color;
+    link.style.color = 'white';
+    link.style.padding = '10px'; 
+    link.style.borderRadius = '20px';
+}
+
 function calculateDeadline(deadline) {
     const now = new Date();
     const timeDiff = deadline - now;

@@ -17,17 +17,18 @@ const accept = document.getElementById('accept');
 accept.addEventListener('click', function () {
     const confirmAccept = confirm("Are you sure you want to accept this project?");
     if (confirmAccept) {
-        window.location.href = `ap_progress.html?tenderID=${tenderID}`;
+        acceptProject();
     }
 });
 
+let provider;
+let contract;
+let contractAddress;
+let contractABI;
+
 // Initialize the provider and contract
 window.onload = async function init() {
-    let provider;
-    let contract;
-    let contractAddress;
-    let contractABI;
-
+    
     // Fetch ABI and contract address from abi.json file
     const response = await fetch('../abi.json');
     const data = await response.json();
@@ -51,6 +52,23 @@ window.onload = async function init() {
         }
     } else {
         alert("Please install MetaMask to interact with the blockchain.");
+    }
+}
+
+async function acceptProject() {
+    try {
+        // Update tender status after accept
+        const tx = await contract.updateTenderStatus(tenderID, 4);
+
+        await tx.wait();
+        
+        alert("Project accepted successfully!");
+
+        window.location.href = `ap_progress.html?tenderID=${tenderID}`;
+
+    } catch (error) {
+        console.error("Error accepting project:", error);
+        alert("Failed to accept project. Check console for details.");
     }
 }
 

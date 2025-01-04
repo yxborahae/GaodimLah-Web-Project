@@ -55,19 +55,18 @@ async function fetchAwardedProjects(contract, signer) {
 
       console.log('complete check:' + tenderID);
 
-      const projectWinner = tenderData[10]; // Winner address
-      const status = tenderData[9]; // Status (e.g., awarded)
-
-      const randomStatus = Math.floor(Math.random() * (90 - 20 + 1)) + 20;
+      const projectWinner = tenderData[10];
+      const status = tenderData[9]; 
+      var progress = (status - 3) / 4 * 100;
 
       if (status >= 3 && projectWinner === signerAddress) { 
         awardedProjects.push({
           title: tenderData[2], 
           tenderId: tenderData[1], 
           deadline: new Date(tenderData[7] * 1000).toISOString().split('T')[0], 
-          progress: randomStatus, 
-          progressText: `Progress ${randomStatus}%`,
-          progressColor: getProgressColor(randomStatus)
+          progress: progress, 
+          progressText: `Progress ${progress}%`,
+          progressColor: getProgressColor(progress)
         });
       }
     }
