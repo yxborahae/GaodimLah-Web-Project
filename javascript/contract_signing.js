@@ -175,16 +175,16 @@ async function loadSigningStatus(contract) {
     const creatorHash = creatorSignature[3];
     const winnerHash = winnerSignature[3];
 
-    if (creatorHash !== ethers.constants.HashZero && signerAddress == tenderCreator) {
-        document.getElementById("gov-sign-button").style.display = 'none';
-    } else {
+    if (creatorHash == ethers.constants.HashZero && signerAddress == tenderCreator) {
         document.getElementById("gov-sign-button").style.display = 'block';
+    } else {
+        document.getElementById("gov-sign-button").style.display = 'none';
     }
 
-    if (winnerHash !== ethers.constants.HashZero && signerAddress == projectWinner) {
-        document.getElementById("bid-sign-button").style.display = 'none';
-    } else {
+    if (winnerHash == ethers.constants.HashZero && signerAddress == projectWinner) {
         document.getElementById("bid-sign-button").style.display = 'block';
+    } else {
+        document.getElementById("bid-sign-button").style.display = 'none';
     }
 }
 
@@ -286,10 +286,22 @@ async function signContract() {
         console.log("Transaction Hash:", transactionHash);
         console.log("Timestamp:", new Date(timestamp * 1000).toISOString());
 
-        // Update tender status after signing the contract (assuming status 5 means "signed")
-        await contract.updateTenderStatus(tenderID, 5);
+        // Check if both parties have signed
+        const creator = await contract.getTenderBasicInfo(tenderID);
+        const projectWinner = creator[10]; 
+        const tenderCreator = creator[0]; 
 
-        alert("Contract signed successfully!");
+        const creatorSignature = await contract.getContractSignatureDetails(tenderID, tenderCreator);
+        const winnerSignature = await contract.getContractSignatureDetails(tenderID, projectWinner);
+
+        if (creatorSignature[3] !== ethers.constants.HashZero && winnerSignature[3] !== ethers.constants.HashZero) {
+            console.log("Both parties have signed. Updating tender status...");
+            await contract.updateTenderStatus(tenderID, 5);
+            alert("Contract signed successfully and tender status updated!");
+        } else {
+            console.log("Waiting for both parties to sign...");
+            alert("Contract signed successfully! Waiting for the other party to sign.");
+        }
 
         // Reload the signing status after signing
         await loadSigningStatus(contract);
@@ -460,8 +472,6 @@ async function updateGovernmentRepresentativeSection() {
         document.querySelector(".government-signature p:nth-child(3)").textContent = `Digital Signature: ${creatorSignature[3]}`;
         document.querySelector(".government-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp)}`; 
 
-        // Show the "Signed Contract" button
-        document.getElementById("bid-sign-button").style.display = 'none';
     } catch (error) {
         console.error("Error updating government Representative section:", error);
     }
