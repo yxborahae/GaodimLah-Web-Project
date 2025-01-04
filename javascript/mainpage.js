@@ -59,6 +59,18 @@ async function loadTenders(contract) {
                 case 3: // Awarded
                     document.getElementById('Awarded').appendChild(tenderCard);
                     break;
+                case 4: // Accept
+                    document.getElementById('Awarded').appendChild(tenderCard);
+                    break;
+                case 5: // Signed
+                    document.getElementById('Awarded').appendChild(tenderCard);
+                    break;
+                case 6: // Ongoing
+                    document.getElementById('Awarded').appendChild(tenderCard);
+                    break;
+                case 7: // Complete
+                    document.getElementById('Awarded').appendChild(tenderCard);
+                    break;
                 default:
                     break;
             }
