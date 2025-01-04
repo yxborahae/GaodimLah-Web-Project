@@ -169,7 +169,8 @@ async function loadSigningStatus(contract) {
 
     const creatorSignature = await contract.getSignOffSignatureDetails(tenderID, tenderCreator);
     const winnerSignature = await contract.getSignOffSignatureDetails(tenderID, projectWinner);
-
+    
+    updateAcceptStatus(creator);
     updateTenderStatus(creator);
     updateGovStatus(creatorSignature);
     updateBidStatus(winnerSignature);
@@ -194,6 +195,21 @@ async function loadSigningStatus(contract) {
         document.getElementById("bid-sign-button").style.display = 'none';
     } else {
         document.getElementById("bid-sign-button").style.display = 'block';
+    }
+}
+
+function updateAcceptStatus(creator) {
+    const statusElement = document.getElementById('accept-status-button');
+    const status = creator[9];
+    console.log("Tender Status:", status);
+    if (status >= 4) {
+        statusElement.textContent = `Project Accepted`;
+        statusElement.style.backgroundColor = 'green';
+        statusElement.style.color = 'white';
+    } else {
+        statusElement.textContent = `Awaiting Accept`;
+        statusElement.style.backgroundColor = 'orange';
+        statusElement.style.color = 'white';
     }
 }
 

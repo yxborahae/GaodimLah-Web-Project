@@ -34,12 +34,43 @@ window.onload = async function init() {
             console.log("Connected to contract:", contractAddress);
 
             fetchTenderDetails(contract);
+
         } catch (error) {
             console.error("Error connecting to MetaMask:", error);
             alert("Error connecting to MetaMask. Please try again.");
         }
     } else {
         alert("Please install MetaMask to interact with the blockchain.");
+    }
+}
+
+function updateAcceptStatus(creator) {
+    const statusElement = document.getElementById('accept-status-button');
+    const status = creator[9];
+    console.log("Tender Status:", status);
+    if (status >= 4) {
+        statusElement.textContent = `Project Accepted`;
+        statusElement.style.backgroundColor = 'green';
+        statusElement.style.color = 'white';
+    } else {
+        statusElement.textContent = `Awaiting Accept`;
+        statusElement.style.backgroundColor = 'orange';
+        statusElement.style.color = 'white';
+    }
+}
+
+function updateTenderStatus(creator) {
+    const statusElement = document.getElementById('contract-status-button');
+    const status = creator[9];
+    console.log("Tender Status:", status);
+    if (status === 7) {
+        statusElement.textContent = `Complete Signature`;
+        statusElement.style.backgroundColor = 'green';
+        statusElement.style.color = 'white';
+    } else {
+        statusElement.textContent = `Awaiting Signature`;
+        statusElement.style.backgroundColor = 'orange';
+        statusElement.style.color = 'white';
     }
 }
 
@@ -58,6 +89,9 @@ async function fetchTenderDetails(contract) {
         const ministry = result[3];
         const bidderDetails = await contract.getUser(result[10]);
         const companyName = bidderDetails.companyName;
+
+        updateAcceptStatus(result);
+        updateTenderStatus(result);
 
         // Populate tender details
         document.getElementById('tender-title').innerHTML = `<h3 class="tender-title">${title}</h3>`;
