@@ -167,36 +167,85 @@ async function loadSigningStatus(contract) {
     const signer = await contract.provider.getSigner();
     const signerAddress = await signer.getAddress();
 
-    const creatorSignature = await contract.getSignature(tenderID, tenderCreator);
-    const winnerSignature = await contract.getSignature(tenderID, projectWinner);
+    const creatorSignature = await contract.getSignOffSignatureDetails(tenderID, tenderCreator);
+    const winnerSignature = await contract.getSignOffSignatureDetails(tenderID, projectWinner);
 
-    updatePartyStatus("creator-status", creatorSignature);
-    updatePartyStatus("winner-status", winnerSignature);
-
-    // Enable "Sign Contract" button if current user is eligible
-    if (signerAddress === tenderCreator || signerAddress === projectWinner) {
-        document.getElementById("sign-button").disabled = false;
-    }
+    updateTenderStatus(creator);
+    updateGovStatus(creatorSignature);
+    updateBidStatus(winnerSignature);
 
     checkBothSigned(creatorSignature, winnerSignature);
 
-    // Hide "Sign Contract" button if both parties have signed the contract
-    if (creatorSignature !== ethers.constants.HashZero && winnerSignature !== ethers.constants.HashZero) {
-        document.getElementById("sign-button").style.display = 'none';
+    await displayTransactionDetails(contract, tenderID, signerAddress);
+    
+    updateBidderRepresentativeSection();
+    updateGovernmentRepresentativeSection();
+
+    const creatorHash = creatorSignature[3];
+    const winnerHash = winnerSignature[3];
+
+    if (creatorHash !== ethers.constants.HashZero && signerAddress == tenderCreator) {
+        document.getElementById("gov-sign-button").style.display = 'none';
     } else {
-        document.getElementById("sign-button").style.display = 'block';
+        document.getElementById("gov-sign-button").style.display = 'block';
+    }
+
+    if (winnerHash !== ethers.constants.HashZero && signerAddress == projectWinner) {
+        document.getElementById("bid-sign-button").style.display = 'none';
+    } else {
+        document.getElementById("bid-sign-button").style.display = 'block';
     }
 }
 
-function updatePartyStatus(elementId, signature) {
-    const statusElement = document.getElementById(elementId);
-    statusElement.textContent = signature !== ethers.constants.HashZero ? "Signed" : "Not Signed";
+function updateTenderStatus(creator) {
+    const statusElement = document.getElementById('contract-status-button');
+    const status = creator[9];
+    console.log("Tender Status:", status);
+    if (status === 7) {
+        statusElement.textContent = `Complete Signature`;
+        statusElement.style.backgroundColor = 'green';
+        statusElement.style.color = 'white';
+    } else {
+        statusElement.textContent = `Awaiting Signature`;
+        statusElement.style.backgroundColor = 'orange';
+        statusElement.style.color = 'white';
+    }
+}
+
+function updateGovStatus(signature) {
+    const statusElement = document.getElementById('creator-status');
+    const creatorHash = signature[3];
+    console.log("Government Contract Hash:", creatorHash);
+    if (creatorHash !== ethers.constants.HashZero) {
+        statusElement.textContent = `Signed`;
+        statusElement.style.backgroundColor = 'green';
+        statusElement.style.color = 'white';
+    } else {
+        statusElement.textContent = `Not Signed`;
+        statusElement.style.backgroundColor = 'orange';
+        statusElement.style.color = 'white';
+    }
+}
+
+function updateBidStatus(signature) {
+    const statusElement = document.getElementById('winner-status');
+    const bidderHash = signature[3];
+    console.log("Bidder Contract Hash:", bidderHash);
+    if (bidderHash !== ethers.constants.HashZero) {
+        statusElement.textContent = `Signed`;
+        statusElement.style.backgroundColor = 'green';
+        statusElement.style.color = 'white';
+    } else {
+        statusElement.textContent = `Not Signed`;
+        statusElement.style.backgroundColor = 'orange';
+        statusElement.style.color = 'white';
+    }
 }
 
 async function signContract() {
     try {
 
-        const confirmSign = confirm("Are you sure you want to sign this contract? Once signed, this action cannot be undone.");
+        const confirmSign = confirm("Are you sure you want to sign off the project? Once signed, this action cannot be undone.");
         if (!confirmSign) {
             alert("Signing cancelled.");
             return; // Exit if the user clicks 'Cancel'
@@ -206,10 +255,34 @@ async function signContract() {
         const message = "I agree to the tender contract terms.";
         const signedHash = ethers.utils.id(message);
 
-        const tx = await contract.signContract(tenderID, signedHash);
-        await tx.wait();
+        const signingAction = 1;
 
+        // Attempt to sign the contract
+        const tx = await contract.sign(tenderID, signedHash, signingAction);
         const txReceipt = await tx.wait(); 
+
+        let blockNumber = txReceipt.blockNumber;
+        blockNumber = parseInt(blockNumber, 10);
+        const transactionHash = txReceipt.transactionHash;
+        
+        // Check if the block number is valid
+        if (isNaN(blockNumber) || blockNumber <= 0) {
+            console.error("Invalid block number:", blockNumber);
+            alert("Invalid block number. Unable to retrieve block details.");
+            return;
+        }
+
+        // Fetch block details
+        const blockDetails = await provider.getBlock(blockNumber);
+        const timestamp = blockDetails.timestamp;
+
+        console.log("Signature Details:");
+        console.log("Block Number:", blockNumber);
+        console.log("Transaction Hash:", transactionHash);
+        console.log("Timestamp:", new Date(timestamp * 1000).toISOString());
+
+        // Update tender status after signing the contract (assuming status 5 means "signed")
+        await contract.updateTenderStatus(tenderID, 7);
 
         alert("Contract signed successfully!");
 
@@ -219,54 +292,101 @@ async function signContract() {
         // Reload status after signing
         await loadSigningStatus(contract);
 
-        // Update the Bidder Representative section
-        await updateBidderRepresentativeSection();
-
-        // Update the Bidder Representative section
-        await updateGovermentRepresentativeSection();
-
     } catch (error) {
         console.error("Error signing contract:", error);
         alert("Failed to sign contract. Check console for details.");
     }
 }
 
-function checkBothSigned(creatorSignature, winnerSignature) {
-    const timestamp = Date.now();
-    if (
-        creatorSignature !== ethers.constants.HashZero &&
-        winnerSignature !== ethers.constants.HashZero
-    ) {
+async function checkBothSigned(creatorSignature, winnerSignature) {
+    // Debugging: Log the full objects to understand their structure
+    console.log("Creator Signature:", creatorSignature);
+    console.log("Winner Signature:", winnerSignature);
+
+    // Ensure creatorSignature and winnerSignature are not undefined or null
+    if (!creatorSignature || !winnerSignature) {
+        console.warn("Signature details are missing or undefined.");
+        return; // Exit if either signature is missing
+    }
+
+    // Check for the contractHash (if it exists in the returned structure)
+    const creatorHash = creatorSignature[3];
+    const winnerHash = winnerSignature[3];
+
+    // Update confirmation message only if both hashes are valid
+    if (creatorHash !== ethers.constants.HashZero && winnerHash !== ethers.constants.HashZero) {
         document.getElementById("confirmation-message").textContent =
-            "✅ Both parties have signed the contract. Agreement confirmed!";
-            document.getElementById("close-date").textContent =
-            `Project Closure Date: ${new Date(timestamp * 1000).toLocaleString()}`;
-        
+            "✅ Both parties have signed off the project. Agreement confirmed!";
+    } else {
+        document.getElementById("confirmation-message").textContent =
+            "❌ Project not fully signed off yet. Awaiting signatures.";
     }
 }
 
-async function displayTransactionDetails(txReceipt) {
+async function displayTransactionDetails(contract, tenderID, signerAddress) {
     try {
-        // Fetch Block details to get the timestamp
-        const block = await provider.getBlock(txReceipt.blockNumber);
+        // Fetch signature details from the smart contract
+        const signatureDetails = await contract.getSignOffSignatureDetails(tenderID, signerAddress);
 
-        // Retrieve transaction details
-        const txHash = txReceipt.transactionHash;
-        const blockNumber = txReceipt.blockNumber;
-        const timestamp = new Date(block.timestamp * 1000).toLocaleString(); // Convert timestamp to human-readable format
-        const contractHash = txReceipt.contractAddress || "N/A"; // The contract address is available if the contract was deployed in this transaction
+        // Destructure the returned values
+        const [transactionID, blockNumber, timestamp, contractHash] = signatureDetails;
+
+        // Check if the contract has been signed
+        if (contractHash === ethers.constants.HashZero) {
+            // If not signed, display a proper message
+            document.querySelector(".blockchain-record").innerHTML = `
+                <p class="subtitle">Blockchain Transaction Record</p>
+                <div class="line"></div>
+                <p>This contract has not been signed yet.</p>
+            `;
+            return;
+        }
+
+        // Ensure blockNumber is a valid integer
+        const blockNumberInt = parseInt(blockNumber, 10);
+        if (isNaN(blockNumberInt) || blockNumberInt <= 0) {
+            console.error("Invalid block number:", blockNumber);
+            document.querySelector(".blockchain-record").innerHTML = `
+                <p class="subtitle">Blockchain Transaction Record</p>
+                <div class="line"></div>
+                <p>Error: Invalid block number.</p>
+            `;
+            return;
+        }
+
+        // Fetch block details using the provider
+        const block = await contract.provider.getBlock(blockNumberInt);
+
+        // Check if block exists
+        if (!block) {
+            console.error("Block not found:", blockNumberInt);
+            document.querySelector(".blockchain-record").innerHTML = `
+                <p class="subtitle">Blockchain Transaction Record</p>
+                <div class="line"></div>
+                <p>Error: Block details not found.</p>
+            `;
+            return;
+        }
+
+        // Format the timestamp
+        const transactionTimestamp = new Date(timestamp * 1000).toLocaleString();
 
         // Update the blockchain record section in HTML
         document.querySelector(".blockchain-record").innerHTML = `
             <p class="subtitle">Blockchain Transaction Record</p>
             <div class="line"></div>
-            <p><span>Transaction ID: </span>${txHash}</p>
-            <p><span>Block Number: </span>${blockNumber}</p>
-            <p><span>Timestamp: </span>${timestamp}</p>
+            <p><span>Transaction ID: </span>${transactionID}</p>
+            <p><span>Block Number: </span>${blockNumberInt}</p>
+            <p><span>Timestamp: </span>${transactionTimestamp}</p>
             <p><span>Contract Hash: </span>${contractHash}</p>
         `;
     } catch (error) {
         console.error("Error displaying transaction details:", error);
+        document.querySelector(".blockchain-record").innerHTML = `
+            <p class="subtitle">Blockchain Transaction Record</p>
+            <div class="line"></div>
+            <p>An error occurred while fetching the transaction details. Please try again later.</p>
+        `;
     }
 }
 
@@ -280,46 +400,63 @@ async function updateBidderRepresentativeSection() {
         const bidderName = bidderDetails.personalDetails.fullName;
 
         // Get the bidder's signature and timestamp (when they signed the contract)
-        const winnerSignature = await contract.getSignature(tenderID, projectWinner);
-        const timestamp = Date.now();
-
-        // Update the HTML of the Bidder Representative section
+        const winnerSignature = await contract.getSignOffSignatureDetails(tenderID, projectWinner);
+        const timestamp = new Date(winnerSignature[2] * 1000).toLocaleString();
+        
         document.querySelector(".bidder-signature .small-title").textContent = "Bidder Representative";
-        document.getElementById("winner-status").textContent = winnerSignature !== ethers.constants.HashZero ? "Signed" : "Not Signed";
+
+        const winnerHash = winnerSignature[3];
+
+        if (!winnerHash || winnerHash === ethers.constants.HashZero) {
+            document.getElementById("winner-status").textContent = "Not Signed";
+            document.querySelector(".bidder-signature p:nth-child(2)").textContent = `Name: N/A`;
+            document.querySelector(".bidder-signature p:nth-child(3)").textContent = `Digital Signature: N/A`;
+            document.querySelector(".bidder-signature p:nth-child(4)").textContent = `Date Signed: N/A`;
+            return;
+        }
 
         // Update name and signature details
+        document.getElementById("winner-status").textContent = "Signed";
         document.querySelector(".bidder-signature p:nth-child(2)").textContent = `Name: ${bidderName}`;
-        document.querySelector(".bidder-signature p:nth-child(3)").textContent = `Digital Signature: ${winnerSignature}`;
-        document.querySelector(".bidder-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp * 1000).toLocaleString()}`; // Format timestamp
+        document.querySelector(".bidder-signature p:nth-child(3)").textContent = `Digital Signature: ${winnerSignature[3]}`;
+        document.querySelector(".bidder-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp)}`;
 
-        // Show the "Signed Contract" button
-        document.getElementById("sign-button").style.display = 'none';
     } catch (error) {
         console.error("Error updating Bidder Representative section:", error);
     }
 }
 
-async function updateGovermentRepresentativeSection() {
+async function updateGovernmentRepresentativeSection() {
     try {
         const creator = await contract.getTenderBasicInfo(tenderID);
         const name = creator[3];
         const address = creator[0]; 
 
         // Get the bidder's signature and timestamp (when they signed the contract)
-        const winnerSignature = await contract.getSignature(tenderID, address);
-        const timestamp = Date.now();
+        const creatorSignature = await contract.getSignOffSignatureDetails(tenderID, address);
+        const timestamp = new Date(creatorSignature[2] * 1000).toLocaleString();
 
-        // Update the HTML of the Bidder Representative section
-        document.querySelector(".government-signature .small-title").textContent = "Bidder Representative";
-        document.getElementById("winner-status").textContent = winnerSignature !== ethers.constants.HashZero ? "Signed" : "Not Signed";
+        document.querySelector(".government-signature .small-title").textContent = "Government Representative";
+
+        const creatorHash = creatorSignature[3];
+
+        if (!creatorHash || creatorHash === ethers.constants.HashZero) {
+            // If not signed, display "Not signed yet"
+            document.getElementById("creator-status").textContent = "Not Signed";
+            document.querySelector(".government-signature p:nth-child(2)").textContent = `Name: N/A`;
+            document.querySelector(".government-signature p:nth-child(3)").textContent = `Digital Signature: N/A`;
+            document.querySelector(".government-signature p:nth-child(4)").textContent = `Date Signed: N/A`;
+            return;
+        }
 
         // Update name and signature details
+        document.getElementById("creator-status").textContent = "Signed";
         document.querySelector(".government-signature p:nth-child(2)").textContent = `Name: ${name}`;
-        document.querySelector(".government-signature p:nth-child(3)").textContent = `Digital Signature: ${winnerSignature}`;
-        document.querySelector(".government-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp * 1000).toLocaleString()}`; // Format timestamp
+        document.querySelector(".government-signature p:nth-child(3)").textContent = `Digital Signature: ${creatorSignature[3]}`;
+        document.querySelector(".government-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp)}`; 
 
         // Show the "Signed Contract" button
-        document.getElementById("sign-button").style.display = 'none';
+        document.getElementById("bid-sign-button").style.display = 'none';
     } catch (error) {
         console.error("Error updating government Representative section:", error);
     }

@@ -60,7 +60,7 @@ async function fetchAwardedProjects(contract, signer) {
 
       const randomStatus = Math.floor(Math.random() * (90 - 20 + 1)) + 20;
 
-      if (status === 3 && projectWinner === signerAddress) { 
+      if (status >= 3 && projectWinner === signerAddress) { 
         awardedProjects.push({
           title: tenderData[2], 
           tenderId: tenderData[1], 

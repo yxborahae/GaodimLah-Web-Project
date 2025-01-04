@@ -35,9 +35,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 // Instantiate the contract
                 contract = new ethers.Contract(contractAddress, contractABI, signer);
-
+                console.log(contract);
+                
                 // Check if user is registered
-                const userData = await contract.users(address);
+                const userData = await contract.getUser(address);
+                console.log(userData);
+
                 if (userData.isRegistered) {
                     // Check if the address is admin or a regular user
                     if (address === "0xdCB551745523dC12f7E985d328b5f123301A86cB") {

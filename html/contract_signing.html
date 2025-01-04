@@ -52,7 +52,7 @@
 
             </div>
             <div class="contract_status">
-                <p>Contract Status: <button>Awaiting Signature</button> </p>
+                <p>Contract Status: <button id="contract-status-button">Awaiting Signature</button> </p>
                 
             </div>
 
@@ -100,7 +100,7 @@
                         <p>Name</p>
                         <p>Digital Signature: </p>
                         <p>Date Signed:</p>
-    
+                        <button class="contract-sign mt-3" id="gov-sign-button" onclick=signContract()>Signed Contract</button>
                     </div>
 
                     <div class="container bidder-signature mt-3">
@@ -111,7 +111,7 @@
                         <p>Name</p>
                         <p>Digital Signature: </p>
                         <p>Date Signed:</p>
-                        <button class="contract-sign mt-3" id="sign-button" onclick=signContract()>Signed Contract</button>
+                        <button class="contract-sign mt-3" id="bid-sign-button" onclick=signContract()>Signed Contract</button>
     
                     </div>
                     

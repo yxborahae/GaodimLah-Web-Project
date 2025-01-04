@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 contract = new ethers.Contract(contractAddress, contractABI, signer);
 
                 // Check if user is registered
-                const userData = await contract.users(address);
+                const userData = await contract.getUser(address);
 
                 const tenderID = new URLSearchParams(window.location.search).get('tenderID');
                 
