@@ -46,6 +46,7 @@ window.onload = async function init() {
             console.log("Connected to contract:", contractAddress);
 
             fetchTenderDetails(contract);
+            
         } catch (error) {
             console.error("Error connecting to MetaMask:", error);
             alert("Error connecting to MetaMask. Please try again.");
@@ -88,8 +89,11 @@ async function fetchTenderDetails(contract) {
 
         const title = result[2];
         const ministry = result[3]; 
+        const  tenderStatus = result[9];
         const bidderDetails = await contract.getUser(result[10]);
         const companyName = bidderDetails.companyName; 
+
+        console.log('tender status', tenderStatus);
 
         document.getElementById('tender-title').innerHTML = `
             <h3 class="tender-title" id="tender-title">${title}</h3>
@@ -111,7 +115,7 @@ async function fetchTenderDetails(contract) {
         `;
 
         // Fetch milestones
-        const milestones = await contract.getTenderMilestones(tenderID);
+        const milestones = await contract.getMilestones(tenderID);
 
         // Populate Project Key Terms
         let milestoneContent = '';
@@ -148,7 +152,12 @@ async function fetchTenderDetails(contract) {
                 </div>
             </div>
         `;
-
+        
+        if (tenderStatus >= 4) {
+            decline.style.display = 'none';
+            accept.style.display = 'none';
+        }
+        
         
     } catch (err) {
         console.error("Error fetching tender details:", err);

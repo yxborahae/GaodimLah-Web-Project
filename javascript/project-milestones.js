@@ -109,21 +109,37 @@ async function fetchTenderDetails(contract) {
         `;
 
         // Fetch milestones
-        const milestones = await contract.getTenderMilestones(tenderID);
+        const milestones = await contract.getMilestones(tenderID);
 
         // Map status to text and style
         const statusMap = {
             0: { text: 'Not Started', color: '#f3f3f3', icon: '⏳' },
-            1: { text: 'On Going', color: '#2196F3', icon: '🔄' },
+            1: { text: 'On Going', color: '#6F9CDE', icon: '🔄' },
             2: { text: 'Complete', color: '#4CAF50', icon: '✅' },
         };
+       
+        const milestoneStatuses = [];
 
         // Populate milestones
         let milestoneContent = '';
         if (milestones.length > 0) {
-            milestones.forEach((milestone, index) => {
-                const status = statusMap[milestone.status] || statusMap[0]; // Default to 'Not Started'
+            for (let index = 0; index < milestones.length; index++) {
+                const uploadedDocs = await contract.getMilestoneDocuments(tenderID, index);
+                let status;
+                if (milestones[index].status === 2){
+                    status = statusMap[2];
+                }else{
+                    if (uploadedDocs.length > 0) {
+                        status = statusMap[1];
+                    } else {
+                        status = statusMap[0];
+                    }
+                }
+                milestoneStatuses.push(status);
+            }
 
+            milestones.forEach((milestone, index) => {
+                const status = milestoneStatuses[index];
                 milestoneContent += `
                     <a href="project-milestone-details.html?tenderID=${tenderID}&index=${index}">
                         <div class="milestone-card">

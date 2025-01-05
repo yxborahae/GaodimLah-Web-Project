@@ -99,7 +99,7 @@ async function fetchTenderDetails(contract) {
         `;
         
         // Fetch milestones
-        const milestones = await contract.getTenderMilestones(tenderID);
+        const milestones = await contract.getMilestones(tenderID);
 
         // Populate Project Key Terms
         let milestoneContent = '';
@@ -153,6 +153,7 @@ async function loadSigningStatus(contract) {
     const creator = await contract.getTenderBasicInfo(tenderID);
     const projectWinner = creator[10]; 
     const tenderCreator = creator[0]; 
+    const tenderStatus = creator[9];
 
     const signer = await contract.provider.getSigner();
     const signerAddress = await signer.getAddress();
@@ -185,6 +186,12 @@ async function loadSigningStatus(contract) {
         document.getElementById("bid-sign-button").style.display = 'block';
     } else {
         document.getElementById("bid-sign-button").style.display = 'none';
+    }
+
+    console.log('tender status ', tenderStatus);
+    if (tenderStatus >= 5) {
+        decline.style.display = 'none';
+        accept.style.display = 'none';
     }
 }
 

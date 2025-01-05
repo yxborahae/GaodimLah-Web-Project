@@ -1,216 +1,232 @@
+/* Overall Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F7F6F9;
-
-  }
-  
-  header {
-    padding: 0px 20px 0px 20px;
-    
-  }
-  
-  .header-title {
-    font-size: 22px; 
-    font-weight: bold; 
-    color: #4550DA; 
-  }
-  
-  .header-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-  }
-  
-  .notificationIcon {
-    background-color: white;
-    color: black;
-  }
-  
-  .notificationIcon:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  .profileIcon {
-    background-color: #4550DA;
-    color: white;
-  }
-  
-  .profileIcon:hover {
-    background-color: black;
-    color: white;
-  }
-
-.tender-title-bar{
-    background-color: black;
-    height: 45px;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .tender-title{
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 10px ;
-  
-  }
-
-  .mainSection{
-    padding-left: 80px;
-    padding-right: 80px;
-    box-sizing: border-box;
-  }
-
-h1{
-    font-size: 26px;
-    font-weight: 600;
-}
-
-
-h2{
-    font-size: 16px;
-  }
-
-  
-span{
-    font-weight: 600; 
-}
-
-.keyTerms{
-    padding: 15px 20px;
-    border-radius: 6px;
-    background-color: white;
-    box-sizing: border-box;
-
-}
-
-.keyTerms .subtitle{
-  font-weight: 700;
-  font-size: 17px;
+  font-family: 'Roboto', sans-serif; /* A more modern, clean font */
+  background-color: #F4F7FC;  /* Lighter background for a softer feel */
+  margin: 0;
   padding: 0;
-  margin-top:0 ;
-  margin-bottom: 6px;
+  color: #333; /* Darker text for better readability */
 }
 
-.keyTerms .line{
-  height: 2px;
+/* Header Styling */
+header {
+  padding: 10px 20px;
+  background-color: #ffffff; /* Light background for contrast */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for header */
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4A4A4A; /* Slightly darker text */
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  cursor: pointer;
+}
+
+.notificationIcon:hover,
+.profileIcon:hover {
   background-color: #4550DA;
-  width: 450px;
-  margin-bottom: 0px;
+  color: white;
 }
 
-
-.keyTerms p{
-    margin-bottom: 0;
-    margin-top: 10px;
-    font-size: 15px;
-    font-weight: bolder;
-
+/* Tender Title Bar */
+.tender-title-bar {
+  background-color: #1A1A1A;  /* Darker background */
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
 }
 
-.keyTerms p span{
+.tender-title {
+  color: white;
+  font-size: 20px;
   font-weight: 600;
 }
 
-.milestone-title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Main Section Layout */
+.mainSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.milestone-title button{
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #949090;
-    border: 1px solid #949090;
-    background-color: #D9D9D9; 
+/* Milestone Title */
+.milestone-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-
-table{
-    width: 99.5%;
-    font-size: 14px;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  
-  table .textColumn{
-    text-align: left;
-  }
-  
-  table th{
-    color: white;
-    background-color: #4651E3;
-    padding: 5px 20px;
-    font-weight: 500;
-  }
-  
-  table td{
-    color: black;
-    background-color: #CEB8F0;
-    padding: 5px 20px;
-  }
-
-
-.payment-status{
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
-    border: 1px solid #949090;
-    background-color: #D9D9D9; 
-    
+.milestone-title button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  background-color: #2196F3;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.milestone-title button:hover {
+  background-color: #1976D2;
+}
 
-button{
-    box-shadow: none;
-    outline: none;
-    border: none;
-  }
-  
-  .mainButton{
-    background-color: #4550DA;
-    color: #ffffff;
-    border-radius: 5px;
-    padding: 6px 10px;
-    
-  }
+/* Key Terms Styling */
+.keyTerms {
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
 
-  .mainButton:hover {
-    background-color: #737cf8;
-  }
+.keyTerms .subtitle {
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
 
-  .buttons{
-    display: flex;
-    margin: 50px;
-    justify-content: center;
-  }
-  
-  #back{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-right: 5px;
-    width: 130px;
-  }
-  #next{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 5px;
-    width: 130px;
-  }
+.keyTerms .line {
+  align-items: center;
+  height: 2px;
+  background-color: #7B1FAC;
+  margin: 10px 0;
+}
+
+.keyTerms p {
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.keyTerms p span {
+  align-items: center;
+  font-weight: 700;
+}
+
+/* Table Styling */
+table {
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table th {
+  align-items: center;
+  background-color: #7B1FAC;
+  color: rgb(215, 201, 201);
+  padding: 12px;
+  font-weight: 500;
+  text-align: left;
+}
+
+table td {
+  align-items: center;
+  background-color: #FAFAFA;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table .textColumn {
+  align-items: center;
+  text-align: left;
+}
+
+/* Status Button */
+.milestone-status-button {
+  padding: 6px 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-status {
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #ebeaea;
+  border: 1px solid #bebcbc;
+}
+
+.payment-status:hover {
+  background-color: #B0B0B0;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.mainButton {
+  background-color: #4550DA;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.mainButton:hover {
+  background-color: #737cf8;
+}
+
+/* Layout for Back and Next Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#back, #next {
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  background-color: #2196F3;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#back:hover, #next:hover {
+  background-color: #1976D2;
+}
+
+.upload-btn {
+  background-color: #4f267e; 
+  color: rgb(233, 222, 222);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #8e24aa; 
+}

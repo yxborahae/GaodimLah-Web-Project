@@ -98,7 +98,7 @@ async function fetchTenderDetails(contract) {
 async function fetchAndRenderMilestones(tenderID, contract) {
     try {
         // Fetch milestones from the blockchain
-        const milestones = await contract.getTenderMilestones(tenderID);
+        const milestones = await contract.getMilestones(tenderID);
 
         // Target the container/table where milestones will be displayed
         const milestoneTable = document.getElementById('milestone-table');
@@ -115,18 +115,18 @@ async function fetchAndRenderMilestones(tenderID, contract) {
 
         // Check if milestones exist
         if (milestones.length > 0) {
-            milestones.forEach((milestone, index) => {
-                
-                mstatus = '';
+            for (const [index, milestone] of milestones.entries()) {
+                const uploadedDocs = await contract.getMilestoneDocuments(tenderID, index);
+                let mstatus = '';
 
-                if (milestone.status === 0){
-                    mstatus = 'No Start';
-                }else if (milestone.status === 1){
-                    mstatus = 'On Going';
-                }else if (milestone.status === 1){
+                if (milestone.status === 2) {
                     mstatus = 'Complete';
-                }else{
-                    mstatus = 'Undefined';
+                } else {
+                    if (uploadedDocs.length > 0) {
+                        mstatus = 'On Going';
+                    } else {
+                        mstatus = 'No Start';
+                    }
                 }
                 milestoneContent += `
                     <tr>
@@ -135,7 +135,7 @@ async function fetchAndRenderMilestones(tenderID, contract) {
                         <td>${mstatus}</td>
                     </tr>
                 `;
-            });
+            };
         } else {
             // Handle case when no milestones are available
             milestoneContent += `

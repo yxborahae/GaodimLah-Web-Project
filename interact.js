@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const connectWalletButton = document.getElementById("connectWallet-btn");
-  const contractResult = document.getElementById("contract-result");
 
   let provider;
   let signer;
@@ -31,8 +30,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("Contract data loaded successfully:", contractData);
   } catch (error) {
     console.error("Error loading ABI file:", error);
-    contractResult.textContent =
-      "Error loading ABI file. Check console for details.";
     return; // Prevent further execution if ABI can't be loaded
   }
 
@@ -85,8 +82,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     } catch (error) {
       console.error("Error connecting wallet:", error);
-      contractResult.textContent =
-        "Error connecting wallet. Check console for details.";
     }
   });
 });
