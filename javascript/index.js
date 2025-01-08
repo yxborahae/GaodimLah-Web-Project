@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (userData.isRegistered) {
                     // Check if the address is admin or a regular user
                     if (address === "0xdCB551745523dC12f7E985d328b5f123301A86cB") {
-                        window.location.href = "./admin_main.html"; // Redirect to admin page
-                    } else {
+                    //     window.location.href = "./admin_main.html"; // Redirect to admin page
+                    // } else {
                         window.location.href = "./tender_main.html"; // Redirect to tender page
                     }
                 } else {

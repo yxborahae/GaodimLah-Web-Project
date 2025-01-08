@@ -94,7 +94,7 @@ function renderProjects(title, projects) {
         <a href="evaluation.html?tenderID=${tenderID}&bidID=${project.bidID}" style="text-decoration: none; color: inherit;">
           <div class="project-content">
             <div class="project-left">
-              <div class="project-title">Bidder ID: ${project.bidder}</div>
+              <div class="project-title">Vendor ID: ${project.bidder}</div>
               <div class="project-details">Bid Amount: RM ${project.amount}</div>
               <div class="project-details">Submit Date:: ${project.submitDate}</div>
               <div class="project-details">Bid ID: ${project.bidID}</div>

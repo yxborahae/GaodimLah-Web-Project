@@ -158,8 +158,8 @@ function renderProjects(projects) {
           <div class="project-left">
             <div class="project-title">${project.title}</div>
             <div class="project-details">Tender ID: ${project.tenderId}</div>
-            <div class="project-details">Total Bidder: ${project.totalBidder}</div>
-            <div class="project-details">Number of Bidders Passing Preliminary Evaluation: ${project.totalBidder}</div>
+            <div class="project-details">Total Vendor: ${project.totalBidder}</div>
+            <div class="project-details">Number of Vendors Passing Preliminary Evaluation: ${project.totalBidder}</div>
           </div>
           <div class="project-right">
             <div style="background-color: #CEB8F0; padding: 20px 20px; border-radius: 10px; white-space: nowrap; text-align: center;"><div style="color: black; font-weight: 100; font-size: 12px;">Proposal Validity Expiry: ${formatDeadline(project.proposalValidityExpiry)}</div>

@@ -417,7 +417,7 @@ async function displayTransactionDetails(contract, tenderID, signerAddress) {
 async function updateBidderRepresentativeSection() {
     try {
         const creator = await contract.getTenderBasicInfo(tenderID);
-        const projectWinner = creator[10]; // Project Winner Address (Bidder Representative)
+        const projectWinner = creator[10]; // Project Winner Address (Vendor Representative)
 
         // Get the bidder details (name, etc.)
         const bidderDetails = await contract.getUser(projectWinner);
@@ -427,7 +427,7 @@ async function updateBidderRepresentativeSection() {
         const winnerSignature = await contract.getContractSignatureDetails(tenderID, projectWinner);
         const timestamp = new Date(winnerSignature[2] * 1000).toLocaleString();
         
-        document.querySelector(".bidder-signature .small-title").textContent = "Bidder Representative";
+        document.querySelector(".bidder-signature .small-title").textContent = "Vendor Representative";
 
         const winnerHash = winnerSignature[3];
 
@@ -446,7 +446,7 @@ async function updateBidderRepresentativeSection() {
         document.querySelector(".bidder-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp)}`;
 
     } catch (error) {
-        console.error("Error updating Bidder Representative section:", error);
+        console.error("Error updating Vendor Representative section:", error);
     }
 }
 
@@ -460,7 +460,7 @@ async function updateGovernmentRepresentativeSection() {
         const creatorSignature = await contract.getContractSignatureDetails(tenderID, address);
         const timestamp = new Date(creatorSignature[2] * 1000).toLocaleString();
 
-        document.querySelector(".government-signature .small-title").textContent = "Government Representative";
+        document.querySelector(".government-signature .small-title").textContent = "Project Owner Representative";
 
         const creatorHash = creatorSignature[3];
 
@@ -480,7 +480,7 @@ async function updateGovernmentRepresentativeSection() {
         document.querySelector(".government-signature p:nth-child(4)").textContent = `Date Signed: ${new Date(timestamp)}`; 
 
     } catch (error) {
-        console.error("Error updating government Representative section:", error);
+        console.error("Error updating project owner Representative section:", error);
     }
 }
 
